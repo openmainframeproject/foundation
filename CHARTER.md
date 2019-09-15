@@ -27,24 +27,23 @@ Effective October 10, 2018
     - ii) one representative appointed from each Platinum End-User Member;
     - iii) one Silver Member representative (rounded down to the nearest whole number, but at least one at any time there is at least one Silver Member of the Project ) elected annually by the Silver Members for every 10 Silver Members; with no more than three Silver Member representatives;
     - iv) one Academic Institution Member representative (rounded down to the nearest whole number, but at least one at any time there is at least one Academic Institution Member of the Project) elected annually by the Academic Institution Members for every 10 Academic Institution Members; with no more than three Academic Institution Member representatives; and
-    - v) the TSC Chair.
+    - v) the TAC Chair.
   - b) Responsibilities:
     - i) approve a budget directing the use of funds raised from all sources of revenue;
     - ii) elect a Chair of the Project to preside over meetings, authorize expenditures approved by the budget and manage any day-to-day operations; and
     - iii) vote on decisions or matters before the Governing Board.
 
-4. Technical Steering Committee (“TSC”)
-  - a) Composition – the TSC voting members shall consist of:
+4. Technical Advisory Council (“TAC”)
+  - a) Composition – the TAC voting members shall consist of:
     - i) one appointed representative from each Platinum Member and each Platinum End-User Member; and
-    - ii) a representative from each TSC top-level project, as appointed by the top-level project; anyone can participate on the TSC by contributing to the technical community and becoming a maintainer.
+    - ii) a representative from each TAC top-level project, as appointed by the top-level project; anyone can participate on the TAC by contributing to the technical community and becoming a maintainer.
   - b) Top-level projects are expected to establish governance procedures and policies to ensure that participation is open to all.
-  - c) The TSC will establish work flow procedures for the submission, approval and closure/archiving of top-level projects by the TSC subject to approval by the Governing Board.
-  - d) IBM has agreed to make available, as a technical resource to the TSC, a technical "fellow" resource (the "CTO") who will be available to help the technical community focus, plan and execute TSC projects. The CTO shall be a non-voting (except as voting rights may be provided by operation of Section 4.a.) representative on the TSC.
-  - e) The TSC shall appoint a TSC Chair, who will be a voting member of the Governing Board.
-  - f) Responsibilities: The TSC shall be responsible for:
+  - c) The TAC will establish work flow procedures for the submission, approval and closure/archiving of top-level projects by the TAC subject to approval by the Governing Board.
+  - d) IBM has agreed to make available, as a technical resource to the TAC, a technical "fellow" resource (the "CTO") who will be available to help the technical community focus, plan and execute TAC projects. The CTO shall be a non-voting (except as voting rights may be provided by operation of Section 4.a.) representative on the TAC.
+  - e) The TAC shall appoint a TAC Chair, who will be a voting member of the Governing Board.
+  - f) Responsibilities: The TAC shall be responsible for:
     - i) coordinating the technical direction of the Project;
-    - ii) overseeing top-level projects and the project lifecycle of top-level
-    projects;
+    - ii) overseeing top-level projects and the project lifecycle of top-level projects;
     - iii) communicating with external and industry organizations concerning Project technical matters;
     - iv) appointing representatives to work with other open source or open standards communities.
 5. Marketing Committee
@@ -53,11 +52,11 @@ Effective October 10, 2018
     - ii) one representative elected by the Silver, Academic Institution and Associate Members as a class.
   - b) Responsibilities: The Marketing Committee shall be responsible for designing, developing and executing marketing efforts on behalf of the Governing Board.
 6. Voting
-  - a) While it is the goal of the project to operate as a consensus based community, if any decision requires a vote to move forward, the representatives of the Governing Board, TSC, or Marketing Committee, as applicable, shall vote on a one vote per representative basis.
-  - b) Decisions by vote shall be based on a majority vote, provided that at least sixty percent (60%) of the Governing Board, TSC, Marketing Committee or other committee representatives, as applicable, must be either present or participating electronically or by written action in order to conduct a valid vote.
-  - c) In the event of a tied vote with respect to an action by the Governing Board, TSC, Marketing Committee or other committee created by the Governing Board, the chair of such board or committee shall be entitled to submit a tie-breaking vote.
+  - a) While it is the goal of the project to operate as a consensus based community, if any decision requires a vote to move forward, the representatives of the Governing Board, TAC, or Marketing Committee, as applicable, shall vote on a one vote per representative basis.
+  - b) Decisions by vote shall be based on a majority vote, provided that at least sixty percent (60%) of the Governing Board, TAC, Marketing Committee or other committee representatives, as applicable, must be either present or participating electronically or by written action in order to conduct a valid vote.
+  - c) In the event of a tied vote with respect to an action by the Governing Board, TAC, Marketing Committee or other committee created by the Governing Board, the chair of such board or committee shall be entitled to submit a tie-breaking vote.
 7. Antitrust Guidelines
-  - a)  All members shall abide by The Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>.
+  - a)  All members shall abide by The Linux Foundation Antitrust Policy available at http://www.linuxfoundation.org/antitrust-policy.
   - b) All members shall encourage open participation from any organization able to meet the membership requirements, regardless of competitive interests. Put another way, the Governing Board shall not seek to exclude members based on any criteria, requirements or reasons other than those used for all members.
 8. Code of Conduct
   - a) All participants agree to abide by The Linux Foundation Code of Conduct available at http://events.linuxfoundation.org/code-of-conduct.
