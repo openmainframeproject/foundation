@@ -43,8 +43,7 @@ Effective October 10, 2018
   - e) The TSC shall appoint a TSC Chair, who will be a voting member of the Governing Board.
   - f) Responsibilities: The TSC shall be responsible for:
     - i) coordinating the technical direction of the Project;
-    - ii) overseeing top-level projects and the project lifecycle of top-level
-    projects;
+    - ii) overseeing top-level projects and the project lifecycle of top-level projects;
     - iii) communicating with external and industry organizations concerning Project technical matters;
     - iv) appointing representatives to work with other open source or open standards communities.
 5. Marketing Committee
@@ -57,7 +56,7 @@ Effective October 10, 2018
   - b) Decisions by vote shall be based on a majority vote, provided that at least sixty percent (60%) of the Governing Board, TSC, Marketing Committee or other committee representatives, as applicable, must be either present or participating electronically or by written action in order to conduct a valid vote.
   - c) In the event of a tied vote with respect to an action by the Governing Board, TSC, Marketing Committee or other committee created by the Governing Board, the chair of such board or committee shall be entitled to submit a tie-breaking vote.
 7. Antitrust Guidelines
-  - a)  All members shall abide by The Linux Foundation Antitrust Policy available at <http://www.linuxfoundation.org/antitrust-policy>.
+  - a)  All members shall abide by The Linux Foundation Antitrust Policy available at http://www.linuxfoundation.org/antitrust-policy.
   - b) All members shall encourage open participation from any organization able to meet the membership requirements, regardless of competitive interests. Put another way, the Governing Board shall not seek to exclude members based on any criteria, requirements or reasons other than those used for all members.
 8. Code of Conduct
   - a) All participants agree to abide by The Linux Foundation Code of Conduct available at http://events.linuxfoundation.org/code-of-conduct.
