@@ -3,7 +3,7 @@
 
 The Linux Foundation
 
-Effective October 10, 2018
+Effective October 10, 2019
 
 1. **Mission of the Open Mainframe Project (the “Project”).**
     - **a.** Create an open source, technical community to benefit the ecosystem of Linux and open source software on the mainframe.
