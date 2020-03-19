@@ -1,4 +1,4 @@
-# Communication Guidelines for Open Mainframe Project and hosted projects
+# Branding Guidelines for Open Mainframe Project and hosted projects
 
 *Latest update June 4, 2019*
 
@@ -16,7 +16,7 @@ Open source projects use trademarks – such as the project’s name and logos �
 
 As a result, and because of some of the requirements that are necessary to preserve the project’s name and logos under trademark laws, the project aims to ensure consistency of usage to avoid confusion – especially, potential confusion in the delineation between what is provided by the project community, and what is a separate product or service offering provided by a participant, a contributor, or a downstream user or redistributor of the project code.
 
-The project has in place some basic guidelines regarding proper and improper usage of its trademarks, with an aim towards balancing, on the one hand, the need to ensure that the project trademarks remain reliable indicators of the qualities that they have been created to preserve; and, on the other hand, the need to ensure that community members are able to discuss the project and to accurately describe the relationship between The Linux Foundation and Open Mainframe Project, and the products and services offered by others. 
+The project has in place some basic guidelines regarding proper and improper usage of its trademarks, with an aim towards balancing, on the one hand, the need to ensure that the project trademarks remain reliable indicators of the qualities that they have been created to preserve; and, on the other hand, the need to ensure that community members are able to discuss the project and to accurately describe the relationship between The Linux Foundation and Open Mainframe Project, and the products and services offered by others.
 
 ## Branding Guides
 
@@ -31,6 +31,7 @@ In addition to the generally applicable rules discussed in [The Linux Foundation
   - Don’t use “Open Mainframe Project” or an Open Mainframe Project hosted project name (1) in a way that creates a sense of endorsement, sponsorship, or false association with Open Mainframe Project (e.g., “Open Mainframe Project or Project ABC approved,” “Open Mainframe Project or Project ABC certified,” “a product by an Open Mainframe Project member”); or (2) in connection with a project that has not been accepted into the Open Mainframe Project organization; or (3) in connection with a product that is not a comformant offering (where defined in a project’s conformance program materials).
   - Don’t deliberately give the impression that a company is the “main” company behind an Open Mainframe Project hosted project. Don’t associate Open Mainframe Project or an Open Mainframe Project hosted project with a single project or company.
   - Don’t use a mark in a way that is otherwise harmful to the Open Mainframe Project organization, its members or other projects.
+- If a project provides a logo for use in an icon format, note that it’s use is intended only for use where an icon is most appropriate ( such as within an application ). Please work with pr@openmainframeproject.org to review if there are questions or concerns.
 
 ## Do I need permission to talk publicly about Open Mainframe Project or the hosted projects?
 
