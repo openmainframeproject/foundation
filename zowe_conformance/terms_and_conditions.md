@@ -75,8 +75,7 @@ The participant must continue to abide by the terms and conditions of the Confor
 
 ## Use of the Conformance Marks
 
-Use of the Conformance Marks is only permitted for Participants who have
-satisfied the requirements of the Conformance Program, and is only permitted in connection with its Qualifying Offerings. No other rights to use the Conformance Marks or the Project Word Mark are permitted hereunder, except to the extent permitted under "fair use" or other applicable law.
+Use of the Conformance Marks is only permitted for Participants who have satisfied the requirements of the Conformance Program, and is only permitted in connection with its Qualifying Offerings. No other rights to use the Conformance Marks or the Project Word Mark are permitted hereunder, except to the extent permitted under "fair use" or other applicable law.
 
 All use of the Conformance Marks is subject to the Trademark Usage Guidelines, which are incorporated herein.
 
