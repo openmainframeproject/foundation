@@ -50,7 +50,7 @@ Name, brief description, planned release announcement date, and URLs for more in
 
 Initial Version and Components of Zowe Conformance Program tests for Conformance. Please verify and comment where needed that the participating offering has achieved the conformance criteria for each conformance type. A participating offering may submit for one or more of the Zowe Conformance types (API Mediation Layer, CLI, and/or App Framework) in a single application. For more details on the testing criteria, please refer to the Test Evaluation Guide.
 
-- [ ] **Zowe API Mediation layer - 2019**
+- [ ] **Zowe API Mediation layer - 2020**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -62,7 +62,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe CLI - 2019**
+- [ ] **Zowe CLI - 2020**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -74,7 +74,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe App Framework - 2019**
+- [ ] **Zowe App Framework - 2020**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
