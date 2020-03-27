@@ -11,7 +11,7 @@
     - [Submit test results](#submit-test-results)
     - [Successful review](#successful-review)
     - [Ongoing conformance](#ongoing-conformance)
-    - [Use of the Conformance Marks](#use-of-the-conformance-marks)
+- [Use of the Conformance Marks](#use-of-the-conformance-marks)
 - [Term and Termination](#term-and-termination)
 - [Disclaimer of Warranties](#disclaimer-of-warranties)
 - [Limitation of Liability](#limitation-of-liability)
@@ -85,7 +85,7 @@ If The Linux Foundation confirms to the Participant that the tests have been suc
 The participant must continue to abide by the terms and conditions of the Conformance Program throughout the period of the Participant's use of the Program Marks. This includes all of the terms set forth in this agreement, including without limitation the following specific requirements:
 
 >
-> *Removal of the Conformance Marks at End of Conformance or Participation*: Conformance for a Qualifying Offering is tied to a specific version of the corresponding conformance tests and evaluation criteria for one or more particular Components. The tests' and evaluation criteria version number and the corresponding Component must be specified within the Conformance Mark logos, as described in the Visual Branding Guide. A previously-Qualifying Offering for a previous version can re-conform to the new Test Evaluation Guide to gain conformance to a newer version at any time by following the steps described above.  Being conformant to a version of Zowe does not roll over to conformance to later versions of Zowe, nor is conformance removed from a version of Zowe when a newer version is released, notwithstanding scenarios described in [Reported Non-conformance](#reported-non-conformance) and [Termination](#termination).
+> *Conformance Test Versions*: Conformance for a Qualifying Offering is tied to a specific version of the corresponding conformance tests and evaluation criteria for one or more particular Components. The tests' and evaluation criteria version number and the corresponding Component must be specified within the Conformance Mark logos, as described in the Visual Branding Guide. A previously-Qualifying Offering for a previous version can re-conform to the new Test Evaluation Guide to gain conformance to a newer version at any time by following the steps described above.  Being conformant to a version of Zowe does not roll over to conformance to later versions of Zowe, nor is conformance removed from a version of Zowe when a newer version is released, notwithstanding scenarios described in [Reported Non-conformance](#reported-non-conformance) and [Termination](#termination).
 > 
 > During a Zowe version updates may be made to the Test Evaluation Guide that provide updated conformance criteria. Wherever possible this will be in the form of suggested or best practice, however where it is felt by the squad that owns the conformance evaluation, together with agreement from the Zowe onboraders squad and the Zowe Leadership Comittee, that this change has value to separate offerings within a conformance program, a conformance program update may occur during the timeframe of a Zowe version.
 > 
@@ -99,7 +99,7 @@ The participant must continue to abide by the terms and conditions of the Confor
 >
 > *Removal of the Conformance Marks at End of Conformance or Participation*: Removal of the Conformance Marks at End of Conformance or Participation. If a Qualifying Offering ceases to remain conformant with the applicable tests and evaluation criteria, or upon any other termination of participation in the Conformance Program, a Participant may no longer use the Conformance Marks in new materials for that formerly Qualifying Offering, and must remove the Conformance Marks from existing marketing materials and websites for that formerly Qualifying Offering within 30 days.
 
-### Use of the Conformance Marks
+## Use of the Conformance Marks
 
 Use of the Conformance Marks is only permitted for Participants who have satisfied the requirements of the Conformance Program, and is only permitted in connection with its Qualifying Offerings. No other rights to use the Conformance Marks or the Project Word Mark are permitted hereunder, except to the extent permitted under "fair use" or other applicable law.
 
