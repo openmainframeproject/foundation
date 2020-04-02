@@ -4,6 +4,8 @@ The Zowe Conformance Test Evaluation Guide is a set of self-certify and self-ser
 
 Below are the requirements for the available conformance programs. Items marked **(required)** are required for achieving conformance in a given program. Items marked **(best practice)** are considered a best practice for conformant applications.
 
+These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release.
+
 ## Zowe API Mediation layer - Zowe v1
 
 1. **Application Service**
