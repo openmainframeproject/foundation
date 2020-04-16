@@ -701,37 +701,282 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </tr>
  </table>
 
-1.  **Infrastructure**
-
-    a.  Plug-in is constructed on the Imperative CLI Framework. **(required)**
-
-    b.  Plug-in is NOT run as a standalone CLI. **(required)**
-
-    c.  Plug-in commands write to stdout or stderr via Imperative Framework response.console APIs. **(required)**
-
-2.  **Installation**
-
-    a.  Plug-in is installable with the zowe plugins install command. **(required)**
-
-    b.  Plug-in is installable into the \@zowe-v1-lts version of the core Zowe CLI and follows semantic versioning. **(required)**
-
-    c.  Plug-in is uninstallable via the zowe plugins uninstall command. **(required)**
-
-3.  **Naming**
-
-    a.  If the plug-in introduces a command group name, it does not conflict with existing conformant plug-in group names. **(required)**
-
-4.  **Profiles**
-
-    a.  If the plug-in has unique connection details, it introduces a profile that lets users store these details for repeated use. **(required)**
-
-    b.  Plug-in users are able to override all profile settings via the command line and/or environment variables. **(best practice)**
-
-5.  **Support**
-
-    a.  Submitter describes how Support is provided and Support details are clearly documented
-
 ## Zowe App Framework -- Zowe v1
+
+### Packaging
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">1</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every plugin must have a unique ID.  The ID format follows java package naming conventions.  The Zowe project reserves org.zowe</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">2</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every plugin and each of its services must have a version</td>
+ </tr><tr>
+   <th style="background-color:#555555">3</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Directory layout adheres to the App filesystem structure</td>
+ </tr><tr>
+   <th style="background-color:#555555">4</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Source code is also recommended, but not required to adhere to the App filesystem structure for tooling consistency</td>
+ </tr>
+ </table>
+
+ ### Web UIs All
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">5</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>All Apps must contain an icon image file to represent it, located at web/assets/icon.png within the App's package</td>
+ </tr>
+ </table>
+
+### Web UI iFrame
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">6</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>IFrame Apps (apps with framework type "iframe") which embed a top-level iframe within (example: https://github.com/zowe/api-layer/blob/master/zlux-api-catalog/web/index.html) must use the ID "zluxIframe" for that element. This is required for the app to be a recipient of app to app communication.</td>
+ </tr>
+
+ <tr>
+   <th style="background-color:#555555">7</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Zowe resources must be accessed via the iframe-adapter located within zlux-app-manager/bootstrap/web.  Use of window.parent or window.top to access the ZoweZLUX object is non-permissible.</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">8</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Documentation or automated addition of the "iframe" plugin to the Zowe desktop must be performed by executing the script 'zowe-install-app.sh' script in the Zowe instance directory</td>
+ </tr>
+ </table>
+
+
+### Web UI Non0iframe
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">9</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>DOM elements originating from your App should always be a child of the Zowe viewport DOM element, "com-rs-mvd-viewport" </td>
+ </tr>
+
+ <tr>
+   <th style="background-color:#555555">10</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Network requests to the Zowe App Server must never be done without the use of the URI Broker</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">11</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Access to resources outside the App Server should also be made through the URI Broker whenever possible</td>
+ </tr>
+   <tr>
+   <th style="background-color:#555555">12</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Access to resources outside the App Server should also be made through the URI Broker whenever possible</td>
+ </tr>
+   <tr>
+   <th style="background-color:#555555">13</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>When using a library present in the Zowe App Framework core, you must depend on the same version </td>
+ </tr>
+   <tr>
+   <th style="background-color:#555555">14</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Web apps should extend the framework's default build scripts for webpack and typescript.</td>
+ </tr>
+ </table>
+
+### UI Design
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">15</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Apps should follow the UI Design guidelines at https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md</td>
+ </tr>
+ </table>
+
+ ### Localization and Internationalization (l10n and l18n)
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">16</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>The active language to be used for string selection must be retrieved using ZoweZLUX.globalization.getLanguage(), which determines language by multiple factors</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">17</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>No strings visible in a UI should be hard-coded, rather resource strings must be used in accordance with one of the existing internationalization support mechanisms</td>
+ </tr>
+ </table>
+
+### App Server
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">18</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Data services should be written such that all synchronous and asynchronous errors are caught. Utilize try-catch and check the existence of error objects from asynchronous calls. Uncaught exceptions effect server responsiveness and disrupt clients</td>
+ </tr>
+</table>
+
+### Documentation
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">19</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every HTTP API must be documented in swagger 2.0. The swagger document must be stored in doc/swagger</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">20</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>In addition, it is recommended to have documentation about the format of any Websocket APIs, to be placed within doc</td>
+ </tr>
+</table>
+
+
 
 1.  **Packaging**
 
