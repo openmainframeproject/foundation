@@ -9,6 +9,8 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
 ## Zowe API Mediation layer - Zowe v1
 
+### Application Service
+
 <table rules="all">
  <thead>
   <th style=background-color:#5555AA>Item </th>
@@ -18,9 +20,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  <th style=background-color:#5555AA>Conformant </th>
  <th style=background-color:#5555AA>Criteria </th>
  </thead>
- <thead>
-   <th><th><th><th><th><th style=background-color:#5555AA>Application Service<th>
- </thead>
+
  <tr>
    <th style="background-color:#555555">1</th>
    <th style="background-color:#555555">v1</th>
@@ -28,6 +28,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>An application service provides at least one service of UI register with discovery services</td>
+ 
  </tr>
  <tr>
    <th style="background-color:#555555" rowspan=3>2</th>
@@ -35,14 +36,15 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b)</th>
    <th style="background-color:#AAAAAA"></th>
    <td style="text-align:center"><b>A service must be reigstered using one of the following methods</b><p style="color:red"> [please mark which one applies (a) or (b)</td>
+  
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
-   <th style="background-color:#AAAAAA"></th>
-   <th style="background-color:#AAAAAA" >x</th>
-   <th></th>
+   <td style="background-color:#AAAAAA"></th>
+   <td style="background-color:#AAAAAA" >x</th>
+   <td></th>
    <td>a. Dynamic Registration</td>
- </tr>
+ 
   </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -50,21 +52,24 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>b. Static Definition</td>
+  
  </tr>
   <tr>
    <th style="background-color:#555555">3</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
-   <th></th>
+   <td></td>
    <td>The service must provide a daefault service ID that is prefixed by the provider name (for example: 'acme','xyzcorp','bar')</td>
-    <tr>
+<tr>
+
    <th style="background-color:#555555">4</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
-   <th></th>
+   <td></td>
    <td>The service ID must be configurable externally after deployment</td>
+
  </tr>
   <tr>
    <th style="background-color:#555555">5</th>
@@ -73,6 +78,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>The service ID must be written in lower case, contain no symbols, and is limited to 64 characters</td>
+
  <tr>
    <th style="background-color:#555555">6</th>
    <th style="background-color:#555555">v1</th>
@@ -80,6 +86,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>The API ID must follow the same rules for Java packages. The example of the API ID:zowe.apiml.apicatalog</td>
+
  </tr>
   <tr>
    <th style="background-color:#555555">7</th>
@@ -88,6 +95,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>The published service URL must follow the gateway URL conventions</td>
+ 
  </tr>
 <tr>
    <th style="background-color:#555555" rowspan=8>8</th>
@@ -95,6 +103,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA" colspan=2>Versioned</th>
    <th style="background-color:#AAAAAA"></th>
    <td style="text-align:center"><b>For versioned APIs, service URL must contain a service version before the service ID in the following formats:</b><p style="color:red">[mark just one section - Versioned or Non-Versioned]</td>
+
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -172,13 +181,22 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
    <td>c. adding the path of a launch component to the instance.env file for the Zowe workspace</td>
- </tr>
-  <thead>
-   <th><th><th><th><th><th><th>
- </thead>
+  </tr>
+
+</table>
+
+### API Documentation
+
+<table rules="all">
  <thead>
-   <th><th><th><th><th><th style=background-color:#5555AA>API Documentation<th>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
  </thead>
+
  <tr>
    <th style="background-color:#555555">10</th>
    <th style="background-color:#555555">v1</th>
@@ -227,123 +245,288 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th></th>
    <td>Every HTTP error codoe must be documented. IF endpoint has additional more granulator error codes just the documentation reference can be provided for these</td>
  </tr>
-   <thead>
-   <th><th><th><th><th><th><th>
- </thead>
+ </table>
+
+### API Naming and Addressing
+
+<table rules="all">
  <thead>
-   <th><th><th><th><th><th style=background-color:#5555AA>API Naming and Addressing<th>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
  </thead>
-</table>
+
+ <tr>
+   <th style="background-color:#555555">16</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Encoded slash is not used</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">17</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>The service interprets values independent of their URL encoding</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">18</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>lowerCamelCase is used for names of resources, parameters, and JSON properties</td>
+ </tr>
+ </table>
+
+### Service Requests and Responses
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">19</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>API - Request and response payloads are in JSON or binary data format</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">20</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>API - in JSON format, linkes are relative, and must not contain the schema, hostname, and port</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">21</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>WebSocket - Service URIs contained in WebSocket messages payload are addressed through the API ML Gateway</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">22</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>UI - UI uses relative links and does not contain the schema, hostname, and port</td>
+ </tr>
+ </table>
+
+### Authentication and Authorization
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">23</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Resources are protected by mainframe credentials</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">24</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Services accept basic authentication (minimum requirement)</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">25</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Single-Sign-On Support:  Services accept EITHER Zowe JWT token in the cookie OR support PassTickets</td>
+ </tr>
+ </table>
+
+ ### Versioning and Support
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">26</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Service implementation follows the semantic versioning model</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">27</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Last two major versions are supported by API services</td>
+ </tr>
+ </table>
+
+### UI
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">28</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>UI uses only relative URLs</td>
+ </tr>
+ </table>
+
+ ### WebSocket Services
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">29</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>WebSocket connection creation, all subsequent communication between WebSocket client, and server is routed through the API ML Gateway</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">30</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>WebSocket connections are closed by the initiator through API ML Gateway</td>
+ </tr>
+ </table>
 
 
-## Zowe API Mediation layer - Zowe v1
+### Lifecycling
 
-1. **Application Service**
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    a.  An application provides at least one service or UI **(required)**
+ <tr>
+   <th style="background-color:#555555">31</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Running as a Zowe address space</td>
+ </tr>
+ </table>
 
-2. **Register with discovery services**
+ ### Directory and File Ownership Permissions
 
-    a.  A service must be registered using one of the following methods:\
-             Dynamic registration - **(best practice)**\
-             Static definition - **(required)**
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    b.  The service must provide a default service ID that is prefixed by the provider name (for example: \`acme\`, \`xyzcorp\`, \`bar\`). **(required)**
+ <tr>
+   <th style="background-color:#555555">32</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership within the Zowe runtime</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">33</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>A conformant application must not modify the permissions or ownership of a Zowe instance directory workspace</td>
+ </tr>
+ </table>
 
-    c.  The service ID must be configurable externally after deployment.
-    **(required)**
+ ### Support
 
-    d.  The service ID must written in lower case, contain no symbols, and is limited to 64 characters. **(required)**
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    e.  The API ID must follow the same rules as for Java packages. The example of the API ID: org.zowe.apiml.apicatalog. **(required)**
+ <tr>
+   <th style="background-color:#555555">34</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Submitter describes how Support is provided and Support details are clearly documented</td>
+ </tr>
 
-    f.  The published service URL must follow the gateway URL conventions. **(required)**
+ </table>
 
-    g.  For versioned APIs, service URLs must contain a service version before the service ID in the following formats:\
-             - api/v1/{serviceId} reserved for REST APIs\
-             - ui/v1/{serviceId} reserved for UIs\
-             - ws/v1/{serviceId} reserved for WebSockets\
-    For non-versioned APIs or APIs versioned differently (e.g. z/OSMF),
-    use the following formats: \
-             - api/{serviceId} reserved for REST APIs\
-             - ui/{serviceId} reserved for UIs\
-             - ws/{serviceId} reserved for WebSockets\
-    **(required)**
-
-    h.  The registration of the service must not be done by modifying the Zowe runtime directory api-defs folder. Supported methods include: \
-             - adding the static API definition YAML file path to instance.env file for the Zowe workspace\
-             - copying the static API definition YAML file to the instance directory workspace api-definitions directory\
-    **(required)**
-
-3. **API Documentation**
-
-    a.  Documentation is Swagger/Open API 2.0/Open API 3.0 compliant. **(required)**
-
-    b.  Every public resource is documented with a description of each resource. **(required)**
-
-    c.  Every method of each REST endpoint is documented. **(required)**
-
-    d.  Every method of each REST endpoint is demonstrated by an example. **(required)**
-
-    e.  Every parameter (headers, query parameters, payload, cookies, etc.) is documented with definitions of all possible values and their associated meanings. **(required)**
-
-    f.  Every HTTP error code must be documented. If endpoint has additional more granular error codes just the documentation reference can be provided for these. **(required)**
-
-4. **API naming and addressing**
-
-    a.  Encoded slash is not used. **(best practice)**
-
-    b.  The service interprets values independent of their URL encoding. **(required)**
-
-    c.  lowerCamelCase is used for names of resources, parameters, and JSON properties. **(best practice)**
-
-5. **Service requests and responses**
-
-    a.  API - Request and response payloads are in JSON or binary data format.
-
-    b.  API - In JSON format, links are relative, and must not contain the schema, hostname, and port. **(required)**
-
-    c.  WebSocket - Service URIs contained in WebSocket messages payload are addressed through the API ML Gateway. **(required)**
-
-    d.  UI - UI uses relative links and does not contain the schema, hostname, and port. **(required)**
-
-6.  **Authentication and Authorization**
-
-    a.  Resources are protected by mainframe credentials. **(required)**
-
-    b.  Services accept basic authentication (minimum requirement). **(required)**
-
-    c.  Single-Sign-On Support: Services accept EITHER Zowe JWT token in the cookie OR support PassTickets. **(best practice)**
-
-7.  **Versioning and Support**
-
-    a.  Service implementation follows the semantic versioning model. **(best practice)**
-
-    b.  Last two major versions are supported by API services. **(required)**
-
-8.  **UI**
-
-    a.  UI uses only relative URLs. **(required)**
-
-9.  **WebSocket Services**
-
-    a.  WebSocket connection creation, all subsequent communication between WebSocket client, and server is routed through the API ML Gateway **(required)**
-
-    b.  WebSocket connections are closed by the initiator through API ML Gateway. **(required)**
-
-10. **Lifecycling**
-
-    a.  Running as a Zowe address space **(best practice)**
-
-11. **Directory and File Ownership Permissions**
-
-    a.  A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership within the Zowe runtime. **(required)**
-
-    b.  A conformant application must not modify the permissions or ownership of a Zowe instance directory workspace. **(required)**
-
-12. **Support**
-
-    a.  Submitter describes how Support is provided and Support details are clearly documented. **(required)**
 
 ## Zowe CLI - Zowe v1
 
