@@ -6,6 +6,236 @@ Below are the requirements for the available conformance programs. Items marked 
 
 These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release.
 
+
+## Zowe API Mediation layer - Zowe v1
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+ <thead>
+   <th><th><th><th><th><th style=background-color:#5555AA>Application Service<th>
+ </thead>
+ <tr>
+   <th style="background-color:#555555">1</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>An application service provides at least one service of UI register with discovery services</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555" rowspan=3>2</th>
+   <th style="background-color:#555555"></th>
+   <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b)</th>
+   <th style="background-color:#AAAAAA"></th>
+   <td style="text-align:center"><b>A service must be reigstered using one of the following methods</b><p style="color:red"> [please mark which one applies (a) or (b)</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA" >x</th>
+   <th></th>
+   <td>a. Dynamic Registration</td>
+ </tr>
+  </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>b. Static Definition</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">3</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>The service must provide a daefault service ID that is prefixed by the provider name (for example: 'acme','xyzcorp','bar')</td>
+    <tr>
+   <th style="background-color:#555555">4</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>The service ID must be configurable externally after deployment</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">5</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>The service ID must be written in lower case, contain no symbols, and is limited to 64 characters</td>
+ <tr>
+   <th style="background-color:#555555">6</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>The API ID must follow the same rules for Java packages. The example of the API ID:zowe.apiml.apicatalog</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">7</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>The published service URL must follow the gateway URL conventions</td>
+ </tr>
+<tr>
+   <th style="background-color:#555555" rowspan=8>8</th>
+   <th style="background-color:#555555"></th>
+   <th style="background-color:#AAAAAA" colspan=2>Versioned</th>
+   <th style="background-color:#AAAAAA"></th>
+   <td style="text-align:center"><b>For versioned APIs, service URL must contain a service version before the service ID in the following formats:</b><p style="color:red">[mark just one section - Versioned or Non-Versioned]</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>  - api/v1/{serviceId} reserved for REST APIs</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td> - ui/v1/{serviceId} reserved for Uis</td>
+ </tr>
+   <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td> - ui/v1/{serviceId} reserved for Uis</td>
+ </tr>
+<tr>
+   <th style="background-color:#555555"></th>
+   <th style="background-color:#AAAAAA" colspan=2>Non-Versioned</th>
+   <th style="background-color:#AAAAAA"></th>
+   <td>For non-versioned APIs or APIs versioned differently (e.g. z/OSMF), use the following formats</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>  - api/{serviceId} reserved for REST APIs</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>  - ui/{serviceId} reserved for UIs</td>
+ </tr>
+   <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>  - ws/{serviceId} reserved for WebSockets</td>
+ </tr>
+
+ <tr>
+   <th style="background-color:#555555" rowspan=4>9</th>
+   <th style="background-color:#555555"></th>
+   <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b)</th>
+   <th style="background-color:#AAAAAA"></th>
+   <td style="text-align:center"><b>The registration of the serice must not obe done by modifying the Zowe runtime directory api-defs folder. Supported methods include:</b><p style="color:red">[please mark which one applies (a) or (b) or (c)]:</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>a. adding the static API definition YAML file path to instance.env file for the Zowe workspace</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>b. copying the static API definition YAML file to the instance directory workspace api-definnitions diretory</td>
+ </tr>
+   <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>c. adding the path of a launch component to the instance.env file for the Zowe workspace</td>
+ </tr>
+  <thead>
+   <th><th><th><th><th><th><th>
+ </thead>
+ <thead>
+   <th><th><th><th><th><th style=background-color:#5555AA>API Documentation<th>
+ </thead>
+ <tr>
+   <th style="background-color:#555555">10</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Documentation is Swagger/Open API 2.0/Open API 3.0 compliant</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">11</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every public resource is documented with a description of each resource</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">12</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every method of each REST endpoint is documented</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">13</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every method of each REST endpoint is demonstrated by example</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">14</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every parameter (headers, query parameters, payloads, cookies, etc.) is documented with definitions of all possible values and their associated meanings</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">15</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Every HTTP error codoe must be documented. IF endpoint has additional more granulator error codes just the documentation reference can be provided for these</td>
+ </tr>
+   <thead>
+   <th><th><th><th><th><th><th>
+ </thead>
+ <thead>
+   <th><th><th><th><th><th style=background-color:#5555AA>API Naming and Addressing<th>
+ </thead>
+</table>
+
+
 ## Zowe API Mediation layer - Zowe v1
 
 1. **Application Service**
