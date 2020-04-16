@@ -17,12 +17,28 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
   - [WebSocket Services](#websocket-services)
   - [Lifecycling](#lifecycling)
   - [Directory and File Ownership Permissions](#directory-and-file-ownership-permissions)
+  - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
 - [Zowe CLI - Zowe v1](#zowe-cli---zowe-v1)
   - [Infrastructure](#infrastructure)
   - [Installation](#installation)
   - [Naming](#naming)
   - [Profiles](#profiles)
+  - [Support](#support)
+- [Zowe App Framework - Zowe v1](#zowe-app-framework---zowe-v1)
+  - [Packaging](#packaging)
+  - [Web UIs All](#web-uis-all)
+  - [Web UI iframe](#web-ui-iframe)
+  - [Web UI Non-iframe](#web-ui-non-iframe)
+  - [UI Design](#ui-design)
+  - [Localization and Internationalization (l10n and l18n)](#localization-and-internationalization-(l10n-and-l18n))
+  - [App Server](#app-server)
+  - [Documentation](#documentation)
+  - [Logging](#logging)
+  - [Encoding](#enoding)
+  - [Storage](#storage)
+  - [Directory and File Ownership Permissions](directory-and-file-ownership-permissions)
+  - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
 
 
@@ -470,29 +486,6 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </tr>
  </table>
 
-
-### Lifecycling
-
-<table rules="all">
- <thead>
-  <th style=background-color:#5555AA>Item </th>
- <th style=background-color:#5555AA>Ver </th>
- <th style=background-color:#5555AA>Required </th>
- <th style=background-color:#5555AA>Best Practice </th>
- <th style=background-color:#5555AA>Conformant </th>
- <th style=background-color:#5555AA>Criteria </th>
- </thead>
-
- <tr>
-   <th style="background-color:#555555">31</th>
-   <th style="background-color:#555555">v1</th>
-   <th style="background-color:#AAAAAA"></th>
-   <th style="background-color:#AAAAAA">x</th>
-   <th></th>
-   <td>Running as a Zowe address space</td>
- </tr>
- </table>
-
  ### Directory and File Ownership Permissions
 
 <table rules="all">
@@ -523,6 +516,58 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </tr>
  </table>
 
+### Lifecycling as a Zowe address space
+
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th rowspan=4 style="background-color:#555555">34</th>
+   <th style="background-color:#555555"></th>
+   <th colspan ="3" style="background-color:#AAAAAA">Applicable if LIFECYCLED</th>
+   <td>If the service should be lifecycled by Zowe then</td>
+ </tr>
+ <tr>
+
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>it should provide a fully qualified path in the instance.env file for the Zowe workspace which points to the location of a directory containing a start.sh script</td>
+ </tr>
+ <tr>
+
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>a validate.sh script</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>a configure.sh script</td>
+ </tr>
+ <tr>
+<th style="background-color:#555555">35</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>If the service introduces new variables to the instance.env file, these should be prefixed by the provider ID to avoid collisions </td>
+ </tr>
+ </table>
+
+
  ### Support
 
 <table rules="all">
@@ -536,7 +581,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </thead>
 
  <tr>
-   <th style="background-color:#555555">34</th>
+   <th style="background-color:#555555">36</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
@@ -977,96 +1022,219 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 </table>
 
 
+### Logging
 
-1.  **Packaging**
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    a.  Every plugin must have a unique ID. The ID format follows java package naming conventions. The Zowe project reserves org.zowe. **(required)**
+ <tr>
+   <th style="background-color:#555555">21</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>An Apps non-IFrame web components, or App Framework dataservices (eg Javascript and Typescript) must log only through the "zlux" logger</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">22</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>ZSS services log only through the Zowe ZSS Logger</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">23</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Passwords must never be logged</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">24</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Error reporting should follow the standard tooling</td>
+ </tr>
+</table>
 
-    b.  Every plugin and each of its services must have a version. **(required)**
+### Encoding
 
-    c.  Directory layout adheres to the App filesystem structure. **(required)**
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    d.  Source code layout is recommended adheres to the App filesystem structure for tooling consistency. **(best practice)**
+ <tr>
+   <th style="background-color:#555555">25</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>If you want your Apps to work with z/OS Node.js version 12 or greater, all application files must be tagged according to their content type</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">26</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Testing Apps via the install-app script is advisable to allow end users to utilize Zowe plugin management tooling</td>
+ </tr>
+ </table>
 
-2.  **Web UIs ALL**
+ ### Storage
 
-    a.  All Apps must contain an icon image file to represent it, located at web/assets/icon.png within the App\'s package. **(required)**
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-3.  **Web UI IFrame**
+ <tr>
+   <th style="background-color:#555555">27</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>User preferences, if applicable to a plugin, must be stored through the configuration data service </td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">28</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>For other plugin storage needs, storing data outside of the configuration dataservice is permitted only within $INSTANCE_DIR/workspace/app-server or $INSTANCE_DIR/workspace/app-server/pluginStatic with a top-level folder equal to their plugin ID. Plugins must not store information anywhere else in any Zowe directories such as $INSTANCE_DIR or $ROOT_DIR in order to prevent conflict with future Zowe versions and other plugins </td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">29</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>It is advisable for the storage of user preferences to use environment variables for locating directories.  Use of the instance directory environment variable is not required, but should be considered to subvert the use of hard-coded paths</td>
+ </tr>
+ </table>
 
-    a.  IFrame Apps (apps with framework type \"iframe\") which embed a top-level iframe within (example: <https://github.com/zowe/api-layer/blob/master/zlux-api-catalog/web/index.html>) must use the ID \"zluxIframe\" for that element. This is required for the app to be a recipient of app to app communication. **(required)**
+ ### Directory and File Ownership Permissions
 
-    b.  Zowe resources must be accessed via the iframe-adapter located within zlux-app-manager/bootstrap/web. Use of window.parent or window.top to access the ZoweZLUX object is non-permissible. **(required)**
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    c.  Documentation or automated addition of the "iframe" plugin to the Zowe desktop must be performed by executing the script 'zowe-install-app.sh' script in the Zowe instance directory. **(required)**
+ <tr>
+   <th style="background-color:#555555">30</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership </td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">31</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>A conformant application must not modify the permissions or ownership of a Zowe instance directory workspace</td>
+ </tr>
+ </table>
 
-4.  **Web UI Non-IFrame**
+ ### Lifecycling as a Zowe address space
 
-    a.  DOM elements originating from your App should always be a child of the Zowe viewport DOM element, \"com-rs-mvd-viewport\". **(required)**
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    b.  Network requests to the Zowe App Server must never be done without the use of the URI Broker. **(required)**
+ <tr>
+   <th rowspan=4 style="background-color:#555555">32</th>
+   <th style="background-color:#555555"></th>
+   <th colspan ="3" style="background-color:#AAAAAA">Applicable if LIFECYCLED</th>
+   <td>If the service should be lifecycled by Zowe then</td>
+ </tr>
+ <tr>
 
-    c.  Access to resources outside the App Server should also be made through the URI Broker whenever possible. **(best practice)**
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>it should provide a fully qualified path in the instance.env file for the Zowe workspace which points to the location of a directory containing a start.sh script</td>
+ </tr>
+ <tr>
 
-    d.  Apps must not pollute the global namespace with regards Javascript, HTML, and CSS. **(required)**
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>a validate.sh script</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>a configure.sh script</td>
+ </tr>
+ <tr>
+<th style="background-color:#555555">33</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>If the service introduces new variables to the instance.env file, these should be prefixed by the provider ID to avoid collisions </td>
+ </tr>
+ </table>
 
-    e.  When using a library present in the Zowe App Framework core, you must depend on the same version. **(required)**
 
-    f.  Web apps should extend the framework\'s default build scripts for webpack and typescript. **(best practice)**
+ ### Support
 
-5.  **UI Design**
+ <table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
 
-    a.  Apps should follow the UI Design guidelines at <https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md> **(best practice)**
-
-6.  **Localization and Internationalization (I10n and I18n)**
-
-    a.  The active language to be used for string selection must be retrieved using ZoweZLUX.globalization.getLanguage(), which determines language by multiple factors. **(required)**
-
-    b.  No strings visible in a UI should be hard-coded, rather resource strings must be used in accordance with one of the existing internationalization support mechanisms. **(best practice)**
-
-7.  **App Server**
-
-    a.  Data services should be written such that all synchronous and asynchronous errors are caught. Utilize try-catch and check the existence of error objects from asynchronous calls. Uncaught exceptions effect server responsiveness and disrupt clients. **(required)**
-
-8.  **Documentation**
-
-    a.  Every HTTP API must be documented in swagger 2.0. The swagger document must be stored in doc/swagger. **(required)**
-
-    b.  In addition, it is recommended to have documentation about the format of any Websocket APIs, to be placed within doc. **(best practice)**
-
-9.  **Logging**
-
-    a.  An Apps non-IFrame web components, or App Framework dataservices (eg Javascript and Typescript) must log only through the \"zlux\" logger. **(required)**
-
-    b.  ZSS services log only through the Zowe ZSS Logger. **(required)**
-
-    c.  Passwords must never be logged. **(required)**
-
-    d.  Error reporting should follow the standard tooling. **(best practice)**
-
-10. **Storage**
-
-    a.  User preferences, if applicable to a plugin, must be stored through the configuration data service. **(required)**
-
-    b.  For other plugin storage needs, storing data outside of the configuration dataservice is permitted only within $INSTANCE_DIR/workspace/app-server or $INSTANCE_DIR/workspace/app-server/pluginStatic with a top-level folder equal to their plugin ID. Plugins must not store information anywhere else in any Zowe directories such as $INSTANCE_DIR or $ROOT_DIR in order to prevent conflict with future Zowe versions and other plugins. **(required)**
-
-    c.  It is advisable for the storage of user preferences to use environment variables for locating directories. Use of the instance directory environment variable is not required, but should be considered to subvert the use of hard-coded paths. **(best practice)**
-
-11. **Directory and File Ownership Permissions**
-
-    a.  A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership. **(required)**
-
-    b.  A conformant application must not modify the permissions or ownership of a Zowe instance directory workspace. **(best practice)**
-
-12. **Lifecycling as a Zowe address space**
-
-    a.  If the service should be lifecycled by Zowe then it should provide \
-             - a fully qualified path in the instance. env file for the Zowe workspace which points to the location of a directory containing a start.sh script. **(required)**\
-             - a validate.sh script. **(best practice)**\
-             - a configure.sh script. **(best practice)**
-
-    b.  If the service introduces new variables to the instance. env file, these should be prefixed by the provider ID to avoid collisions. **(required)**
-
-13. **Support**
-
-    a.  Submitter describes how Support is provided and Support details are clearly documented
+ <tr>
+   <th style="background-color:#555555">34</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Submitter describes how Support is provided and Support details are clearly documented</td>
+</table>
