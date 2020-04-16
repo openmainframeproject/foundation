@@ -6,8 +6,27 @@ Below are the requirements for the available conformance programs. Items marked 
 
 These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release.
 
+- [Zowe API Mediation Layer - Zowe V1](#zowe-api-mediation-layer---zowe-v1)
+  - [Application Service](#application-service)
+  - [API Documentation](#api-documentation)
+  - [API Naming and Addressing](#api-naming-and-addressing)
+  - [Service Requests and Responses](#service-requests-and-responses)
+  - [Authentication and Authorization](#authentication-and-authoriation)
+  - [Versioning and Support](#versioning-and-support)
+  - [UI](#ui)
+  - [WebSocket Services](#websocket-services)
+  - [Lifecycling](#lifecycling)
+  - [Directory and File Ownership Permissions](#directory-and-file-ownership-permissions)
+  - [Support](#support)
+- [Zowe CLI - Zowe v1](#zowe-cli---zowe-v1)
+  - [Infrastructure](#infrastructure)
+  - [Installation](#installation)
+  - [Naming](#naming)
+  - [Profiles](#profiles)
+  - [Support](#support)
 
-## Zowe API Mediation layer - Zowe v1
+
+## Zowe API Mediation layer - Zowe V1
 
 ### Application Service
 
@@ -529,6 +548,158 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
 
 ## Zowe CLI - Zowe v1
+
+### Infrastructure
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">1</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Plug-in is constructed on the Imperative CLI Framework</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">2</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Plug-in should not run as a standalone CLI (e.g. does not specify a bin field in package.json or other similar techniques to run standalone)</td>
+ </tr>
+
+ <tr>
+   <th style="background-color:#555555">3</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Plug-in commands write to stdout or stderr via Imperative Framework response.console APIs</td>
+ </tr>
+
+ </table>
+
+### Installation
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">4</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Plug-in is installable with the zowe plugins install command</td>
+ </tr>
+ <tr>
+   <th style="background-color:#555555">5</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Plug-in is installable into the @zowe-v1-lts version of the core Zowe CLI and follows semantic versioning</td>
+ </tr>
+
+ <tr>
+   <th style="background-color:#555555">6</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Plug-in is uninstallable via the zowe plugins uninstall command</td>
+ </tr>
+
+ </table>
+
+ ### Naming
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">7</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>If the plug-in introduces a command group name, it does not conflict with existing conformant plug-in group names</td>
+ </tr>
+
+### Profiles
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">8</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>If the plug-in has unique connection details, it introduces a profile that lets users store these details for repeated use</td>
+ </tr>
+  <tr>
+   <th style="background-color:#555555">9</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
+   <td>Plug-in users are able to override all profile settings via the command line and/or environment variables</td>
+ </tr>
+
+ ### Support
+
+<table rules="all">
+ <thead>
+  <th style=background-color:#5555AA>Item </th>
+ <th style=background-color:#5555AA>Ver </th>
+ <th style=background-color:#5555AA>Required </th>
+ <th style=background-color:#5555AA>Best Practice </th>
+ <th style=background-color:#5555AA>Conformant </th>
+ <th style=background-color:#5555AA>Criteria </th>
+ </thead>
+
+ <tr>
+   <th style="background-color:#555555">10</th>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA"></th>
+   <th></th>
+   <td>Submitter describes how Support is provided and Support details are clearly documented</td>
+ </tr>
+ </table>
 
 1.  **Infrastructure**
 
