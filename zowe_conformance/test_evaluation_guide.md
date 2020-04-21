@@ -697,7 +697,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th></th>
    <td>If the plug-in introduces a command group name, it does not conflict with existing conformant plug-in group names</td>
  </tr>
- <table>
+ </table>
 
 ### Profiles
 
