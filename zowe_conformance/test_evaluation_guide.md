@@ -821,7 +821,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </tr>
  </table>
 
-### Web UI iFrame
+### Web UI iframe
 
  <table rules="all">
  <thead>
@@ -861,7 +861,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </table>
 
 
-### Web UI Non0iframe
+### Web UI Non iframe
 
  <table rules="all">
  <thead>
@@ -1047,7 +1047,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>An Apps non-IFrame web components, or App Framework dataservices (eg Javascript and Typescript) must log only through the "zlux" logger</td>
+   <td>An Apps non-Iframe web components, or App Framework dataservices (eg Javascript and Typescript) must log only through the "zlux" logger</td>
  </tr>
  <tr>
    <th style="background-color:#555555">22</th>
