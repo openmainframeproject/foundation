@@ -280,7 +280,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every HTTP error codoe must be documented. IF endpoint has additional more granulator error codes just the documentation reference can be provided for these</td>
+   <td>Every HTTP error code must be documented. IF endpoint has additional more granular error codes just the documentation reference can be provided for these</td>
  </tr>
  </table>
 
@@ -348,7 +348,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>API - in JSON format, linkes are relative, and must not contain the schema, hostname, and port</td>
+   <td>API - in JSON format, links are relative, and must not contain the schema, hostname, and port</td>
  </tr>
   <tr>
    <th style="background-color:#555555">21</th>
