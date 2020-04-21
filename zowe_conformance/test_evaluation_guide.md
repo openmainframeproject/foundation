@@ -2,11 +2,11 @@
 
 The Zowe Conformance Test Evaluation Guide is a set of self-certify and self-service tests to help the developer community integrate and extend specific technology into the Zowe framework. 
 
-Below are the requirements for the available conformance programs. Items marked **(required)** are required for achieving conformance in a given program. Items marked **(best practice)** are considered a best practice for conformant applications.
+Below are the requirements for the three available conformance programs. Items marked **(required)** are required for achieving conformance in a given program. Items marked **(best practice)** are considered a best practice for conformant applications.
 
 These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release.
-
-- [Zowe API Mediation Layer - Zowe V1](#zowe-api-mediation-layer---zowe-v1)
+#
+- [Zowe API Mediation Layer - Zowe v1](#zowe-api-mediation-layer---zowe-v1)
   - [Application Service](#application-service)
   - [API Documentation](#api-documentation)
   - [API Naming and Addressing](#api-naming-and-addressing)
@@ -19,12 +19,14 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
   - [Directory and File Ownership Permissions](#directory-and-file-ownership-permissions)
   - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
+#
 - [Zowe CLI - Zowe v1](#zowe-cli---zowe-v1)
   - [Infrastructure](#infrastructure)
   - [Installation](#installation)
   - [Naming](#naming)
   - [Profiles](#profiles)
   - [Support](#support)
+#
 - [Zowe App Framework - Zowe v1](#zowe-app-framework---zowe-v1)
   - [Packaging](#packaging)
   - [Web UIs All](#web-uis-all)
@@ -40,9 +42,9 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
   - [Directory and File Ownership Permissions](directory-and-file-ownership-permissions)
   - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
+#
 
-
-## Zowe API Mediation layer - Zowe V1
+## Zowe API Mediation layer - Zowe v1
 
 ### Application Service
 
@@ -192,7 +194,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  <tr>
    <th style="background-color:#555555" rowspan=4>9</th>
    <th style="background-color:#555555"></th>
-   <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b)</th>
+   <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
    <td style="text-align:center"><b>The registration of the serice must not obe done by modifying the Zowe runtime directory api-defs folder. Supported methods include:</b><p style="color:red">[please mark which one applies (a) or (b) or (c)]:</td>
  </tr>
@@ -591,6 +593,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
  </table>
 
+#
 
 ## Zowe CLI - Zowe v1
 
@@ -745,6 +748,8 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <td>Submitter describes how Support is provided and Support details are clearly documented</td>
  </tr>
  </table>
+
+#
 
 ## Zowe App Framework -- Zowe v1
 
