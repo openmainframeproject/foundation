@@ -101,9 +101,14 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
     b.  WebSocket connections are closed by the initiator through API ML Gateway. **(required)**
 
-10. **Lifecycling**
+12. **Lifecycling as a Zowe address space**
 
-    a.  Running as a Zowe address space **(best practice)**
+    a.  If the service should be lifecycled by Zowe then it should provide \
+             - a fully qualified path in the instance. env file for the Zowe workspace which points to the location of a directory containing a start.sh script. **(required)**\
+             - a validate.sh script. **(best practice)**\
+             - a configure.sh script. **(best practice)**
+
+    b.  If the service introduces new variables to the instance. env file, these should be prefixed by the provider ID to avoid collisions. **(required)**
 
 11. **Directory and File Ownership Permissions**
 
