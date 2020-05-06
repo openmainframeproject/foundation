@@ -2,7 +2,7 @@
 name: New Slack channel
 about: Requesting a new Slack channel in the OMP Slack organization
 title: New Slack Channel - [CHANNEL]
-labels: infrastrcuture request
+labels: infrastructure request
 assignees: jmertic
 
 ---
