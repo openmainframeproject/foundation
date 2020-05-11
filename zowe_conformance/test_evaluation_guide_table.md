@@ -77,9 +77,9 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
-   <td style="background-color:#AAAAAA"></th>
-   <td style="background-color:#AAAAAA" >x</th>
-   <td></th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
    <td>a. Dynamic Registration</td>
  
   </tr>
@@ -753,7 +753,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
 #
 
-## Zowe App Framework -- Zowe v1
+## Zowe App Framework - Zowe v1
 
 ### Packaging
 
@@ -942,7 +942,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>Apps should follow the UI Design guidelines at https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md</td>
+   <td>Apps should follow the UI Design guidelines at <a href=https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md>https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md</a></td>
  </tr>
  </table>
 
