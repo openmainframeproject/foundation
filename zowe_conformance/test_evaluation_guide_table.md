@@ -72,7 +72,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center"><b>A service must be reigstered using one of the following methods</b><p style="color:red"> [please mark which one applies (a) or (b)</td>
+   <td style="text-align:center"><b>A service must be registered using one of the following methods</b><p style="color:red"> [please mark which one applies (a) or (b)</td>
   
  </tr>
   <tr>
@@ -97,7 +97,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <td></td>
-   <td>The service must provide a daefault service ID that is prefixed by the provider name (for example: 'acme','xyzcorp','bar')</td>
+   <td>The service must provide a default service ID that is prefixed by the provider name (for example: <code>acme.xyzcorp.bar</code></td>
 <tr>
 
    <th style="background-color:#555555">4</th>
@@ -196,7 +196,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center"><b>The registration of the serice must not not be done by modifying the Zowe runtime directory api-defs folder. Supported methods include:</b><p style="color:red">[please mark which one applies (a) or (b) or (c)]:</td>
+   <td style="text-align:center"><b>The registration of the service must not not be done by modifying the Zowe runtime directory api-defs folder. Supported methods include:</b><p style="color:red">[please mark which one applies (a) or (b) or (c)]:</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -839,7 +839,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>IFrame Apps (apps with framework type "iframe") which embed a top-level iframe within (example: https://github.com/zowe/api-layer/blob/master/zlux-api-catalog/web/index.html) must use the ID "zluxIframe" for that element. This is required for the app to be a recipient of app to app communication.</td>
+   <td>Iframe Apps (apps with framework type "iframe") which embed a top-level iframe within (example: https://github.com/zowe/api-layer/blob/master/zlux-api-catalog/web/index.html) must use the ID "zluxIframe" for that element. This is required for the app to be a recipient of app to app communication.</td>
  </tr>
 
  <tr>
