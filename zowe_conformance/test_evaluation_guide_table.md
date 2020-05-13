@@ -77,9 +77,9 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
-   <td style="background-color:#AAAAAA"></th>
-   <td style="background-color:#AAAAAA" >x</th>
-   <td></th>
+   <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th></th>
    <td>a. Dynamic Registration</td>
  
   </tr>
@@ -196,7 +196,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center"><b>The registration of the serice must not obe done by modifying the Zowe runtime directory api-defs folder. Supported methods include:</b><p style="color:red">[please mark which one applies (a) or (b) or (c)]:</td>
+   <td style="text-align:center"><b>The registration of the serice must not not be done by modifying the Zowe runtime directory api-defs folder. Supported methods include:</b><p style="color:red">[please mark which one applies (a) or (b) or (c)]:</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -210,7 +210,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>b. copying the static API definition YAML file to the instance directory workspace api-definnitions diretory</td>
+   <td>b. copying the static API definition YAML file to the instance directory workspace api-definitions directory</td>
  </tr>
    <tr>
    <th style="background-color:#555555">v1</th>
@@ -280,7 +280,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every HTTP error code must be documented. IF endpoint has additional more granular error codes just the documentation reference can be provided for these</td>
+   <td>Every HTTP error code must be documented. If endpoint has additional more granular error codes just the documentation reference can be provided for these</td>
  </tr>
  </table>
 
@@ -753,7 +753,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
 #
 
-## Zowe App Framework -- Zowe v1
+## Zowe App Framework - Zowe v1
 
 ### Packaging
 
@@ -942,7 +942,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>Apps should follow the UI Design guidelines at https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md</td>
+   <td>Apps should follow the UI Design guidelines at <a href=https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md>https://github.com/zowe/zlc/blob/master/process/UI_GUIDELINES.md</a></td>
  </tr>
  </table>
 
