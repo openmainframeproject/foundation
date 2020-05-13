@@ -5,7 +5,7 @@ The Zowe Conformance Test Evaluation Guide is a set of self-certify and self-ser
 Below are the requirements for the three available conformance programs. Items marked **(required)** are required for achieving conformance in a given program. Items marked **(best practice)** are considered a best practice for conformant applications.
 
 These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release.
-#
+
 - [Zowe API Mediation Layer - Zowe v1](#zowe-api-mediation-layer---zowe-v1)
   - [Application Service](#application-service)
   - [API Documentation](#api-documentation)
@@ -19,14 +19,12 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
   - [Directory and File Ownership Permissions](#directory-and-file-ownership-permissions)
   - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
-#
 - [Zowe CLI - Zowe v1](#zowe-cli---zowe-v1)
   - [Infrastructure](#infrastructure)
   - [Installation](#installation)
   - [Naming](#naming)
   - [Profiles](#profiles)
   - [Support](#support)
-#
 - [Zowe App Framework - Zowe v1](#zowe-app-framework---zowe-v1)
   - [Packaging](#packaging)
   - [Web UIs All](#web-uis-all)
@@ -42,7 +40,6 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
   - [Directory and File Ownership Permissions](directory-and-file-ownership-permissions)
   - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
-#
 
 ## Zowe API Mediation layer - Zowe v1
 
@@ -65,15 +62,15 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>An application service provides at least one service of UI register with discovery services</td>
- 
+
  </tr>
  <tr>
    <th style="background-color:#555555" rowspan=3>2</th>
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center"><b>A service must be registered using one of the following methods</b><p style="color:red"> [please mark which one applies (a) or (b)</td>
-  
+   <td style="text-align:center"><b>A service must be reigstered using one of the following methods</b><p style="color:red"> [please mark which one applies (a) or (b)</td>
+
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -81,7 +78,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
    <td>a. Dynamic Registration</td>
- 
+
   </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -89,7 +86,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>b. Static Definition</td>
-  
+
  </tr>
   <tr>
    <th style="background-color:#555555">3</th>
@@ -132,7 +129,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th></th>
    <td>The published service URL must follow the gateway URL conventions</td>
- 
+
  </tr>
 <tr>
    <th style="background-color:#555555" rowspan=8>8</th>
