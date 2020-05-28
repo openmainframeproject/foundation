@@ -1021,7 +1021,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>In addition, we recommend documentation about the format of any Websocket APIs, to be ncluded in the doc</td>
+   <td>In addition, we recommend documentation about the format of any Websocket APIs, to be included in the doc</td>
  </tr>
 </table>
 
