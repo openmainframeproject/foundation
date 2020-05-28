@@ -1,21 +1,20 @@
 # Zowe Conformance Test Evaluation Guide
 
-The Zowe Conformance Test Evaluation Guide is a set of self-certify and self-service tests to help the developer community integrate and extend specific technology into the Zowe framework. 
+The Zowe Conformance Test Evaluation Guide is a set of self-certifying and self-service tests to help the development community integrate and extend specific technology into the Zowe framework. 
 
-Below are the requirements for the three available conformance programs. Items marked **(required)** are required for achieving conformance in a given program. Items marked **(best practice)** are considered a best practice for conformant applications.
+This guide describes the requirements of the three available conformance programs. Items marked **(required)** are required for an application to be conformant. Items marked **(best practice)** are considered best practices for conformant applications.
 
-These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release.
+These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Release.
 
 - [Zowe API Mediation Layer - Zowe v1](#zowe-api-mediation-layer---zowe-v1)
   - [Application Service](#application-service)
   - [API Documentation](#api-documentation)
   - [API Naming and Addressing](#api-naming-and-addressing)
   - [Service Requests and Responses](#service-requests-and-responses)
-  - [Authentication and Authorization](#authentication-and-authoriation)
+  - [Authentication and Authorization](#authentication-and-authorization)
   - [Versioning and Support](#versioning-and-support)
   - [UI](#ui)
   - [WebSocket Services](#websocket-services)
-  - [Lifecycling](#lifecycling)
   - [Directory and File Ownership Permissions](#directory-and-file-ownership-permissions)
   - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
@@ -31,17 +30,17 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
   - [Web UI iframe](#web-ui-iframe)
   - [Web UI Non-iframe](#web-ui-non-iframe)
   - [UI Design](#ui-design)
-  - [Localization and Internationalization (l10n and l18n)](#localization-and-internationalization-(l10n-and-l18n))
+  - [Localization and Internationalization l10n and l18n](#localization-and-internationalization-l10n-and-l18n)
   - [App Server](#app-server)
   - [Documentation](#documentation)
   - [Logging](#logging)
-  - [Encoding](#enoding)
+  - [Encoding](#encoding)
   - [Storage](#storage)
   - [Directory and File Ownership Permissions](directory-and-file-ownership-permissions)
   - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space)
   - [Support](#support)
 
-## Zowe API Mediation layer - Zowe v1
+## Zowe API Mediation Layer - Zowe v1
 
 ### Application Service
 
@@ -61,7 +60,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>An application service provides at least one service of UI register with discovery services</td>
+   <td>An application service provides at least one service UI registered with discovery services</td>
 
  </tr>
  <tr>
@@ -69,7 +68,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center"><b>A service must be reigstered using one of the following methods</b><p style="color:red"> [please mark which one applies (a) or (b)</td>
+   <td style="text-align:center">A service must be registered using one of the following methods:<p style="color:red"> (Mark which one applies _a_ or _b_).</td>
 
  </tr>
   <tr>
@@ -94,7 +93,8 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <td></td>
-   <td>The service must provide a default service ID that is prefixed by the provider name (for example: <code>acme.xyzcorp.bar</code></td>
+   <td>The service must provide a default service ID that is prefixed by the organization/provider name. 
+     <p><b>Examples of compliant service IDs:</b></p><p><code>zowemonitoring, cajclcheck, ibmims, rocketterasam</code></p> <p><b>Examples of non-compliant service IDs:</b></p><p><code>jclcheck, myims, mydb2</code></p><p><b>Note:</b> The API ID is not part of the URL.</p></td>
 <tr>
 
    <th style="background-color:#555555">4</th>
@@ -111,7 +111,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>The service ID must be written in lower case, contain no symbols, and is limited to 64 characters</td>
+   <td>The service ID must be lower case, contain no symbols, and have a maximum of 64 characters</td>
 
  <tr>
    <th style="background-color:#555555">6</th>
@@ -119,7 +119,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>The API ID must follow the same rules for Java packages. The example of the API ID:zowe.apiml.apicatalog</td>
+  <td>The API ID must follow the same rules for Java packages. <p><b>Example of the API ID:</b> <code>zowe.apiml.apicatalog</code></p></td>
 
  </tr>
   <tr>
@@ -136,7 +136,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Versioned</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center"><b>For versioned APIs, service URL must contain a service version before the service ID in the following formats:</b><p style="color:red">[mark just one section - Versioned or Non-Versioned]</td>
+   <td style="text-align:center">For versioned APIs, the service URL must contain a service version before the service ID in the following formats:<p style="color:red">(Mark only one section - Versioned or Non-Versioned)</td>
 
  </tr>
   <tr>
@@ -151,20 +151,20 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td> - ui/v1/{serviceId} reserved for Uis</td>
+   <td> - ui/v1/{serviceId} reserved for UIs</td>
  </tr>
    <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td> - ui/v1/{serviceId} reserved for Uis</td>
+   <td> - ui/v1/{serviceId} reserved for UIs</td>
  </tr>
 <tr>
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Non-Versioned</th>
    <th style="background-color:#AAAAAA"></th>
-   <td>For non-versioned APIs or APIs versioned differently (e.g. z/OSMF), use the following formats</td>
+   <td>For non-versioned APIs or APIs versioned differently (e.g. z/OSMF), use the following formats:</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -193,28 +193,28 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center"><b>The registration of the service must not be done by modifying the Zowe runtime directory api-defs folder. Supported methods include:</b><p style="color:red">[please mark which one applies (a) or (b) or (c)]:</td>
+   <td style="text-align:center">Registration of the service must not be performed by modifying the Zowe runtime directory api-defs folder. Supported methods include:<p style="color:red">(Mark which one applies _a_, _b_, or _c_)</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>a. adding the static API definition YAML file path to instance.env file for the Zowe workspace</td>
+  <td>a. Adding the static API definition YAML file path to <code>instance.env</code> file for the Zowe workspace</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>b. copying the static API definition YAML file to the instance directory workspace api-definitions directory</td>
+   <td>b. Copying the static API definition YAML file to the instance directory workspace api-definitions directory</td>
  </tr>
    <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>c. adding the path of a launch component to the instance.env file for the Zowe workspace</td>
+  <td>c. Adding the path of a launch component to the <code>instance.env</code> file for the Zowe workspace</td>
   </tr>
 
 </table>
@@ -261,7 +261,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every method of each REST endpoint is demonstrated by example</td>
+   <td>Every method of each REST endpoint is demonstrated with an example</td>
  </tr>
  <tr>
    <th style="background-color:#555555">14</th>
@@ -277,7 +277,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every HTTP error code must be documented. If endpoint has additional more granular error codes just the documentation reference can be provided for these</td>
+   <td>Every HTTP error code must be documented. If the endpoint has additional, more granular error codes, only provide the documentation reference.</td>
  </tr>
  </table>
 
@@ -345,7 +345,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>API - in JSON format, links are relative, and must not contain the schema, hostname, and port</td>
+   <td>API - in JSON format, relative links, and must not contain schema, hostname, and port</td>
  </tr>
   <tr>
    <th style="background-color:#555555">21</th>
@@ -361,7 +361,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>UI - UI uses relative links and does not contain the schema, hostname, and port</td>
+   <td>UI - The UI uses relative links and does not contain the schema, hostname, and port</td>
  </tr>
  </table>
 
@@ -399,7 +399,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Single-Sign-On Support:  Services accept EITHER Zowe JWT token in the cookie OR support PassTickets</td>
+   <td>Single-Sign-On Support:  Services accept EITHER Zowe JWT token in the cookie OR support of PassTickets</td>
  </tr>
  </table>
 
@@ -429,7 +429,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Last two major versions are supported by API services</td>
+   <td>The last two major versions are supported by API services</td>
  </tr>
  </table>
 
@@ -503,7 +503,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership within the Zowe runtime</td>
+   <td>A conformant application must not modify the contents of the Zowe runtime USS directory and must not change any directory or file permissions or ownership within the Zowe runtime</td>
  </tr>
  <tr>
    <th style="background-color:#555555">33</th>
@@ -531,7 +531,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th rowspan=4 style="background-color:#555555">34</th>
    <th style="background-color:#555555"></th>
    <th colspan ="3" style="background-color:#AAAAAA">Applicable if LIFECYCLED</th>
-   <td>If the service should be lifecycled by Zowe then</td>
+   <td>Satisfy the following criteria to lifecycle a service with Zowe:</td>
  </tr>
  <tr>
 
@@ -539,7 +539,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>it should provide a fully qualified path in the instance.env file for the Zowe workspace which points to the location of a directory containing a start.sh script</td>
+   <td>Contains a fully qualified path in the <code>instance.env</code> file for the Zowe workspace which points to the location of a directory containing a <code>start.sh</code> script</td>
  </tr>
  <tr>
 
@@ -547,14 +547,14 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>a validate.sh script</td>
+   <td>Contains a <code>validate.sh</code> script</td>
  </tr>
  <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>a configure.sh script</td>
+  <td>Contains a <code>configure.sh</code> script</td>
  </tr>
  <tr>
 <th style="background-color:#555555">35</th>
@@ -562,7 +562,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>If the service introduces new variables to the instance.env file, these should be prefixed by the provider ID to avoid collisions </td>
+  <td>If the service introduces new variables to the <code>instance.env</code> file, these variables should be prefixed by the provider ID to avoid collisions </td>
  </tr>
  </table>
 
@@ -585,7 +585,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Submitter describes how Support is provided and Support details are clearly documented</td>
+   <td>The Submitter describes how support is provided. Support details must be clearly documented.</td>
  </tr>
 
  </table>
@@ -612,7 +612,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Plug-in is constructed on the Imperative CLI Framework</td>
+   <td>The plug-in is constructed on the Imperative CLI Framework</td>
  </tr>
  <tr>
    <th style="background-color:#555555">2</th>
@@ -620,7 +620,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Plug-in should not run as a standalone CLI (e.g. does not specify a bin field in package.json or other similar techniques to run standalone)</td>
+   <td>The plug-in does not run as a standalone CLI (e.g. does not specify a bin field in package.json or other similar techniques to run standalone)</td>
  </tr>
 
  <tr>
@@ -629,7 +629,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Plug-in commands write to stdout or stderr via Imperative Framework response.console APIs</td>
+  <td>The plug-in commands write to <code>stdout</code> or <code>stderr</code> via Imperative Framework response.console APIs</td>
  </tr>
 
  </table>
@@ -652,7 +652,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Plug-in is installable with the zowe plugins install command</td>
+   <td>The plug-in is installable with the zowe plugins install command</td>
  </tr>
  <tr>
    <th style="background-color:#555555">5</th>
@@ -660,7 +660,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Plug-in is installable into the @zowe-v1-lts version of the core Zowe CLI and follows semantic versioning</td>
+   <td>The plug-in is installable into the @zowe-v1-lts version of the core Zowe CLI and follows semantic versioning</td>
  </tr>
 
  <tr>
@@ -669,7 +669,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Plug-in is uninstallable via the zowe plugins uninstall command</td>
+   <td>The plug-in is uninstallable via the zowe plugins uninstall command</td>
  </tr>
 
  </table>
@@ -692,7 +692,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>If the plug-in introduces a command group name, it does not conflict with existing conformant plug-in group names</td>
+   <td>If the plug-in introduces a command group name, it must not conflict with existing conformant plug-in group names</td>
  </tr>
  </table>
 
@@ -744,7 +744,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Submitter describes how Support is provided and Support details are clearly documented</td>
+   <td>The Submitter describes how support is provided. Support details must be clearly documented.</td>
  </tr>
  </table>
 
@@ -770,7 +770,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every plugin must have a unique ID.  The ID format follows java package naming conventions.  The Zowe project reserves org.zowe</td>
+   <td>Every plugin must have a unique ID. The ID format follows java package naming conventions. The Zowe project reserves org.zowe</td>
  </tr>
  <tr>
    <th style="background-color:#555555">2</th>
@@ -785,14 +785,14 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Directory layout adheres to the App filesystem structure</td>
+   <td>The directory layout adheres to the App filesystem structure</td>
  </tr><tr>
    <th style="background-color:#555555">4</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>Source code is also recommended, but not required to adhere to the App filesystem structure for tooling consistency</td>
+   <td>Source code is recommended, but not required to adhere to the App filesystem structure for tooling consistency</td>
  </tr>
  </table>
 
@@ -814,7 +814,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>All Apps must contain an icon image file to represent it, located at web/assets/icon.png within the App's package</td>
+   <td>All Apps must contain an icon image file to represent it, located at code>web/assets/icon.png</code> within the App's package</td>
  </tr>
  </table>
 
@@ -836,7 +836,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Iframe Apps (apps with framework type "iframe") which embed a top-level iframe within (example: https://github.com/zowe/api-layer/blob/master/zlux-api-catalog/web/index.html) must use the ID "zluxIframe" for that element. This is required for the app to be a recipient of app to app communication.</td>
+   <td>Iframe Apps (apps with framework type "iframe") which embed a top-level iframe within them must use the ID "zluxIframe" for that element. <p><b>Example:</b> https://github.com/zowe/api-layer/blob/master/zlux-api-catalog/web/index.html</p> This is required for the app to be a recipient of app to app communication.</td>
  </tr>
 
  <tr>
@@ -845,7 +845,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Zowe resources must be accessed via the iframe-adapter located within zlux-app-manager/bootstrap/web.  Use of window.parent or window.top to access the ZoweZLUX object is non-permissible.</td>
+   <td>Zowe resources must be accessed via the iframe-adapter located within <code>zlux-app-manager/bootstrap/web</code>. The use of <code>window.parent</code> or <code>window.top</code> to access the ZoweZLUX object is non-permissible.</td>
  </tr>
   <tr>
    <th style="background-color:#555555">8</th>
@@ -853,7 +853,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Documentation or automated addition of the "iframe" plugin to the Zowe desktop must be performed by executing the script 'zowe-install-app.sh' script in the Zowe instance directory</td>
+   <td>Documentation or automated addition of the "iframe" plugin to the Zowe desktop must be performed by executing the <code>zowe-install-app.sh</code> script in the Zowe instance directory</td>
  </tr>
  </table>
 
@@ -876,7 +876,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>DOM elements originating from your App should always be a child of the Zowe viewport DOM element, "com-rs-mvd-viewport" </td>
+   <td>DOM elements originating from your App are a child of the Zowe viewport DOM element, <code>com-rs-mvd-viewport/code> </td>
  </tr>
 
  <tr>
@@ -893,7 +893,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>Access to resources outside the App Server should also be made through the URI Broker whenever possible</td>
+   <td>Access to resources outside the App Server should be made through the URI Broker whenever possible</td>
  </tr>
    <tr>
    <th style="background-color:#555555">12</th>
@@ -901,7 +901,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Access to resources outside the App Server should also be made through the URI Broker whenever possible</td>
+   <td>Access to resources outside the App Server should be made through the URI Broker whenever possible</td>
  </tr>
    <tr>
    <th style="background-color:#555555">13</th>
@@ -943,7 +943,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
  </tr>
  </table>
 
- ### Localization and Internationalization (l10n and l18n)
+ ### Localization and Internationalization l10n and l18n
 
  <table rules="all">
  <thead>
@@ -969,7 +969,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>No strings visible in a UI should be hard-coded, rather resource strings must be used in accordance with one of the existing internationalization support mechanisms</td>
+   <td>No strings visible in a UI should be hard-coded. Resource strings must be used in accordance with one of the existing internationalization support mechanisms.</td>
  </tr>
  </table>
 
@@ -991,7 +991,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Data services should be written such that all synchronous and asynchronous errors are caught. Utilize try-catch and check the existence of error objects from asynchronous calls. Uncaught exceptions effect server responsiveness and disrupt clients</td>
+   <td>Data services should be written such that all synchronous and asynchronous errors are caught. Utilize try-catch and check the existence of error objects from asynchronous calls. Uncaught exceptions affect server responsiveness and disrupts clients.</td>
  </tr>
 </table>
 
@@ -1013,7 +1013,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every HTTP API must be documented in swagger 2.0. The swagger document must be stored in doc/swagger</td>
+   <td>Every HTTP API must be documented in swagger 2.0. The swagger document must be stored in doc/swagger.</td>
  </tr>
  <tr>
    <th style="background-color:#555555">20</th>
@@ -1021,7 +1021,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>In addition, it is recommended to have documentation about the format of any Websocket APIs, to be placed within doc</td>
+   <td>In addition, we recommend documentation about the format of any Websocket APIs, to be ncluded in the doc</td>
  </tr>
 </table>
 
@@ -1090,7 +1090,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>If you want your Apps to work with z/OS Node.js version 12 or greater, all application files must be tagged according to their content type</td>
+   <td>To enable an App to work with z/OS Node.js version 12 or higher, all application files must be tagged according to their content type</td>
  </tr>
  <tr>
    <th style="background-color:#555555">26</th>
@@ -1098,7 +1098,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>Testing Apps via the install-app script is advisable to allow end users to utilize Zowe plugin management tooling</td>
+   <td>Testing Apps via the install-app script is advisable to enable end users to utilize Zowe plugin management tooling</td>
  </tr>
  </table>
 
@@ -1128,7 +1128,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>For other plugin storage needs, storing data outside of the configuration dataservice is permitted only within $INSTANCE_DIR/workspace/app-server or $INSTANCE_DIR/workspace/app-server/pluginStatic with a top-level folder equal to their plugin ID. Plugins must not store information anywhere else in any Zowe directories such as $INSTANCE_DIR or $ROOT_DIR in order to prevent conflict with future Zowe versions and other plugins </td>
+   <td>For other plugin storage needs, storing data outside of the configuration dataservice is permitted only within <code>$INSTANCE_DIR/workspace/app-server</code> or <code>$INSTANCE_DIR/workspace/app-server/pluginStatic</code> with a top-level folder equal to their plugin ID. Plugins must not store information anywhere else in any Zowe directories such as <code>$INSTANCE_DIR</code> or <code>$ROOT_DIR</code> in order to prevent conflict with future Zowe versions and other plugins </td>
  </tr>
   <tr>
    <th style="background-color:#555555">29</th>
@@ -1136,7 +1136,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>It is advisable for the storage of user preferences to use environment variables for locating directories.  Use of the instance directory environment variable is not required, but should be considered to subvert the use of hard-coded paths</td>
+   <td>It is advisable for the storage of user preferences to use environment variables for locating directories. The use of the instance directory environment variable is not required, however we recommend the use of this variable to subvert the use of hard-coded paths</td>
  </tr>
  </table>
 
@@ -1158,7 +1158,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership </td>
+   <td>A conformant application must not modify the contents of the Zowe runtime USS directory and must not change any directory or file permissions or ownership </td>
  </tr>
  <tr>
    <th style="background-color:#555555">31</th>
@@ -1186,7 +1186,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th rowspan=4 style="background-color:#555555">32</th>
    <th style="background-color:#555555"></th>
    <th colspan ="3" style="background-color:#AAAAAA">Applicable if LIFECYCLED</th>
-   <td>If the service should be lifecycled by Zowe then</td>
+   <td>Satisfy the following criteria to lifecycle a service with Zowe:</td>
  </tr>
  <tr>
 
@@ -1194,7 +1194,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>it should provide a fully qualified path in the instance.env file for the Zowe workspace which points to the location of a directory containing a start.sh script</td>
+   <td>The service should provide a fully qualified path in the <code>instance.env</code> file for the Zowe workspace which points to the location of a directory containing a <code>start.sh</code> script</td>
  </tr>
  <tr>
 
@@ -1202,14 +1202,14 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>a validate.sh script</td>
+   <td>Contain a <code>validate.sh</code> script</td>
  </tr>
  <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>a configure.sh script</td>
+  <td>Contain a <code>configure.sh</code> script</td>
  </tr>
  <tr>
 <th style="background-color:#555555">33</th>
@@ -1217,7 +1217,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>If the service introduces new variables to the instance.env file, these should be prefixed by the provider ID to avoid collisions </td>
+  <td>If the service introduces new variables to the <code>instance.env</code> file, these variablesshould be prefixed by the provider ID to avoid collisions </td>
  </tr>
  </table>
 
@@ -1240,5 +1240,5 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Submitter describes how Support is provided and Support details are clearly documented</td>
+   <td>The Submitter describes how support is provided. Support details must be clearly documented</td>
 </table>
