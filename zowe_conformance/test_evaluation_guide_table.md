@@ -876,7 +876,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>DOM elements originating from your App are a child of the Zowe viewport DOM element, <code>com-rs-mvd-viewport/code> </td>
+   <td>DOM elements originating from your App are children of the Zowe viewport DOM element, <code>com-rs-mvd-viewport</code> </td>
  </tr>
 
  <tr>
