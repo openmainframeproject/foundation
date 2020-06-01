@@ -901,7 +901,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Access to resources outside the App Server should be made through the URI Broker whenever possible</td>
+   <td>Apps must not pollute the global namespace with regards Javascript, HTML, and CSS</td>
  </tr>
    <tr>
    <th style="background-color:#555555">13</th>
