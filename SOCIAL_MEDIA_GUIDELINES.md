@@ -1,4 +1,4 @@
-# OMP Social Media Guidelines#
+# OMP Social Media Guidelines
 ## Objectives
 The objectives of OMP social media:
 - Advance topics and conversations that are relevant to and beneficial for the Open Mainframe community
