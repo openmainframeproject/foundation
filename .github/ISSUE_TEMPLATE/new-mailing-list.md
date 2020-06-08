@@ -1,5 +1,5 @@
 ---
-name: New Mailing List channel
+name: New Mailing List
 about: Requesting a new mailing list at https://lists.openmainframeproject.org
 title: New Mailing List - [PROJECT]
 labels: infrastructure request
