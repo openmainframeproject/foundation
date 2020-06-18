@@ -12,11 +12,12 @@ The documents are the source versions; final version are made available on the [
 
 ## Build instructions
 
-Converting the markdown to PDF can be achieved leveraging [pandoc](https://pandoc.org/) and [wkhtmltopdf](https://wkhtmltopdf.org/) as shown below.
+Converting the markdown to PDF can be achieved leveraging [pandoc](https://pandoc.org/) and [wkhtmltopdf](https://wkhtmltopdf.org/) as shown below for releases.
 
 ```bash
 pandoc zowe_conformance/participation_form.md -o Zowe.Conformance.Program.-.Participation.Form.pdf -f gfm --pdf-engine=wkhtmltopdf
 pandoc zowe_conformance/terms_and_conditions.md -o Zowe.Conformance.Program.-.Terms.and.Conditions.pdf -f gfm --pdf-engine=wkhtmltopdf
 pandoc zowe_conformance/test_evaluation_guide.md -o Zowe.Conformance.Program.-.Test.Evaluation.Guide.pdf -f gfm --pdf-engine=wkhtmltopdf
 pandoc zowe_conformance/test_evaluation_guide_table.md -o Zowe.Conformance.Program.-.Test.Evaluation.Guide.Table.pdf -f gfm --pdf-engine=wkhtmltopdf
+cp zowe_conformance/brand_guidelines.pdf Zowe.Conformance.Program.-.Brand.Guidelines.pdf
 ```
