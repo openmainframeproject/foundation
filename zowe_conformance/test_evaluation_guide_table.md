@@ -93,7 +93,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <td></td>
-   <td>The service must provide a default service ID that is prefixed by the organization/provider name. 
+   <td>The service must provide a default service ID that is prefixed by the organization/provider name.
      <p><b>Examples of compliant service IDs:</b></p><p><code>zowemonitoring, cajclcheck, ibmims, rocketterasam</code></p> <p><b>Examples of non-compliant service IDs:</b></p><p><code>jclcheck, myims, mydb2</code></p><p><b>Note:</b> The API ID is not part of the URL.</p></td>
 <tr>
 
