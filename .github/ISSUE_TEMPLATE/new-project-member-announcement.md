@@ -3,7 +3,7 @@ name: New Project/Member announcement
 about: Issue type for tracking a new member or project announcement (including project
   graduation)
 title: "[PROJECT/MEMBER NAME] announcement"
-labels: ''
+labels: 'announcement'
 assignees: ''
 
 ---
