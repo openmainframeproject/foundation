@@ -885,7 +885,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Network requests to the Zowe App Server must never be done without the use of the URI Broker</td>
+   <td>Network requests to the Zowe App Server must never be done without the use of the URI Broker. This ensures compatibility with future versions of Zowe if URLs change.</td>
  </tr>
   <tr>
    <th style="background-color:#555555">11</th>
@@ -961,7 +961,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>The active language to be used for string selection must be retrieved using ZoweZLUX.globalization.getLanguage(), which determines language by multiple factors</td>
+   <td>If your software supports multiple languages, the active language to be used for string selection must be retrieved using ZoweZLUX.globalization.getLanguage(), which determines language by multiple factors</td>
  </tr>
   <tr>
    <th style="background-color:#555555">17</th>
@@ -1120,7 +1120,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>User preferences, if applicable to a plugin, must be stored through the configuration data service </td>
+   <td>User preferences, if applicable to a plug-in, must be stored through the configuration data service, unless the software needs pre-existing storage structures such as DB2 </td>
  </tr>
  <tr>
    <th style="background-color:#555555">28</th>
@@ -1158,7 +1158,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>A conformant application must not modify the contents of the Zowe runtime USS directory and must not change any directory or file permissions or ownership </td>
+   <td>A conformant application must not modify the contents of the Zowe root directory <code>$ROOT_DIR</code> and must not change any directory or file permissions or ownership </td>
  </tr>
  <tr>
    <th style="background-color:#555555">31</th>
@@ -1186,7 +1186,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th rowspan=4 style="background-color:#555555">32</th>
    <th style="background-color:#555555"></th>
    <th colspan ="3" style="background-color:#AAAAAA">Applicable if LIFECYCLED</th>
-   <td>Satisfy the following criteria to lifecycle a service with Zowe:</td>
+   <td>If the app framework plugin requires services that do not originate from Zowe, but require the same lifecycle as Zowe, satisfy the following criteria to lifecycle them with Zowe:</td>
  </tr>
  <tr>
 
