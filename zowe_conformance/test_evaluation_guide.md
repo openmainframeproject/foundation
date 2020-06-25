@@ -192,7 +192,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
     a. DOM elements originating from your App should always be children of the Zowe viewport DOM element, `com-rs-mvd-viewport`. **(required)**
 
-    b. Network requests to the Zowe App Server must never be done without the use of the URI Broker. **(required)**
+    b. Network requests to the Zowe App Server must never be done without the use of the URI Broker. This ensures compatibility with future versions of Zowe if URLs change. **(required)**
 
     c. Access to resources outside the App Server should also be made through the URI Broker whenever possible. **(best practice)**
 
@@ -207,7 +207,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
 6.  **Localization and Internationalization (I10n and I18n)**
 
-    a. The active language to be used for string selection must be retrieved using ZoweZLUX.globalization.getLanguage(), which determines language by multiple factors. **(required)**
+    a. If your software supports multiple languages, the active language to be used for string selection must be retrieved using ZoweZLUX.globalization.getLanguage(), which determines language by multiple factors. **(required)**
 
     b. No strings visible in a UI should be hard-coded, rather resource strings must be used in accordance with one of the existing internationalization support mechanisms. **(best practice)**
 
@@ -239,7 +239,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
 11. **Storage**
 
-    a. User preferences, if applicable to a plug-in, must be stored through the configuration data service. **(required)**
+    a. User preferences, if applicable to a plug-in, must be stored through the configuration data service, unless the software needs pre-existing storage structures such as DB2 **(required)**
 
     b. For other plug-in storage needs, storing data outside of the configuration dataservice is permitted only within `$INSTANCE_DIR/workspace/app-server` or `$INSTANCE_DIR/workspace/app-server/pluginStatic` with a top-level folder equal to their plug-in ID. Plug-ins must not store information anywhere else in any Zowe directories such as `$INSTANCE_DIR` or `$ROOT_DIR` in order to prevent conflict with future Zowe versions and other plug-ins. **(required)**
 
@@ -247,13 +247,13 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
 12. **Directory and File Ownership Permissions**
 
-    a. A conformant application must not modify the contents of the Zowe runtime USS directory and must not change any directory or file permissions or ownership. **(required)**
+    a. A conformant application must not modify the contents of the Zowe root directory (`$ROOT_DIR`) and must not change any directory or file permissions or ownership. **(required)**
 
     b. A conformant application must not modify the permissions or ownership of a Zowe instance directory workspace. **(best practice)**
 
 13. **Lifecycling as a Zowe address space**
 
-    a. Satisfy the following criteria to lifecycle a service with Zowe:
+    a. If the app framework plugin requires services that do not originate from Zowe, but require the same lifecycle as Zowe, satisfy the following criteria to lifecycle them with Zowe:
     
      - Contain a fully qualified path in the `instance.env` file for the Zowe workspace which points to the location of a directory containing a `start.sh` script. **(required)**
      - Contain a validate.sh script. **(best practice)**
