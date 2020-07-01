@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Builds the Zowe Conformance docs into pdfs
+#
+# Copyright this project and it's contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+
+cp brand_guidelines.pdf Zowe.Conformance.Program.-.Brand.Guidelines.pdf
+pandoc participation_form.md -o Zowe.Conformance.Program.-.Participation.Form.pdf -f gfm --pdf-engine=wkhtmltopdf
+pandoc terms_and_conditions.md -o Zowe.Conformance.Program.-.Terms.and.Conditions.pdf -f gfm --pdf-engine=wkhtmltopdf
+pandoc test_evaluation_guide.md -o Zowe.Conformance.Program.-.Test.Evaluation.Guide.pdf -f gfm --pdf-engine=wkhtmltopdf
+pandoc test_evaluation_guide_table.md -o Zowe.Conformance.Program.-.Test.Evaluation.Guide.Table.pdf -f gfm --pdf-engine=wkhtmltopdf
