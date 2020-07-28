@@ -1,9 +1,9 @@
 ---
 name: New blog post
 about: Submit a new blog post for consideration for OMP blog
-title: ''
+title: New blog - [POST NAME]
 labels: blog
-assignees: ''
+assignees: Maemalynn
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: New slidedeck to add to OMP SlideShare
 about: Submit your slidedeck for inclusion on the OMP SlideShare
-title: ''
+title: Add slidedeck to OMP SlideShare - [PRESENTATION NAME]
 labels: youtube
 assignees: chrisblumOMP
 
