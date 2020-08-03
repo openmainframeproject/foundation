@@ -1,7 +1,7 @@
 ---
 name: New video to put on OMP YouTube
 about: Submit your video for inclusion on the OMP YouTube channel
-title: ''
+title: Add video to YouTube - [VIDEO NAME]
 labels: youtube
 assignees: chrisblumOMP
 
