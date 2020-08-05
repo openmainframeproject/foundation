@@ -2,7 +2,7 @@
 name: Submit speaking, sponosorship  or Event for OMP Calendar
 about: Use this template to submit events for the OMP caledar and promotion
 title: ''
-labels: ''
+labels: 'events'
 assignees: chrisblumOMP
 
 ---
