@@ -1,6 +1,6 @@
 ---
-name: Submit speaking, sponosorship  or Event for OMP Calendar
-about: Use this template to submit events for the OMP caledar and promotion
+name: Submit speaking session or sponsorship for an event to showcase on the OMP Events page
+about: Use this template to submit events for the OMP events page to recieve promotion
 title: ''
 labels: 'events'
 assignees: chrisblumOMP
