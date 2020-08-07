@@ -1,8 +1,9 @@
 ---
-name: Submit speaking session or sponsorship for an event to showcase on the OMP Events page
+name: Submit speaking session or sponsorship for an event to showcase on the OMP Events
+  page
 about: Use this template to submit events for the OMP events page to recieve promotion
 title: ''
-labels: 'events'
+labels: ''
 assignees: chrisblumOMP
 
 ---
