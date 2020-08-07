@@ -11,20 +11,20 @@ jobs:
       uses: takanabe/github-actions-automate-projects@v0.0.2
       if: github.event_name == 'issues' && github.event.action == 'opened' && github.event.label.name == 'zowe-blog'
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN_TO_ADD_PROJECT }}
+        GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/4
         GITHUB_PROJECT_COLUMN_NAME: New Blog Post
     - name: add-new-i-am-a-mainframer
       uses: takanabe/github-actions-automate-projects@v0.0.2
       if: github.event_name == 'issues' && github.event.action == 'opened' && github.event.label.name == 'podcast'
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN_TO_ADD_PROJECT }}
+        GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/openmainframeproject/foundation/projects/3
         GITHUB_PROJECT_COLUMN_NAME: Potential Speakers
     - name: add-new-issues-to-organization-based-project-column
       uses: takanabe/github-actions-automate-projects@v0.0.2
       if: ( github.event_name == 'issues' || github.event_name == 'pull_request' ) && github.event.action == 'opened' && ( github.event.label.name != 'zowe-blog' || github.event.label.name == 'podcast' )
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PERSONAL_TOKEN_TO_ADD_PROJECT }}
+        GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/3 # update each quarter
         GITHUB_PROJECT_COLUMN_NAME: To Do
