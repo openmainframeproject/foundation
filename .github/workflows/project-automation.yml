@@ -7,6 +7,9 @@ jobs:
   add-new-issues-to-project-column:
     runs-on: ubuntu-latest
     steps:
+    - name: get labels name
+      run: |
+          echo ${{ github.event.label.name }}
     - name: add-new-zowe-blog-posts
       uses: takanabe/github-actions-automate-projects@v0.0.2
       if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.label.name,'zowe-blog')
