@@ -7,26 +7,23 @@ jobs:
   add-new-issues-to-project-column:
     runs-on: ubuntu-latest
     steps:
-    - name: get labels name
-      run: |
-          echo ${{ github.event.label.name }}
     - name: add-new-zowe-blog-posts
       uses: takanabe/github-actions-automate-projects@v0.0.2
-      if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.label.name,'zowe-blog')
+      if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.labels.*.name,'zowe-blog')
       env:
         GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/4
         GITHUB_PROJECT_COLUMN_NAME: New Blog Post
     - name: add-new-i-am-a-mainframer
       uses: takanabe/github-actions-automate-projects@v0.0.2
-      if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.label.name,'podcast')
+      if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.labels.*.name,'podcast')
       env:
         GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/openmainframeproject/foundation/projects/3
         GITHUB_PROJECT_COLUMN_NAME: Potential Speakers
     - name: add-new-issues-to-organization-based-project-column
       uses: takanabe/github-actions-automate-projects@v0.0.2
-      if: ( github.event_name == 'issues' || github.event_name == 'pull_request' ) && github.event.action == 'opened' && !contains(github.event.label.name,'zowe-blog') && !contains(github.event.label.name,'podcast')
+      if: ( github.event_name == 'issues' || github.event_name == 'pull_request' ) && github.event.action == 'opened' && !contains(github.event.labels.*.name,'zowe-blog') && !contains(github.event.labels.*.name,'podcast')
       env:
         GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/3 # update each quarter
