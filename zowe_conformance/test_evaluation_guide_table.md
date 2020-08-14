@@ -223,6 +223,13 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th></th>
   <td>c. Adding the path of a launch component to the <code>instance.env</code> file for the Zowe workspace</td>
   </tr>
+   <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+  <td>d. Dynamic registration of application that is NOT lifecycled as a Zowe address space /td>
+  </tr>
 
 </table>
 
