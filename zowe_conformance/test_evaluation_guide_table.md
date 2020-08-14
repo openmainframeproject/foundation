@@ -200,7 +200,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center">Registration of the service must not be performed by modifying the Zowe runtime directory api-defs folder. Supported methods include:<p style="color:red">(Mark which one applies _a_, _b_, or _c_)</td>
+   <td style="text-align:center">Registration of the service must not be performed by modifying the Zowe runtime directory api-defs folder. Supported methods include:<p style="color:red">(Mark which one applies _a_, _b_, _c_, or _d_)</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
