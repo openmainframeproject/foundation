@@ -132,7 +132,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
 
  </tr>
 <tr>
-   <th style="background-color:#555555" rowspan=8>8</th>
+   <th style="background-color:#555555" rowspan=9>8</th>
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Versioned</th>
    <th style="background-color:#AAAAAA"></th>
