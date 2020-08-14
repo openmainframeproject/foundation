@@ -192,7 +192,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td> - graphql/{serviceId} reserved for GraphQL</td>
+   <td> - graphql/{serviceId} reserved for GraphQL APIs</td>
  </tr>
 
  <tr>
@@ -233,7 +233,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
 
 </table>
 
-### API Documentation
+### REST API Documentation
 
 <table rules="all">
  <thead>
@@ -295,7 +295,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
  </tr>
  </table>
 
-### API Naming and Addressing
+### REST API Naming and Addressing
 
 <table rules="all">
  <thead>
@@ -351,7 +351,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>API - Request and response payloads are in JSON or binary data format</td>
+   <td>REST API - Request and response payloads are in JSON or binary data format</td>
  </tr>
   <tr>
    <th style="background-color:#555555">20</th>
@@ -359,7 +359,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>API - in JSON format, use relative links, and must not contain schema, hostname, and port. Alternatively, an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
+   <td>REST API - in JSON format, use relative links, and must not contain schema, hostname, and port. Alternatively, an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
  </tr>
   <tr>
    <th style="background-color:#555555">21</th>
@@ -367,7 +367,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>WebSocket - Service URIs contained in WebSocket messages payload are addressed through the API ML Gateway</td>
+   <td>WebSocket (if applicable) - Service URIs contained in WebSocket messages payload are addressed through the API ML Gateway</td>
  </tr>
  <tr>
    <th style="background-color:#555555">22</th>
@@ -375,7 +375,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>UI - The UI uses relative links and does not contain the schema, hostname, and port. Alternatively an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
+   <td>UI (if applicable) - The UI uses relative links and does not contain the schema, hostname, and port. Alternatively an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
  </tr>
  </table>
 
