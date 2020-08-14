@@ -144,7 +144,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - api/v1/{serviceId} reserved for REST APIs</td>
+   <td> - api/v1/{serviceId} reserved for REST APIs</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -171,32 +171,32 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - api/{serviceId} reserved for REST APIs</td>
+   <td> - api/{serviceId} reserved for REST APIs</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - ui/{serviceId} reserved for UIs</td>
+   <td> - ui/{serviceId} reserved for UIs</td>
  </tr>
    <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - ws/{serviceId} reserved for WebSockets</td>
+   <td> - ws/{serviceId} reserved for WebSockets</td>
  </tr>
    <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - graphql/{serviceId} reserved for GraphQL</td>
+   <td> - graphql/{serviceId} reserved for GraphQL</td>
  </tr>
 
  <tr>
-   <th style="background-color:#555555" rowspan=4>9</th>
+   <th style="background-color:#555555" rowspan=5>9</th>
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
