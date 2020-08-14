@@ -60,7 +60,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>An application service provides at least one service UI registered with discovery services</td>
+   <td>The product or applications that extends Zowe API ML must provide at least one API service registered with the Zowe API ML Discovery Service</td>
 
  </tr>
  <tr>
