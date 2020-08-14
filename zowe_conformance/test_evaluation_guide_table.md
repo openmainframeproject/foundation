@@ -187,6 +187,13 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th></th>
    <td>  - ws/{serviceId} reserved for WebSockets</td>
  </tr>
+   <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td>  - graphql/{serviceId} reserved for GraphQL</td>
+ </tr>
 
  <tr>
    <th style="background-color:#555555" rowspan=4>9</th>
