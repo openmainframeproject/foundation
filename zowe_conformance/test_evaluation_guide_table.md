@@ -260,7 +260,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every method of each REST endpoint is documented</td>
+   <td>Every method of each public REST endpoint is documented</td>
  </tr>
  <tr>
    <th style="background-color:#555555">13</th>
@@ -268,7 +268,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every method of each REST endpoint is demonstrated with an example</td>
+   <td>Every method of each public REST endpoint is demonstrated with an example</td>
  </tr>
  <tr>
    <th style="background-color:#555555">14</th>
