@@ -228,7 +228,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-  <td>d. Dynamic registration of application that is NOT lifecycled as a Zowe address space /td>
+  <td>d. Dynamic registration of an application that is NOT lifecycled as a Zowe address space /td>
   </tr>
 
 </table>
