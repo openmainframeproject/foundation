@@ -233,7 +233,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
     
 10. **Encoding**
 
-    a. To enable an App to work with z/OS Node.js version 12 or higher, all application files must be tagged according to their content type. **(required)**
+    a. Application Framework plugins serving web content through App Server or doing file I/O through an App Server dataservice should tag these files on z/OS according to their content type. **(best practice)**
     
     b. Testing Apps via the install-app script is advisable to enable end users to utilize Zowe plugin management tooling. **(best practice)**
 
