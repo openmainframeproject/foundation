@@ -1087,10 +1087,10 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
  <tr>
    <th style="background-color:#555555">25</th>
    <th style="background-color:#555555">v1</th>
-   <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
+   <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>To enable an App to work with z/OS Node.js version 12 or higher, all application files must be tagged according to their content type</td>
+   <td>Application Framework plugins serving web content through App Server or doing file I/O through an App Server dataservice should tag these files on z/OS according to their content type</td>
  </tr>
  <tr>
    <th style="background-color:#555555">26</th>
