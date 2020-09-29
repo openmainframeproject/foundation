@@ -60,7 +60,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>An application service provides at least one service UI registered with discovery services</td>
+   <td>The product or applications that extends Zowe API ML must provide at least one API service registered with the Zowe API ML Discovery Service</td>
 
  </tr>
  <tr>
@@ -132,7 +132,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
 
  </tr>
 <tr>
-   <th style="background-color:#555555" rowspan=8>8</th>
+   <th style="background-color:#555555" rowspan=9>8</th>
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Versioned</th>
    <th style="background-color:#AAAAAA"></th>
@@ -144,7 +144,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - api/v1/{serviceId} reserved for REST APIs</td>
+   <td> - api/v1/{serviceId} reserved for REST APIs</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -171,29 +171,36 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - api/{serviceId} reserved for REST APIs</td>
+   <td> - api/{serviceId} reserved for REST APIs</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - ui/{serviceId} reserved for UIs</td>
+   <td> - ui/{serviceId} reserved for UIs</td>
  </tr>
    <tr>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA" ></th>
    <th></th>
-   <td>  - ws/{serviceId} reserved for WebSockets</td>
+   <td> - ws/{serviceId} reserved for WebSockets</td>
+ </tr>
+   <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+   <td> - graphql/{serviceId} reserved for GraphQL APIs</td>
  </tr>
 
  <tr>
-   <th style="background-color:#555555" rowspan=4>9</th>
+   <th style="background-color:#555555" rowspan=5>9</th>
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center">Registration of the service must not be performed by modifying the Zowe runtime directory api-defs folder. Supported methods include:<p style="color:red">(Mark which one applies _a_, _b_, or _c_)</td>
+   <td style="text-align:center">Registration of the service must not be performed by modifying the Zowe runtime directory api-defs folder. Supported methods include:<p style="color:red">(Mark which one applies _a_, _b_, _c_, or _d_)</td>
  </tr>
   <tr>
    <th style="background-color:#555555">v1</th>
@@ -216,10 +223,17 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th></th>
   <td>c. Adding the path of a launch component to the <code>instance.env</code> file for the Zowe workspace</td>
   </tr>
+   <tr>
+   <th style="background-color:#555555">v1</th>
+   <th style="background-color:#AAAAAA">x</th>
+   <th style="background-color:#AAAAAA" ></th>
+   <th></th>
+  <td>d. Dynamic registration of an application that is NOT lifecycled as a Zowe address space /td>
+  </tr>
 
 </table>
 
-### API Documentation
+### REST API Documentation
 
 <table rules="all">
  <thead>
@@ -253,7 +267,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every method of each REST endpoint is documented</td>
+   <td>Every method of each public REST endpoint is documented</td>
  </tr>
  <tr>
    <th style="background-color:#555555">13</th>
@@ -261,7 +275,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Every method of each REST endpoint is demonstrated with an example</td>
+   <td>Every method of each public REST endpoint is demonstrated with an example</td>
  </tr>
  <tr>
    <th style="background-color:#555555">14</th>
@@ -281,7 +295,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
  </tr>
  </table>
 
-### API Naming and Addressing
+### REST API Naming and Addressing
 
 <table rules="all">
  <thead>
@@ -337,7 +351,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td>API - Request and response payloads are in JSON or binary data format</td>
+   <td>REST API - Request and response payloads are in JSON or binary data format</td>
  </tr>
   <tr>
    <th style="background-color:#555555">20</th>
@@ -345,7 +359,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>API - in JSON format, use relative links, and must not contain schema, hostname, and port. Alternatively, an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
+   <td>REST API - in JSON format, use relative links, and must not contain schema, hostname, and port. Alternatively, an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
  </tr>
   <tr>
    <th style="background-color:#555555">21</th>
@@ -353,7 +367,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>WebSocket - Service URIs contained in WebSocket messages payload are addressed through the API ML Gateway</td>
+   <td>WebSocket (if applicable) - Service URIs contained in WebSocket messages payload are addressed through the API ML Gateway</td>
  </tr>
  <tr>
    <th style="background-color:#555555">22</th>
@@ -361,7 +375,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>UI - The UI uses relative links and does not contain the schema, hostname, and port. Alternatively an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
+   <td>UI (if applicable) - The UI uses relative links and does not contain the schema, hostname, and port. Alternatively an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers</td>
  </tr>
  </table>
 
