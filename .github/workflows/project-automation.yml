@@ -26,5 +26,5 @@ jobs:
       if: ( github.event_name == 'issues' || github.event_name == 'pull_request' ) && github.event.action == 'opened' && !contains(github.event.issue.labels.*.name,'zowe-blog') && !contains(github.event.issue.labels.*.name,'podcast')
       env:
         GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/3 # update each quarter
+        GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/6 # update each quarter
         GITHUB_PROJECT_COLUMN_NAME: To Do
