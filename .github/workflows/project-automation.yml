@@ -21,7 +21,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/openmainframeproject/foundation/projects/3
         GITHUB_PROJECT_COLUMN_NAME: Potential Speakers
-    - name: add-new-i-am-a-mainframer
+    - name: add-new-webinar
       uses: takanabe/github-actions-automate-projects@v0.0.2
       if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.labels.*.name,'webinar')
       env:
