@@ -9,8 +9,15 @@ assignees: chrisblumOMP
 
 Please refer to the webinar guidelines at https://github.com/openmainframeproject/foundation/blob/master/WEBINAR_GUIDELINES.md before submitting.
 
+- Project Name ( also add in the [TITLE] above ):
+- Webinar submitter: 
 - Webinar title: 
-- Project name or Member name for the webinar ( also add in the [TITLE] above ):
-- Abstract:
-- Preferred Month:
-- Anything else we should know:
+- Webinar abstract: 
+- Desired Webinar Date: 
+
+Speaker(s) Information
+- Headshot
+- Title
+- Company
+- Bio
+- Email addresses for all speakers/panelists
