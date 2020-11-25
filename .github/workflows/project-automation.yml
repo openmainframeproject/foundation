@@ -2,7 +2,7 @@
 
 name: Move new requests to the general Open Mainframe Project Kanban Board
 
-on: [issues, pull_request]
+on: [issues, pull_request_target]
 jobs:
   add-new-issues-to-project-column:
     runs-on: ubuntu-latest
