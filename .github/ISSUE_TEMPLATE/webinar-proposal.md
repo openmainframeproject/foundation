@@ -7,7 +7,7 @@ assignees: chrisblumOMP
 
 ---
 
-Please refer to the webinar guidelines at https://github.com/openmainframeproject/foundation/blob/master/WEBINAR_GUIDELINES.md before submitting.
+Please refer to the webinar guidelines at https://github.com/openmainframeproject/foundation/blob/master/WEBINAR-GUIDELINES.md before submitting.
 
 - Project Name ( also add in the [TITLE] above ):
 - Webinar submitter: 
