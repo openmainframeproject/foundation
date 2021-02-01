@@ -30,8 +30,8 @@ jobs:
         GITHUB_PROJECT_COLUMN_NAME: Proposed Webinar for OMP
     - name: add-new-issues-to-organization-based-project-column
       uses: takanabe/github-actions-automate-projects@v0.0.2
-      if: ( github.event_name == 'issues' || github.event_name == 'pull_request' ) && github.event.action == 'opened' && !contains(github.event.issue.labels.*.name,'zowe-blog') && !contains(github.event.issue.labels.*.name,'podcast')
+      if: ( github.event_name == 'issues' || github.event_name == 'pull_request' )
       env:
         GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/6 # update each quarter
+        GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/7 # update each quarter
         GITHUB_PROJECT_COLUMN_NAME: To Do
