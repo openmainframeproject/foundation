@@ -1,37 +1,37 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Move new requests to the general Open Mainframe Project Kanban Board
+name: Move new requests to the correct Open Mainframe Project Kanban Boards
 
 on: [issues, pull_request_target]
 jobs:
-  add-new-issues-to-project-column:
+  automate-project-columns:
     runs-on: ubuntu-latest
     steps:
-    - name: add-new-zowe-blog-posts
-      uses: takanabe/github-actions-automate-projects@v0.0.2
+    - name: Add Zowe Medium blog posts
+      uses: alex-page/github-project-automation-plus@v0.3.0
       if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.labels.*.name,'zowe-blog')
-      env:
-        GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/4
-        GITHUB_PROJECT_COLUMN_NAME: New Blog Post
-    - name: add-new-i-am-a-mainframer
-      uses: takanabe/github-actions-automate-projects@v0.0.2
+      with:
+        project: Zowe Medium blog
+        column: New Blog Post
+        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
+    - name: Add I Am A Mainframer podcasts
+      uses: alex-page/github-project-automation-plus@v0.3.0
       if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.labels.*.name,'podcast')
-      env:
-        GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/openmainframeproject/foundation/projects/3
-        GITHUB_PROJECT_COLUMN_NAME: Potential Speakers
-    - name: add-new-webinar
-      uses: takanabe/github-actions-automate-projects@v0.0.2
+      with:
+        project: I am a Mainframer Podcast
+        column: Potential Speakers
+        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
+    - name: Add Webinar
+      uses: alex-page/github-project-automation-plus@v0.3.0
       if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.labels.*.name,'webinar')
-      env:
-        GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/openmainframeproject/foundation/projects/5
-        GITHUB_PROJECT_COLUMN_NAME: Proposed Webinar for OMP
-    - name: add-new-issues-to-organization-based-project-column
-      uses: takanabe/github-actions-automate-projects@v0.0.2
-      if: ( github.event_name == 'issues' || github.event_name == 'pull_request' )
-      env:
-        GITHUB_TOKEN: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-        GITHUB_PROJECT_URL: https://github.com/orgs/openmainframeproject/projects/7 # update each quarter
-        GITHUB_PROJECT_COLUMN_NAME: To Do
+      with:
+        project: OMP Monthly Webinar
+        column: Proposed Webinar for OMP 
+        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
+    - name: Add to general kanban board
+      uses: alex-page/github-project-automation-plus@v0.3.0
+      if: ( github.event_name == 'issues' || github.event_name == 'pull_request_target' )
+      with:
+        project: OMP 2021 Q1
+        column: To Do
+        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
