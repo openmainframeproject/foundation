@@ -7,8 +7,6 @@ on:
     types: [opened, labeled, closed]
   pull_request_target:
     types: [opened, labeled, closed]
-  project_card:
-    types: [moved]
 
 jobs:
   automate-project-columns:
@@ -54,9 +52,3 @@ jobs:
         project: OMP 2021 Q1
         column: To Do
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-    - name: Close Done issues
-      uses: peter-evans/close-issue@v1
-      if: |
-        github.evemt_name == 'project_card' &&
-        github.event.action == 'moved' &&
-        github.event.project_card.column_id == '12127145'
