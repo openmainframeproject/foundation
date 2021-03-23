@@ -2,36 +2,61 @@
 
 name: Move new requests to the correct Open Mainframe Project Kanban Boards
 
-on: [issues, pull_request_target]
+on:
+  issues:
+    types: [opened, labeled, closed]
+  pull_request_target:
+    types: [opened, labeled, closed]
+  project_card:
+    types: [moved]
+
 jobs:
   automate-project-columns:
     runs-on: ubuntu-latest
     steps:
     - name: Add Zowe Medium blog posts
       uses: alex-page/github-project-automation-plus@v0.3.0
-      if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.labels.*.name,'zowe-blog')
+      if: |
+        github.event_name == 'issues' && 
+        github.event.action == 'opened' && 
+        contains(github.event.issue.labels.*.name,'zowe-blog')
       with:
         project: Zowe Medium blog
         column: New Blog Post
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
     - name: Add I Am A Mainframer podcasts
       uses: alex-page/github-project-automation-plus@v0.3.0
-      if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.labels.*.name,'podcast')
+      if: |
+        github.event_name == 'issues' && 
+        github.event.action == 'opened' && 
+        contains(github.event.issue.labels.*.name,'podcast')
       with:
         project: I am a Mainframer Podcast
         column: Potential Speakers
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
     - name: Add Webinar
       uses: alex-page/github-project-automation-plus@v0.3.0
-      if: github.event_name == 'issues' && github.event.action == 'opened' && contains(github.event.issue.labels.*.name,'webinar')
+      if: | 
+        github.event_name == 'issues' && 
+        github.event.action == 'opened' && 
+        contains(github.event.issue.labels.*.name,'webinar')
       with:
         project: OMP Monthly Webinar
         column: Proposed Webinar for OMP 
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
     - name: Add to general kanban board
       uses: alex-page/github-project-automation-plus@v0.3.0
-      if: ( github.event_name == 'issues' || github.event_name == 'pull_request_target' )
+      if: |
+        github.event.action == 'opened' && 
+        ( github.event_name == 'issues' || 
+        github.event_name == 'pull_request_target' )
       with:
         project: OMP 2021 Q1
         column: To Do
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
+    - name: Close Done issues
+      uses: peter-evans/close-issue@v1
+      if: |
+        github.evemt_name == 'project_card' &&
+        github.event.action == 'moved' &&
+        github.event.project_card.column_id == '12127145'
