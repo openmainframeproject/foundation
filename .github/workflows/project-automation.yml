@@ -49,6 +49,6 @@ jobs:
         ( github.event_name == 'issues' || 
         github.event_name == 'pull_request_target' )
       with:
-        project: OMP 2021 Q1
+        project: OMP 2021 Q2
         column: To Do
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
