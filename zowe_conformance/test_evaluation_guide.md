@@ -91,7 +91,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
     a. Resources are protected by mainframe credentials. **(required)**
 
-    b. Services accept basic authentication (minimum requirement). **(required)**
+    b. Services accept basic authentication or Single-Sign-On Support as explained in the point 6.c (minimum requirement). **(required)**
 
     c. Single-Sign-On Support: Services accept EITHER Zowe JWT token in the cookie OR support of PassTickets. **(required)**
 
@@ -101,22 +101,19 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
     b. The last two major versions are supported by API services. **(required)**
 
-8.  **UI**
-
-    The UI uses only relative URLs. **(required)**
-
-9.  **WebSocket Services**
+8.  **WebSocket Services**
 
     a. WebSocket connection creation, all subsequent communication between WebSocket client, and server are routed through the API ML Gateway **(required)**
 
     b. WebSocket connections are closed by the initiator through API ML Gateway. **(required)**
     
-10. **Directory and File Ownership Permissions**
+9. **Directory and File Ownership Permissions**
 
     a. A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership within the Zowe runtime. **(required)**
 
     b. A conformant application must not modify the permissions or ownership of a Zowe instance directory workspace. **(required)**      
-11. **Lifecycling as a Zowe address space**
+
+10. **Lifecycling as a Zowe address space**
 
     a. Satisfy the following criteria to lifecycle a service with Zowe:
     
@@ -126,7 +123,7 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
 
     b. If the service introduces new variables to the `instance.env` file, these variables should be prefixed by the provider ID to avoid collisions. **(required)**
 
-12. **Support**
+11. **Support**
 
     The Submitter describes how Support is provided. Support details must be clearly documented. **(required)**
 
