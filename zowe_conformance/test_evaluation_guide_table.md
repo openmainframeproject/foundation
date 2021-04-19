@@ -405,7 +405,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>Services accept basic authentication (minimum requirement)</td>
+   <td>Services accept basic authentication or Single-Sign-On Support as explained in the point 25 (minimum requirement)</td>
  </tr>
   <tr>
    <th style="background-color:#555555">25</th>
@@ -447,7 +447,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
  </tr>
  </table>
 
-### UI
+ ### WebSocket Services
 
 <table rules="all">
  <thead>
@@ -465,32 +465,10 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td>UI uses only relative URLs</td>
- </tr>
- </table>
-
- ### WebSocket Services
-
-<table rules="all">
- <thead>
-  <th style=background-color:#5555AA>Item </th>
- <th style=background-color:#5555AA>Ver </th>
- <th style=background-color:#5555AA>Required </th>
- <th style=background-color:#5555AA>Best Practice </th>
- <th style=background-color:#5555AA>Conformant </th>
- <th style=background-color:#5555AA>Criteria </th>
- </thead>
-
- <tr>
-   <th style="background-color:#555555">29</th>
-   <th style="background-color:#555555">v1</th>
-   <th style="background-color:#AAAAAA">x</th>
-   <th style="background-color:#AAAAAA"></th>
-   <th></th>
    <td>WebSocket connection creation, all subsequent communication between WebSocket client, and server is routed through the API ML Gateway</td>
  </tr>
   <tr>
-   <th style="background-color:#555555">30</th>
+   <th style="background-color:#555555">29</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
@@ -512,7 +490,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
  </thead>
 
  <tr>
-   <th style="background-color:#555555">32</th>
+   <th style="background-color:#555555">30</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
@@ -520,7 +498,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
    <td>A conformant application must not modify the contents of the Zowe runtime USS directory and must not change any directory or file permissions or ownership within the Zowe runtime</td>
  </tr>
  <tr>
-   <th style="background-color:#555555">33</th>
+   <th style="background-color:#555555">31</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
@@ -542,7 +520,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
  </thead>
 
  <tr>
-   <th rowspan=4 style="background-color:#555555">34</th>
+   <th rowspan=4 style="background-color:#555555">32</th>
    <th style="background-color:#555555"></th>
    <th colspan ="3" style="background-color:#AAAAAA">Applicable if LIFECYCLED</th>
    <td>Satisfy the following criteria to lifecycle a service with Zowe:</td>
@@ -571,7 +549,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
   <td>Contains a <code>configure.sh</code> script</td>
  </tr>
  <tr>
-<th style="background-color:#555555">35</th>
+<th style="background-color:#555555">33</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
@@ -594,7 +572,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
  </thead>
 
  <tr>
-   <th style="background-color:#555555">36</th>
+   <th style="background-color:#555555">34</th>
    <th style="background-color:#555555">v1</th>
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
