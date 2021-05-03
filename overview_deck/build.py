@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+#
+# Copyright this project and it's contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+# encoding=utf8
+
 from __future__ import print_function
 import os.path
 from googleapiclient.errors import HttpError
