@@ -2,7 +2,7 @@
 name: Submit speaking opportunity
 about: Use this template to submit speaking opportunities for promotion or help in submitting
 title: Speaking Opportunity - [EVENT NAME]
-labels: 'events'
+labels: event, omp-speaking, ambassador-speaking
 assignees: Maemalynn
 ---
 
@@ -22,5 +22,8 @@ If you have submitted a session, please provide details below:
 
 Checklist for tracking:
 - [ ] Confirm event participation
+- [ ] Share event CFP with ambassadors
+- [ ] Submit any OMP talks
+- [ ] Confirm speaking sessions
 - [ ] Add event to events page ( provide link - https://openmainframeproject.org/events )
 - [ ] Prepare and schedule social promotion
