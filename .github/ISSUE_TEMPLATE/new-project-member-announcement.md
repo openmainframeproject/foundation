@@ -5,7 +5,6 @@ about: Issue type for tracking a new member or project announcement (including p
 title: "[PROJECT/MEMBER NAME] announcement"
 labels: announcement
 assignees: 'Maemalynn','jmertic'
-
 ---
 
 Update the title with the project/member name + 'announcement'
