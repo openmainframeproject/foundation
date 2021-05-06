@@ -1,14 +1,13 @@
 ---
 name: Submit speaking opportunity
 about: Use this template to submit speaking opportunities for promotion or help in submitting
-title: ''
+title: Speaking Opportunity - [EVENT NAME]
 labels: 'events'
-assignees:
-
+assignees: Maemalynn
 ---
 
 Please include the following:
-* Event Name:
+* Event Name ( add to title replacing [EVENT_NAME]:
 * Event Dates:
 * Event Location:
 * Event URL:
