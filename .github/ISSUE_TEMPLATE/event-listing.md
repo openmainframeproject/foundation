@@ -2,7 +2,7 @@
 name: New OMP Event
 about: Request OMP to sponsor a third party
 title: OMP Event - NAME
-labels: events, event-sponsorsing
+labels: event, event-sponsorsing
 assignees: Maemalynn
 ---
 
