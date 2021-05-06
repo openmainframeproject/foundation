@@ -3,8 +3,7 @@ name: Webinar proposal
 about: Submit your title and abstract for an Open Mainframe Project webinar
 title: OMP Webinar - [TITLE]
 labels: webinar
-assignees: chrisblumOMP
-
+assignees: Maemalynn
 ---
 
 Please refer to the webinar guidelines at https://github.com/openmainframeproject/foundation/blob/master/WEBINAR-GUIDELINES.md before submitting.
