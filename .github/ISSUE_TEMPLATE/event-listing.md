@@ -19,6 +19,9 @@ Please include the following:
 Checklist for tracking:
 - [ ] Confirm event sponsorship
 - [ ] Complete sponsorship paperwork and task ( link to portal )
+- [ ] Share event CFP with ambassadors
+- [ ] Submit any OMP talks
+- [ ] Confirm speaking sessions
 - [ ] Add event to events page ( provide link - https://openmainframeproject.org/events )
 - [ ] Prepare and schedule social promotion
 - [ ] After event, send followup email to booth attendees ( if applicable )
