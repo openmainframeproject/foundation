@@ -292,7 +292,7 @@ Throughout the next sections you will find the following terminology being used:
 
     h. **Sharing of profiles with Zowe CLI:** Extensions that utilize Zowe CLI profiles must share the created profile instances between Zowe CLI and the Zowe Explorer extension that utilize them. **(required)**
 
-    i. Extension uses the extensibility APIs provided by Zowe Explorer. Supported methods include:<div style="color:red">(Please select all that apply)</div>
+    i. Extension uses the extensibility APIs provided by Zowe Explorer. Supported methods include (Please select all that apply):
     - Extension Accessing Profiles
     - Data Provider Extension
     - Extension Adding Menus
