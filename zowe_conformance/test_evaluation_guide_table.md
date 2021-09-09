@@ -39,7 +39,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
     - [Directory and File Ownership Permissions](#directory-and-file-ownership-permissions-1)
     - [Lifecycling as a Zowe address space](#lifecycling-as-a-zowe-address-space-1)
     - [Support](#support-2)
-  - [Zowe Explorer - Zowe v1](#zowe-explorer---zowe-v1)
+  - [Zowe Explorer for VS Code - Zowe v1](#zowe-explorer-for-vs-code---zowe-v1)
     - [General Extension](#general-extension)
     - [Extension Accessing Profiles](#extension-accessing-profiles)
     - [Data Provider Extension](#data-provider-extension)
@@ -1242,18 +1242,18 @@ These Zowe Conformance criteria are applicable to the lastest Zowe v1 LTS Releas
 
 #
 
-## Zowe Explorer - Zowe v1
+## Zowe Explorer for VS Code - Zowe v1
 
-Throughout the next sections you will find the following terminology being used:
+Throughout the this Zowe Explorer for VS Code section you will find the following terminology being used:
 
-- _Extender_: The organization or developer producing an extension for Zowe Explorer.
-- _Zowe Explorer Extension_: An installable piece of software that provides new functionality to Zowe Explorer or uses/calls services provided by Zowe Explorer. Also simply referred to here as an "extension", this can be a VS Code extension as well as a Zowe CLI Plugin or an independent piece of software. The conformance criteria below call out conformance requirements for three common types of Zowe Explorer extensions, but it is possible that more kinds of extensions can be created. If such new extension kinds surface, then Zowe Explorer APIs and this document can be expanded to support them in the future.
-- _Zowe Explorer VS Code extension_: Refers to a Zowe Explorer extension that is a VS Code extension that is installed in addition to Zowe Explorer ad that has a VS Code extension dependency to Zowe Explorer.
+- _Extender_: The organization or developer producing an extension for Zowe Explorer for VS Code.
+- _Zowe Explorer for VS Code Extension_: An installable piece of software that provides new functionality to Zowe Explorer for VS Code or uses/calls services provided by Zowe Explorer for VS Code. Also simply referred to here as an "extension", this can be a VS Code extension as well as a Zowe CLI Plugin or an independent piece of software. The conformance criteria below call out conformance requirements for three common types of Zowe Explorer for VS Code extensions, but it is possible that more kinds of extensions can be created. If such new extension kinds surface, then Zowe Explorer for VS Code APIs and this document can be expanded to support them in the future.
+- _Zowe Explorer for VS Code VS Code extension_: Refers to a Zowe Explorer for VS Code extension that is a VS Code extension that is installed in addition to Zowe Explorer for VS Code ad that has a VS Code extension dependency to Zowe Explorer for VS Code.
 - _Zowe SDKs_ are [SDKs published by the Zowe project](https://docs.zowe.org/stable/user-guide/sdks-using) that provides various APIs for writing Zowe-based capabilities in general.
 
 ### General Extension
 
-General conformance criteria for all extensions that add new capabilities to Zowe Explorer.
+General conformance criteria for all extensions that add new capabilities to Zowe Explorer for VS Code.
 
 <table rules="all">
  <thead>
@@ -1280,7 +1280,7 @@ General conformance criteria for all extensions that add new capabilities to Zow
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>No Zowe CLI plugin installation requirement: </b> If the extender makes use of a Zowe CLI profile other than the Zowe Explorer default `zosmf` then the extension must not make any assumptions that a matching Zowe CLI plugin has been installed in the Zowe Explorer user's environment.</td>
+   <td><b>No Zowe CLI plugin installation requirement: </b> If the extender makes use of a Zowe CLI profile other than the Zowe Explorer for VS Code default `zosmf` then the extension must not make any assumptions that a matching Zowe CLI plugin has been installed in the Zowe Explorer for VS Code user's environment.</td>
  </tr>
 
  <tr>
@@ -1298,7 +1298,7 @@ General conformance criteria for all extensions that add new capabilities to Zow
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Support:</b> Extension has documentation with instructions on how to report problems that are related to the extension and not Zowe Explorer. It needs to explain how users can determine if a problem is related to the extension or Zowe Explorer.</td>
+   <td><b>Support:</b> Extension has documentation with instructions on how to report problems that are related to the extension and not Zowe Explorer for VS Code. It needs to explain how users can determine if a problem is related to the extension or Zowe Explorer for VS Code.</td>
  </tr>
 
  <tr>
@@ -1307,7 +1307,7 @@ General conformance criteria for all extensions that add new capabilities to Zow
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>User settings consistency:</b> Extender provides a consistent user settings experience. For VS Code extensions, extender follows the recommended naming convention for configuration settings as described in VS Code's <a href="https://code.visualstudio.com/api/references/contribution-points#contributes.configuration">configuration contribution documentation</a>, and avoids starting setting names with the prefix `zowe.`, which is reserved for Zowe Explorer.</td>
+   <td><b>User settings consistency:</b> Extender provides a consistent user settings experience. For VS Code extensions, extender follows the recommended naming convention for configuration settings as described in VS Code's <a href="https://code.visualstudio.com/api/references/contribution-points#contributes.configuration">configuration contribution documentation</a>, and avoids starting setting names with the prefix `zowe.`, which is reserved for Zowe Explorer for VS Code.</td>
  </tr>
 
  <tr>
@@ -1316,7 +1316,7 @@ General conformance criteria for all extensions that add new capabilities to Zow
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>Error message consistency:</b> Extension follows the recommended error message format indicated in the Zowe Explorer extensibility documentation to provide a consistent user experience with Zowe Explorer.</td>
+   <td><b>Error message consistency:</b> Extension follows the recommended error message format indicated in the Zowe Explorer for VS Code extensibility documentation to provide a consistent user experience with Zowe Explorer for VS Code.</td>
  </tr>
 
  <tr>
@@ -1334,14 +1334,14 @@ General conformance criteria for all extensions that add new capabilities to Zow
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Sharing of profiles with Zowe CLI:</b> Extensions that utilize Zowe CLI profiles must share the created profile instances between Zowe CLI and the Zowe Explorer extension that utilize them.</td>
+   <td><b>Sharing of profiles with Zowe CLI:</b> Extensions that utilize Zowe CLI profiles must share the created profile instances between Zowe CLI and the Zowe Explorer for VS Code extension that utilize them.</td>
  </tr>
  <tr>
    <th style="background-color:#555555" rowspan=5>9</th>
    <th style="background-color:#555555"></th>
    <th style="background-color:#AAAAAA" colspan=2>Mark (a) or (b) or (c)</th>
    <th style="background-color:#AAAAAA"></th>
-   <td style="text-align:center">Extension uses the extensibility APIs provided by Zowe Explorer. Supported methods include:<p style="color:red">(Please select all that apply _a_, _b_, or _c_)</td>
+   <td style="text-align:center">Extension uses the extensibility APIs provided by Zowe Explorer for VS Code. Supported methods include:<p style="color:red">(Please select all that apply _a_, _b_, or _c_)</td>
  </tr>
  <tr>
    <th style="background-color:#555555"></th>
@@ -1368,7 +1368,7 @@ General conformance criteria for all extensions that add new capabilities to Zow
 
 ### Extension Accessing Profiles
 
-Criteria for VS Code extensions that want to access the same Zowe CLI profiles that Zowe Explorer uses.
+Criteria for VS Code extensions that want to access the same Zowe CLI profiles that Zowe Explorer for VS Code uses.
 
 <table rules="all">
  <thead>
@@ -1386,7 +1386,7 @@ Criteria for VS Code extensions that want to access the same Zowe CLI profiles t
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>VS Code extension dependency:</b> Extension declares Zowe Explorer as a VS Code extension dependency by including an `extensionDependencies` entry for Zowe Explorer in its package.json file.</td>
+   <td><b>VS Code extension dependency:</b> Extension declares Zowe Explorer for VS Code as a VS Code extension dependency by including an `extensionDependencies` entry for Zowe Explorer for VS Code in its package.json file.</td>
  </tr>
 
   <tr>
@@ -1395,7 +1395,7 @@ Criteria for VS Code extensions that want to access the same Zowe CLI profiles t
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Zowe Extender access:</b> Extension accesses the shared Zowe Explorer profiles cache via `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi()` API as documented in the Zowe Explorer extensibility documentation.</td>
+   <td><b>Zowe Extender access:</b> Extension accesses the shared Zowe Explorer for VS Code profiles cache via `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi()` API as documented in the Zowe Explorer for VS Code extensibility documentation.</td>
  </tr>
 
   <tr>
@@ -1404,13 +1404,13 @@ Criteria for VS Code extensions that want to access the same Zowe CLI profiles t
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Added Profile Type initialization:</b> If the extension has a dependency on a new Zowe CLI profile type other than the Zowe Explorer default `zosmf`, it is calling the `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi().initialize(profileTypeName)` to ensure that the profile type is supported and managed by the extension without a Zowe CLI plugin installed.</td>
+   <td><b>Added Profile Type initialization:</b> If the extension has a dependency on a new Zowe CLI profile type other than the Zowe Explorer for VS Code default `zosmf`, it is calling the `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi().initialize(profileTypeName)` to ensure that the profile type is supported and managed by the extension without a Zowe CLI plugin installed.</td>
  </tr>
 </table>
 
 ### Data Provider Extension
 
-Criteria for VS Code extensions that extend the Zowe Explorer MVS, USS, or JES tree views to use alternative z/OS interaction protocols such as FTP or a REST API.
+Criteria for VS Code extensions that extend the Zowe Explorer for VS Code MVS, USS, or JES tree views to use alternative z/OS interaction protocols such as FTP or a REST API.
 
 <table rules="all">
  <thead>
@@ -1428,7 +1428,7 @@ Criteria for VS Code extensions that extend the Zowe Explorer MVS, USS, or JES t
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>New Zowe CLI profile type:</b> Extension registers its new API instances with a new profile type name for the different Zowe Explorer views via the `ZoweExplorerApi.IApiRegisterClient.register{Mvs|Uss|Jes}Api(profileTypeName)` call as indicated from the Zowe Explorer extensibility documentation</td>
+   <td><b>New Zowe CLI profile type:</b> Extension registers its new API instances with a new profile type name for the different Zowe Explorer for VS Code views via the `ZoweExplorerApi.IApiRegisterClient.register{Mvs|Uss|Jes}Api(profileTypeName)` call as indicated from the Zowe Explorer for VS Code extensibility documentation</td>
  </tr>
 
  <tr>
@@ -1437,7 +1437,7 @@ Criteria for VS Code extensions that extend the Zowe Explorer MVS, USS, or JES t
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>Matching Zowe CLI Plugin:</b> Provide a Zowe CLI Plugin for the data provider's new profile type that implements the core capabilities required for the new protocol that users can then also use to interact with the protocol outside of the Zowe Explorer extension using Zowe CLI commands.</td>
+   <td><b>Matching Zowe CLI Plugin:</b> Provide a Zowe CLI Plugin for the data provider's new profile type that implements the core capabilities required for the new protocol that users can then also use to interact with the protocol outside of the Zowe Explorer for VS Code extension using Zowe CLI commands.</td>
  </tr>
 
  <tr>
@@ -1446,7 +1446,7 @@ Criteria for VS Code extensions that extend the Zowe Explorer MVS, USS, or JES t
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Data provider API implementation:</b> Extension fully implements and registers to at least one of the three Zowe Explorer interfaces or alternatively throw exceptions that provide meaningful error messages to the end-user in the 'Error.message' property that will be displayed in a dialog.</td>
+   <td><b>Data provider API implementation:</b> Extension fully implements and registers to at least one of the three Zowe Explorer for VS Code interfaces or alternatively throw exceptions that provide meaningful error messages to the end-user in the 'Error.message' property that will be displayed in a dialog.</td>
  </tr>
 
  <tr>
@@ -1455,7 +1455,7 @@ Criteria for VS Code extensions that extend the Zowe Explorer MVS, USS, or JES t
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>API test suite implementation:</b>  If the extension implements a Zowe Explorer API data provider interface, it should implement a test suite that calls each of the implemented API methods.</td>
+   <td><b>API test suite implementation:</b>  If the extension implements a Zowe Explorer for VS Code API data provider interface, it should implement a test suite that calls each of the implemented API methods.</td>
  </tr>
 
  <tr>
@@ -1482,13 +1482,13 @@ Criteria for VS Code extensions that extend the Zowe Explorer MVS, USS, or JES t
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>Secure Credential Store:</b> If the extension supports Zowe CLI's Secure Credential store, it calls the Zowe Explorer-provided method for initialization at startup.</td>
+   <td><b>Secure Credential Store:</b> If the extension supports Zowe CLI's Secure Credential store, it calls the Zowe Explorer for VS Code-provided method for initialization at startup.</td>
  </tr>
 </table>
 
 ### Extension Adding Menus
 
-Criteria for VS Code extensions adding menu and commands to VS Code that utilize Zowe Explorer data or extend Zowe Explorer capabilities.
+Criteria for VS Code extensions adding menu and commands to VS Code that utilize Zowe Explorer for VS Code data or extend Zowe Explorer for VS Code capabilities.
 
 <table rules="all">
  <thead>
@@ -1506,7 +1506,7 @@ Criteria for VS Code extensions adding menu and commands to VS Code that utilize
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Command operations: </b> If the extension is adding new commands to Zowe Explorer's tree views, the commands must not replace any existing Zowe Explorer commands.</td>
+   <td><b>Command operations: </b> If the extension is adding new commands to Zowe Explorer for VS Code's tree views, the commands must not replace any existing Zowe Explorer for VS Code commands.</td>
  </tr>
 
   <tr>
@@ -1515,7 +1515,7 @@ Criteria for VS Code extensions adding menu and commands to VS Code that utilize
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Command categories: </b>  If the extension adds to <code>contributes.commands</code> in <code>package.json</code>, the value assigned to the <code>category</code> property contains the extension name and it cannot be "Zowe Explorer".</td>
+   <td><b>Command categories: </b>  If the extension adds to <code>contributes.commands</code> in <code>package.json</code>, the value assigned to the <code>category</code> property contains the extension name and it cannot be "Zowe Explorer for VS Code".</td>
  </tr>
 
   <tr>
@@ -1524,7 +1524,7 @@ Criteria for VS Code extensions adding menu and commands to VS Code that utilize
    <th style="background-color:#AAAAAA">x</th>
    <th style="background-color:#AAAAAA"></th>
    <th></th>
-   <td><b>Context menu groups: </b> If contributing commands to Zowe Explorer's context menus, the extension follows the Zowe Explorer extensibility documentation and adds them in new context menu groups that are located below Zowe Explorer's existing context menu groups in the user interface.</td>
+   <td><b>Context menu groups: </b> If contributing commands to Zowe Explorer for VS Code's context menus, the extension follows the Zowe Explorer for VS Code extensibility documentation and adds them in new context menu groups that are located below Zowe Explorer for VS Code's existing context menu groups in the user interface.</td>
  </tr>
 
   <tr>
@@ -1533,7 +1533,7 @@ Criteria for VS Code extensions adding menu and commands to VS Code that utilize
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>Menu Names:</b> If the extension is adding new commands and context menu entries to the Zowe Explorer tree view nodes, the new command name is consistent with the terminology and naming conventions of the existing Zowe Explorer menu entries.</td>
+   <td><b>Menu Names:</b> If the extension is adding new commands and context menu entries to the Zowe Explorer for VS Code tree view nodes, the new command name is consistent with the terminology and naming conventions of the existing Zowe Explorer for VS Code menu entries.</td>
  </tr>
 
  <tr>
@@ -1542,7 +1542,7 @@ Criteria for VS Code extensions adding menu and commands to VS Code that utilize
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>Context menu items: </b> If contributing commands to Zowe Explorer's views (such as Data Sets, USS, or Jobs), the extension should only add them to the view's right-click context menus.</td>
+   <td><b>Context menu items: </b> If contributing commands to Zowe Explorer for VS Code's views (such as Data Sets, USS, or Jobs), the extension should only add them to the view's right-click context menus.</td>
  </tr>
 </table>
 
