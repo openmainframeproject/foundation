@@ -1464,7 +1464,7 @@ Criteria for VS Code extensions that extend the Zowe Explorer for VS Code MVS, U
    <th style="background-color:#AAAAAA"></th>
    <th style="background-color:#AAAAAA">x</th>
    <th></th>
-   <td><b>Base Profile and Tokens:</b> Extension supports base profiles and tokens (For more information, click here)</td>
+   <td><b>Base Profile and Tokens:</b> Extension supports base profiles and tokens.</td>
  </tr>
 
  <tr>

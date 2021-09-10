@@ -319,7 +319,7 @@ Throughout the this Zowe Explorer for VS Code section you will find the followin
 
     d. **API test suite implementation:**  If the extension implements a Zowe Explorer for VS Code API data provider interface, it should implement a test suite that calls each of the implemented API methods. **(best practice)**
 
-    e. **Base Profile and Tokens:** Extension supports base profiles and tokens (For more information, click here TODO). **(best practice)**
+    e. **Base Profile and Tokens:** Extension supports base profiles and tokens. **(best practice)**
 
     f. **Team Configuration File:** Extension supports the Zowe CLI 7 team configuration file format as an alternative to the Zowe CLI 6 profiles file format. **(best practice)**
 
