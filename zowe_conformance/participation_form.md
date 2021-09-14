@@ -46,6 +46,14 @@ Name, brief description, planned release announcement date, and URLs for more in
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
+If you are _only_ applying for Participant Conformance as a Zowe Conformant Support Provider, and if you do not have _any_ Qualifying Offerings, then please leave the above fields blank and please select the option below.
+
+**Participant Conformance**
+
+- [ ] Check here if you are submitting this form to qualify as a Zowe Conformant Support Provider.
+
+Please see the applicable provisions of the Program Terms regarding "Participant Conformance", and the corresponding parts of the Test Evaluation Guide, before selecting this option.
+
 **Conformance Details**
 
 Initial Version and Components of Zowe Conformance Program tests for Conformance. Please verify and comment where needed that the participating offering has achieved the conformance criteria for each conformance type. A participating offering may submit for one or more of the Zowe Conformance types (API Mediation Layer, CLI, and/or App Framework) in a single application. For more details on the testing criteria, please refer to the Test Evaluation Guide.
@@ -77,6 +85,18 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 - [ ] **Zowe App Framework - Zowe v1**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+- [ ] **Zowe Conformant Support Provider - Zowe v1**
+
+> Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 >
