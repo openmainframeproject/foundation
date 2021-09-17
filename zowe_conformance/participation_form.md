@@ -96,7 +96,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 
 - [ ] **Zowe Explorer for VS Code - Zowe v1**
 
-> Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
+> Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 >
