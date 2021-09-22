@@ -57,6 +57,8 @@ In order to be a Participant in the Conformance Program and to use the Conforman
 5.  [**Successful Review**](#5-successful-review): receive from The Linux Foundation confirmation that the test results have successfully passed or otherwise been accepted and the Qualifying Offerings are acknowledged as conformant.
 6.  [**Ongoing Conformance**](#6-ongoing-conformance): continue to abide by the terms and conditions of the Conformance Program throughout the period of the Participant's use of the Conformance Marks, including without limitation the specific requirements described below.
 
+Some forms of conformance adopted by the project may consist of demonstrating conformance by the Participant itself, regarding the Participant's own capabilities and processes -- rather than the functionality of the Participant's goods and services. These forms of conformance are referred to herein as "Participant Conformance". With regards to Participant Conformance, references to Qualifying Offerings and demonstrating conformance of goods and services in the requirements below shall instead be deemed to refer to demonstrating conformance of the Participant's own capabilities and processes, as set forth in the applicable parts of the Test Evaluation Guide.
+
 Members of Open Mainframe Project will not be charged fees to participate in the Conformance Program. Other potential Participants should contact Open Mainframe Project for more information about participation fees.
 
 ## Process
@@ -95,6 +97,8 @@ The participant must continue to abide by the terms and conditions of the Confor
 ## Use of the Conformance Marks
 
 Use of the Conformance Marks is only permitted for Participants who have satisfied the requirements of the Conformance Program, and is only permitted in connection with its Qualifying Offerings. No other rights to use the Conformance Marks or the Project Word Mark are permitted hereunder, except to the extent permitted under "fair use" or other applicable law.
+
+A Participant that qualifies for Participant Conformance may use the corresponding Conformance Marks in relation to itself as a Participant, subject to the requirements herein. However, the Participant may not use the Conformance Marks in relation to any particular goods or services, unless those goods or services are themselves Qualifying Offerings under the Conformance Program.
 
 All use of the Conformance Marks is subject to the Trademark Usage Guidelines, which are incorporated herein.
 
