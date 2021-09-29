@@ -11,3 +11,6 @@ pandoc participation_form.md -o Zowe.Conformance.Program.-.Participation.Form.pd
 pandoc terms_and_conditions.md -o Zowe.Conformance.Program.-.Terms.and.Conditions.pdf -f gfm --pdf-engine=wkhtmltopdf
 pandoc test_evaluation_guide.md -o Zowe.Conformance.Program.-.Test.Evaluation.Guide.pdf -f gfm --pdf-engine=wkhtmltopdf
 pandoc test_evaluation_guide_table.md -f gfm --pdf-engine=wkhtmltopdf | wkhtmltopdf -O Landscape - Zowe.Conformance.Program.-.Test.Evaluation.Guide.Table.pdf
+
+pandoc support_provider_evaluation_guide.md -o Zowe.Support.Provider.-.Test.Evaluation.Guide.pdf -f gfm --pdf-engine=wkhtmltopdf
+pandoc support_provider_evaluation_guide_table.md -f gfm --pdf-engine=wkhtmltopdf | wkhtmltopdf -O Landscape - Zowe.Support.Provider.-.Test.Evaluation.Guide.Table.pdf
