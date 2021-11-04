@@ -30,4 +30,4 @@ body:
     id: target-date
     attributes:
       label: Desired Webinar Date
-      description: Please allow 1 week for reviews and coordination
+      description: Please allow 3 weeks for reviews, scheduling, promotion, and coordination
