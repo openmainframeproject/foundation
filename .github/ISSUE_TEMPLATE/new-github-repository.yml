@@ -1,0 +1,30 @@
+name: New GitHub repository
+about: Request from a project TSC chair to create a new repository
+title: New GitHub repository for [PROJECT NAME]
+labels: ['infrastructure request']
+assignees: 
+  - jmertic
+  - Yarille
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please put the name of your project in the title above in place of PROJECT NAME, and then provide the following details
+  - type: input
+    id: name
+    attributes:
+      label: Name of the repository to be created
+    validations:
+      required: true
+  - type: textarea
+    id: initial-committers
+    attributes:
+      label: Initial committers
+    validations:
+      required: true
+  - type: textarea
+    id: other-details
+    attributes:
+      label: Any other details or requests
+    validations:
+      required: true
