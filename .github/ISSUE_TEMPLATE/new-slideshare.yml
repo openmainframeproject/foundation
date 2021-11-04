@@ -1,0 +1,28 @@
+name: New slidedeck to add to OMP SlideShare
+description: Submit your slidedeck for inclusion on the OMP SlideShare
+title: Add slidedeck to OMP SlideShare - [PRESENTATION NAME]
+labels: youtube
+assignees: 
+  - Maemalynn
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide the name of your presentation in the title in place of `[PRESENTATION NAME]`, and then complete the below to post a slidedeck for inclusion on the OMP SlideShare. All slidedecks are will be reviewed by the LF staff to ensure it meets the [branding guidelines](https://github.com/openmainframeproject/foundation/blob/master/BRANDING_GUIDELINES.md) and [social media guidelines](https://github.com/openmainframeproject/foundation/blob/master/SOCIAL_MEDIA_GUIDELINES.md), and potentially reviewed by an SME to ensure accuracy ( both of whom will work with you to make any changes needed )
+  - type: input
+    id: slidedeck
+    attributes:
+      label: Slidedeck
+      description: Please provide in either a PPTX or PDF format
+      placeholder: Drag the slidedeck that you want to upload into this text area.
+    validations:
+      required: true
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: Target audience
+  - type: textarea
+    id: target-date
+    attributes:
+      label: Target date to post
+      description: Please allow 1 week for reviews and coordination
