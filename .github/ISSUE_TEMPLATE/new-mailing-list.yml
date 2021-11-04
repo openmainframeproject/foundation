@@ -16,8 +16,8 @@ body:
       label: Would you like a single -discussion list, or seperate -user and -dev lists
       multiple: false
       options:
-        - label: Single -discussion list
-        - label: Seperate -user and -dev lists
+        - Single -discussion list
+        - Seperate -user and -dev lists
     validations:
       required: true
   - type: textarea
