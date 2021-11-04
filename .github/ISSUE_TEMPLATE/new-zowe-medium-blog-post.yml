@@ -1,0 +1,27 @@
+name: New Zowe Medium blog post
+description: Submit a new blog post for consideration for Zowe Medium blog ( https://medium.com/zowe )
+title: Zowe Medium blog post - [TITLE]
+labels: ['zowe-blog']
+assignees: 
+  - Maemalynn
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide the title of your blog post in the title in place of `[TITLE]`, and then provide the blog post below. Guidelines for posts to be considered is at https://github.com/zowe/community/blob/master/blogging/blog_guidelines.md.
+  - type: textarea
+    id: blog
+    attributes:
+      label: Blog post
+      description: Please either provide the content, drag the file into the textarea with the content, or provide a link to the blog post.
+    validations:
+      required: true
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: Target audience
+  - type: textarea
+    id: target-date
+    attributes:
+      label: Target date to post
+      description: Please allow 1 week for reviews and coordination
