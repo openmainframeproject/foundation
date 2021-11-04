@@ -1,0 +1,29 @@
+name: Guest for the "I Am A Mainframer" podcast
+description: If you have an idea of a guest for the "I Am A Mainframer" podcast, let us know here.
+title: '"I Am A Mainframer" podcast guest - [NAME]'
+labels: ['podcast']
+assignees: 
+  - chrisblumOMP
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide the name of the guest in the title above in place of `[NAME]`, and details on the guest below.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+  - type: input
+    id: organization
+    attributes:
+      label: Organization
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: Background on why they should be interviewed
+    validations:
+      required: true
