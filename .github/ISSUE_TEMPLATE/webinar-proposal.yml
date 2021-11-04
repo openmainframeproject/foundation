@@ -25,7 +25,7 @@ body:
           - Title
           - Company
           - Bio
-          - Email addresses for all speakers/panelists    
+          - Email address    
   - type: input
     id: target-date
     attributes:
