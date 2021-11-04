@@ -1,5 +1,5 @@
 name: New video to put on Open Mainframe Project YouTube
-about: Submit your video for inclusion on the Open Mainframe Project YouTube channel
+description: Submit your video for inclusion on the Open Mainframe Project YouTube channel
 title: Add video to YouTube - [VIDEO NAME]
 labels: youtube
 assignees: Maemalynn
@@ -8,7 +8,6 @@ body:
     attributes:
       value: |
         Please add the name of your video in the title above in place of `[VIDEO NAME]`, and then complete the below to post a video for inclusion on the Open Mainframe Project YouTube channel. All videoes are will be reviewed by the LF staff to ensure it meets the [branding guidelines](https://github.com/openmainframeproject/foundation/blob/master/BRANDING_GUIDELINES.md) and [social media guidelines](https://github.com/openmainframeproject/foundation/blob/master/SOCIAL_MEDIA_GUIDELINES.md), and potentially reviewed by an SME to ensure accuracy ( both of whom will work with you to make any changes needed )
-
   - type: input
     id: link-video
     attributes:
