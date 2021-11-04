@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please put the name of your project in the title above in place of PROJECT NAME, and then provide the following details
+        Please put the name of your project in the title above in place of `[PROJECT NAME]`, and then provide the following details
   - type: input
     id: name
     attributes:
