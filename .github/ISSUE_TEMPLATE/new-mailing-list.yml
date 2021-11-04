@@ -13,11 +13,11 @@ body:
   - type: checkboxes
     id: list-preference
     attributes:
-      label: Would you like a combined -user and -dev list, or seperate
-      description: You may select more than one.
+      label: Would you like a single -discussion list, or seperate -user and -dev lists
+      multiple: false
       options:
-        - label: Combined -user and -dev list
-        - label: Seperate -user and -dev list
+        - label: Single -discussion list
+        - label: Seperate -user and -dev lists
     validations:
       required: true
   - type: textarea
