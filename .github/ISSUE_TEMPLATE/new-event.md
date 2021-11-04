@@ -1,8 +1,8 @@
 ---
-name: New OMP Event
+name: New Event
 about: Request OMP to sponsor a third party
-title: OMP Event - NAME
-labels: event, event-sponsorsing
+title: Event - NAME
+labels: event
 assignees: Maemalynn
 
 ---

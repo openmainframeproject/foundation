@@ -1,6 +1,7 @@
 ---
 name: New Zowe Medium blog post
-about: Submit a new blog post for consideration for Zowe Medium blog ( https://medium.com/zowe )
+about: Submit a new blog post for consideration for Zowe Medium blog ( https://medium.com/zowe
+  )
 title: Zowe Medium blog post - [TITLE]
 labels: zowe-blog
 assignees: Maemalynn

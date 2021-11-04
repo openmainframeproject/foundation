@@ -1,9 +1,11 @@
 ---
 name: New Project/Member announcement
-about: Issue type for tracking a new member or project announcement (including project graduation)
+about: Issue type for tracking a new member or project announcement (including project
+  graduation)
 title: "[PROJECT/MEMBER NAME] announcement"
 labels: announcement
-assignees: Maemalynn,jmertic
+assignees: jmertic, Maemalynn
+
 ---
 
 Update the title with the project/member name + 'announcement'

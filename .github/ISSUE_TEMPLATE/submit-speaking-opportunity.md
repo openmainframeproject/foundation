@@ -1,9 +1,11 @@
 ---
 name: Submit speaking opportunity
-about: Use this template to submit speaking opportunities for promotion or help in submitting
+about: Use this template to submit speaking opportunities for promotion or help in
+  submitting
 title: Speaking Opportunity - [EVENT NAME]
-labels: event, omp-speaking, ambassador-speaking
+labels: ambassador-speaking, event, omp-speaking
 assignees: Maemalynn
+
 ---
 
 Please include the following:
