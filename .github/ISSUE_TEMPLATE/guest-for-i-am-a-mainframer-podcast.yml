@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please provide the name of the guest in the title above in place of NAME, and details on the guest below.
+        Please provide the name of the guest in the title above in place of `[NAME]`, and details on the guest below.
   - type: input
     id: title
     attributes:
