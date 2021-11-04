@@ -10,7 +10,7 @@ body:
     attributes:
       value: |
         Please put the name of your project in the title above in place of PROJECT, and then complete all the sections below to request a new mailing list. Requests can take a day or two, so please be patient :-).
-  - type: checkboxes
+  - type: dropdown
     id: list-preference
     attributes:
       label: Would you like a single -discussion list, or seperate -user and -dev lists
