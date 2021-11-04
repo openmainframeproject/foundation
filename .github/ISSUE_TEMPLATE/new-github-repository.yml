@@ -1,5 +1,5 @@
 name: New GitHub repository
-about: Request from a project TSC chair to create a new repository
+description: Request from a project TSC chair to create a new repository
 title: New GitHub repository for [PROJECT NAME]
 labels: ['infrastructure request']
 assignees: 
