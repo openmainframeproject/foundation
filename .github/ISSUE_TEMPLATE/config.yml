@@ -4,7 +4,7 @@ contact_links:
     about: Request Open Mainframe Project to sponsor/support a member or other community event
   - name: Marketing Support
     url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/511
-    about: Submit a guest blog post for openmainframeproject.org and/or linux.com, video to upload to YouTube, or any other social media request.
+    about: Submit a guest blog post for openmainframeproject.org and/or linux.com, video to upload to YouTube, host a webinar, or any other social media request.
   - name: Project Infrastructure Support
     url: https://jira.linuxfoundation.org/plugins/servlet/theme/portal/2/group/6
     about: Request new or changes to mailing list, Slack channel, GitHub organization, 1Password vault, or other infrastructure
