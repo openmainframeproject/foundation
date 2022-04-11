@@ -32,13 +32,3 @@ jobs:
         project: I am a Mainframer Podcast
         column: Potential Speakers
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-    - name: Add Webinar
-      uses: alex-page/github-project-automation-plus@v0.3.0
-      if: | 
-        github.event_name == 'issues' && 
-        github.event.action == 'opened' && 
-        contains(github.event.issue.labels.*.name,'webinar')
-      with:
-        project: OMP Monthly Webinar
-        column: Proposed Webinar for OMP 
-        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
