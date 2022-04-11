@@ -32,33 +32,3 @@ jobs:
         project: I am a Mainframer Podcast
         column: Potential Speakers
         repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-    - name: Add Webinar
-      uses: alex-page/github-project-automation-plus@v0.3.0
-      if: | 
-        github.event_name == 'issues' && 
-        github.event.action == 'opened' && 
-        contains(github.event.issue.labels.*.name,'webinar')
-      with:
-        project: OMP Monthly Webinar
-        column: Proposed Webinar for OMP 
-        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-    - name: Add Event
-      uses: alex-page/github-project-automation-plus@v0.3.0
-      if: | 
-        github.event_name == 'issues' && 
-        github.event.action == 'opened' && 
-        contains(github.event.issue.labels.*.name,'event')
-      with:
-        project: Events and Speaking 2021
-        column: Incoming
-        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
-    - name: Add to general kanban board
-      uses: alex-page/github-project-automation-plus@v0.3.0
-      if: |
-        github.event.action == 'opened' && 
-        ( github.event_name == 'issues' || 
-        github.event_name == 'pull_request_target' )
-      with:
-        project: OMP 2022 Q1
-        column: To Do
-        repo-token: ${{ secrets.YOUR_NEW_PERSONAL_TOKEN }}
