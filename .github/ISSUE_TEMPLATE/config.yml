@@ -12,6 +12,9 @@ contact_links:
   - name: Transfer domain to Open Mainframe Project
     url: https://jira.linuxfoundation.org/plugins/servlet/theme/portal/2/create/63
     about: For transfering a project-owned domain to the Open Mainframe Project
+  - name: Open Mainframe Project Landscape entry requests
+    url: https://github.com/openmainframeproject/omp-landscape/issues/new/choose
+    about: Any requests for adding or updating Open Mainframe Project Landscape entries
   - name: Other Open Mainframe Project member support requests
     url: http://members.openmainframeproject.org/
     about: Member specific requests, including invoicing, contact management, and participation in member-exclusive groups
