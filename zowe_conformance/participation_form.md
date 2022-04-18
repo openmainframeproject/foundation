@@ -1,12 +1,12 @@
-# Zowe V2 Conformance Program
+# Zowe Conformance Program
 
 ## Participation Form
 
-Complete this form for each Participant (e.g., company or other entity) that desires to participate in the Zowe V2 Conformance Program and to use the Conformance Marks. The Project Word Mark and the Conformance Marks are trademarks of The Linux Foundation. Capitalized terms used herein and not otherwise defined shall have the same meanings set forth in the Program Terms.
+Complete this form for each Participant (e.g., company or other entity) that desires to participate in the Zowe Conformance Program and to use the Conformance Marks. The Project Word Mark and the Conformance Marks are trademarks of The Linux Foundation. Capitalized terms used herein and not otherwise defined shall have the same meanings set forth in the Program Terms.
 
 By signing below and submitting this form to The Linux Foundation:
 
-1.  The Participant agrees to the Terms and Conditions of the Zowe V2 Conformance Program (the "Program Terms"), available at <https://www.openmainframeproject.org/projects/zowe/conformance/terms-and-conditions>
+1.  The Participant agrees to the Terms and Conditions of the Zowe Conformance Program (the "Program Terms"), available at <https://www.openmainframeproject.org/projects/zowe/conformance/terms-and-conditions>
 2.  The Participant confirms that the products and services identified below as Qualifying Offerings either (a) have passed all of the tests that are marked required below, as described in the Test Evaluation Guide at <https://www.openmainframeproject.org/projects/zowe/conformance/test-evaluation-guide> or for Participant Conformance at <https://www.openmainframeproject.org/projects/zowe/support-conformance/support-provider-evaluation-guide>, and are Qualifying Offerings under the Program Terms; or (b) prior to usage of the Conformance Marks, will pass all of the tests described in the Test Evaluation Guide, and will be Qualifying Offerings under the Program Terms.
 3.  The Participant confirms that it has submitted, or will submit, to The Linux Foundation the results of the tests prior to its first public use of the Conformance Marks associated with the corresponding version of the Zowe Conformance Program.
 4.  The Participant confirms that it will either (a) maintain conformance of the Qualifying Offerings with the Test Evaluation Guide, or (b) cease use of the Conformance Marks if the products or services cease to be Qualifying Offerings.
@@ -46,17 +46,17 @@ Name, brief description, planned release announcement date, and URLs for more in
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-If you are _only_ applying for Participant Conformance as a Zowe V2 Conformant Support Provider, and if you do not have _any_ Qualifying Offerings, then please leave the above fields blank and please select the option below.
+If you are _only_ applying for Participant Conformance as a Zowe Conformant Support Provider, and if you do not have _any_ Qualifying Offerings, then please leave the above fields blank and please select the option below.
 
 **Participant Conformance**
 
-- [ ] Check here if you are submitting this form to qualify as a Zowe V2 Conformant Support Provider.
+- [ ] Check here if you are submitting this form to qualify as a Zowe Conformant Support Provider.
 
 Please see the applicable provisions of the Program Terms regarding "Participant Conformance", and the corresponding parts of the Test Evaluation Guide, before selecting this option.
 
 **Conformance Details**
 
-Initial Version and Components of Zowe V2 Conformance Program tests for Conformance. Please verify and comment where needed that the participating offering has achieved the conformance criteria for each conformance type. A participating offering may submit for one or more of the Zowe V2 Conformance types (API Mediation Layer, CLI, and/or App Framework) in a single application. For more details on the testing criteria, please refer to the Test Evaluation Guide.
+Initial Version and Components of Zowe Conformance Program tests for Conformance. Please verify and comment where needed that the participating offering has achieved the conformance criteria for each conformance type. A participating offering may submit for one or more of the Zowe Conformance types (API Mediation Layer, CLI, and/or App Framework) in a single application. For more details on the testing criteria, please refer to the Test Evaluation Guide.
 
 - [ ] **Zowe API Mediation layer - Zowe v2**
 

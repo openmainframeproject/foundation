@@ -1,10 +1,10 @@
-# Zowe Support Provider v2 Conformance Guide
+# Zowe Support Provider Conformance Guide
 
-Zowe Support Provider v2 Conformance Guide is a set of self-certifying and self-service tests to help support Zowe framework.
+Zowe Support Provider Conformance Guide is a set of self-certifying and self-service tests to help support Zowe framework.
 
 This guide describes the requirements of the support conformance program. All Applicants complete sections in the **Core** section. Items marked **(best practice)** are considered best practices.
 
-- [Zowe Support Provider v2 Conformance Guide](#zowe-support-provider-v2-conformance-guide)
+- [Zowe Support Provider Conformance Guide](#zowe-support-provider-conformance-guide)
   - [Zowe Support Core Section](#zowe-support-core-section)
     - [Zowe Binaries](#zowe-binaries)
     - [Zowe Security](#zowe-security)

@@ -1,12 +1,12 @@
-# Zowe v2 Conformance Test Evaluation Guide
+# Zowe Conformance Test Evaluation Guide
 
-The Zowe v2 Conformance Test Evaluation Guide is a set of self-certifying and self-service tests to help the development community integrate and extend specific technology into the Zowe framework. 
+The Zowe Conformance Test Evaluation Guide is a set of self-certifying and self-service tests to help the development community integrate and extend specific technology into the Zowe framework. 
 
 This guide describes the requirements of the four available conformance programs. Items marked **(required)** are required for an application to be conformant. Items marked **(best practice)** are considered best practices for conformant applications.
 
-These Zowe Conformance criteria are applicable to the lastest Zowe v2 LTS Release.
+These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 
-- [Zowe v2 Conformance Test Evaluation Guide](#zowe-v2-conformance-test-evaluation-guide)
+- [Zowe Conformance Test Evaluation Guide](#zowe-conformance-test-evaluation-guide)
   - [Zowe API Mediation Layer](#zowe-api-mediation-layer)
     - [Application Service](#application-service)
     - [REST API Documentation](#rest-api-documentation)
