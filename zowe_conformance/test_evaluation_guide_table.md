@@ -43,9 +43,10 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
     - [Support](#support-2)
   - [Zowe Explorer for Visual Studio Code](#zowe-explorer-for-visual-studio-code)
     - [General Extension](#general-extension)
-    - [Extension Accessing Profiles](#extension-accessing-profiles)
-    - [Data Provider Extension](#data-provider-extension)
-    - [Extension Adding Menus](#extension-adding-menus)
+    - [[a] Extension Interacts with mainframe assets delivered by Zowe Explorer](#a-extension-interacts-with-mainframe-assets-delivered-by-zowe-explorer)
+    - [[b] Extension Accessing Profiles](#b-extension-accessing-profiles)
+    - [[c] Extension Serves as a Data Provider](#c-extension-serves-as-a-data-provider)
+    - [[d] Extension Adding Menus](#d-extension-adding-menus)
 
 ## Zowe API Mediation Layer
 
@@ -1677,41 +1678,50 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td ><b>Sharing of profiles with Zowe CLI:</b> Extensions that utilize Zowe CLI profiles must keep the shared profile instances compatible between Zowe CLI and the Zowe Explorer extension that utilize them.</td>
+<td ><b>Sharing Zowe profiles:</b> If the  Extension accesses the same mainframe service as a Zowe CLI plug-in, the connection information should be shared via Zowe Team Config (zowe.config.json)</td> 
 </tr>
 <tr>
-<td rowspan="4" style="background-color: #555555">10</td>
-<td colspan="3" style="background-color: #555555">Mark (a) (b) (c)</td>
+<td rowspan="5" style="background-color: #555555">10</td>
+<td colspan="4" style="background-color: #555555">Mark (a) (b) (c) (d)</td>
+<td style="background-color: #555555">Extension enhances the mainframe user experience [a] <br /> 
+OR <br />
+Extension utilizes the extensibility APIs provided by Zowe Explorer
+ [b, c, d]</td>
+</tr>
+<tr>
 <td style="background-color: #555555"></td>
-<td style="background-color: #555555">Extension uses the extensibility APIs provided by Zowe Explorer. Supported methods include (select all that apply a, b, c):</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td >a. Extension interacts with mainframe content retrieved via Data Set, USS or Jobs view</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA">-</td>
-<td style="background-color: #AAAAAA">-</td>
+<td style="background-color: #555555"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >a. Extension Accessing Profiles</td>
+<td >b. Extension Accessing Profiles</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA">-</td>
-<td style="background-color: #AAAAAA">-</td>
+<td style="background-color: #555555"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >b. Data Provider Extension</td>
+<td >c. Data Provider Extension</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA">-</td>
-<td style="background-color: #AAAAAA">-</td>
+<td style="background-color: #555555"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >c. Extension Adding Menus</td>
+<td >d. Extension Adding Menus</td>
 </tr>
 </tbody>
 </table>
 
-### Extension Accessing Profiles
+### [a] Extension Interacts with mainframe assets delivered by Zowe Explorer
+<p>Criteria for VS Code extensions that  access or interact with Zowe Explorer assets (i.e. data sets, USS, jobs)</p>
 
-<p>Criteria for VS Code extensions that want to access the same Zowe CLI profiles that Zowe Explorer uses:</p>
 <table rules="all">
 <thead>
 <th style="background-color: #5555AA">Item</th>
@@ -1728,16 +1738,38 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td ><b>VS Code extension dependency:</b> If the extension calls the Zowe Explorer API it must declare Zowe Explorer as a VS Code extension dependency by including an <code>extensionDependencies</code> entry for Zowe Explorer in its package.json file. This ensures Zowe Explorer and Zowe Explorer API are activated and initialized for proper use by its extenders.
+<td ><b>README.MD File:</b> Extension documents the following in its associated README.MD file (displayed at the appropriate Marketplace) <br/>
+(1) recommends use of Zowe Explorer <br/>
+(2) describes the relationship to Zowe Explorer <br/>
+(3) describes the scenario  that leverages Zowe Explorer <br/>
+(4) uses the "zowe" TAG <br/>
+Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] extension uses the Zowe Explorer to access mainframe files and then ....[complete-your-use-case-here]
 </td>
 </tr>
+</tbody>
+</table>
+
+### [b] Extension Accessing Profiles
+<p>Criteria for VS Code extensions that want to access the same Zowe CLI profiles that Zowe Explorer uses:</p>
+
+<table rules="all">
+<thead>
+<th style="background-color: #5555AA">Item</th>
+<th style="background-color: #5555AA">Version</th>
+<th style="background-color: #5555AA">Required</th>
+<th style="background-color: #5555AA">Best Practice</th>
+<th style="background-color: #5555AA">Conformant</th>
+<th style="background-color: #5555AA">Criteria</th>
+</thead>
+<tbody>
 <tr>
 <td style="background-color: #555555">12</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td ><b>Zowe Extender access:</b> Extension accesses the shared Zowe Explorer profiles cache via `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi()` API as documented in the Zowe Explorer extensibility documentation.</td>
+<td ><b>VS Code extension dependency:</b> If the extension calls the Zowe Explorer API it must declare Zowe Explorer as a VS Code extension dependency by including an <code>extensionDependencies</code> entry for Zowe Explorer in its package.json file. This ensures Zowe Explorer and Zowe Explorer API are activated and initialized for proper use by its extenders.
+</td>
 </tr>
 <tr>
 <td style="background-color: #555555">13</td>
@@ -1745,10 +1777,18 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td ><b>Added Profile Type initialization:</b> If the extension has a dependency on a new Zowe CLI profile type other than the Zowe Explorer default `zosmf`, it is calling the `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi().initialize(profileTypeName)` to ensure that the profile type is supported and managed by the extension without a Zowe CLI plugin installed.</td>
+<td ><b>Zowe Extender access:</b> Extension accesses the shared Zowe Explorer profiles cache via `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi()` API as documented in the Zowe Explorer extensibility documentation.</td>
 </tr>
 <tr>
 <td style="background-color: #555555">14</td>
+<td style="background-color: #555555">v2</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td ><b>Added Profile Type initialization:</b> If the extension has a dependency on a new Zowe CLI profile type other than the Zowe Explorer default `zosmf`, it is calling the `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi().initialize(profileTypeName)` to ensure that the profile type is supported and managed by the extension without a Zowe CLI plugin installed.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">15</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -1756,15 +1796,15 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Base Profile and Tokens:</b> Extension supports base profiles and tokens</td>
 </tr>
 <tr>
-<td style="background-color: #555555">15</td>
+<td style="background-color: #555555">16</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td ><b>Team Configuration File:</b> Extension supports the Zowe CLI 7 team configuration file format.</td>
+<td ><b>Team Configuration File:</b> Extension supports the Zowe CLI team configuration file format.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">16</td>
+<td style="background-color: #555555">17</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -1774,7 +1814,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tbody>
 </table>
 
-### Data Provider Extension
+### [c] Extension Serves as a Data Provider
 
 <p>Criteria for VS Code extensions that extend the Zowe Explorer MVS, USS, or JES tree views to use alternative z/OS interaction protocols such as FTP or a REST API.</p>
 <table rules="all">
@@ -1788,7 +1828,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">17</td>
+<td style="background-color: #555555">18</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -1797,15 +1837,15 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </td>
 </tr>
 <tr>
-<td style="background-color: #555555">18</td>
+<td style="background-color: #555555">19</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td ><b>New Zowe CLI profile type:</b> Extension registers its new API instances with a new profile type name for the different Zowe Explorer views via the `ZoweExplorerApi.IApiRegisterClient.register{Mvs|Uss|Jes}Api(profileTypeName)` call as indicated from the Zowe Explorer extensibility documentation</td>
+<td ><b>New Zowe CLI profile type:</b> Extension registers its new API instances with a new profile type name for the different Zowe Explorer views via the <code>ZoweExplorerApi.IApiRegisterClient.register{Mvs|Uss|Jes}Api(profileTypeName)</code> call as indicated from the Zowe Explorer extensibility documentation</td>
 </tr>
 <tr>
-<td style="background-color: #555555">19</td>
+<td style="background-color: #555555">20</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -1813,7 +1853,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Matching Zowe CLI Plugin:</b> Provide a Zowe CLI Plugin for the data provider's new profile type that implements the core capabilities required for the new protocol that users can then also use to interact with the protocol outside of the Zowe Explorer extension using Zowe CLI commands.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">20</td>
+<td style="background-color: #555555">21</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -1821,7 +1861,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Data provider API implementation:</b> Extension fully implements and registers to at least one of the three Zowe Explorer interfaces or alternatively throw exceptions that provide meaningful error messages to the end-user in the 'Error.message' property that will be displayed in a dialog.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">21</td>
+<td style="background-color: #555555">22</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -1831,7 +1871,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tbody>
 </table>
 
-### Extension Adding Menus
+### [d] Extension Adding Menus
 
 <p>Criteria for VS Code extensions adding menu and commands to VS Code that utilize Zowe Explorer data or extend Zowe Explorer capabilities.</p>
 <table rules="all">
@@ -1845,16 +1885,16 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">22</td>
+<td style="background-color: #555555">23</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
-<td ><b>VS Code extension dependency:</b> If the extension calls the Zowe Explorer API it must declare Zowe Explorer as a VS Code extension dependency by including an <code>extensionDependencies</code> entry for Zowe Explorer in its package.json file. This ensures Zowe Explorer and Zowe Explorer API are activated and initialized for proper use by its extenders.
+<td ><b>VS Code extension dependency:</b> If the extension calls the Zowe Explorer API it should declare Zowe Explorer as a VS Code extension dependency by including an <code>extensionDependencies</code> entry for Zowe Explorer in its package.json file. This ensures Zowe Explorer and Zowe Explorer API are activated and initialized for proper use by its extenders.
 </td>
 </tr>
 <tr>
-<td style="background-color: #555555">23</td>
+<td style="background-color: #555555">24</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -1862,7 +1902,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Command operations:</b> If the extension is adding new commands to Zowe Explorer's tree views, the commands must not replace any existing Zowe Explorer commands.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">24</td>
+<td style="background-color: #555555">25</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -1870,7 +1910,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Command categories 1:</b> If the extension adds to contributes.commands in package.json, the value assigned to the category property contains the extension name.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">25</td>
+<td style="background-color: #555555">26</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -1878,7 +1918,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Command categories 2:</b> If the extension assigns values to the category property in contributes.commands in package.json, the value cannot be "Zowe Explorer".</td>
 </tr>
 <tr>
-<td style="background-color: #555555">26</td>
+<td style="background-color: #555555">27</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -1886,7 +1926,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Context menu groups:</b> If contributing commands to Zowe Explorer's context menus, the extension follows the Zowe Explorer extensibility documentation and adds them in new context menu groups that are located below Zowe Explorer's existing context menu groups in the user interface.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">27</td>
+<td style="background-color: #555555">28</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -1894,7 +1934,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Adding New Menu Items:</b> If the extension is adding new commands and context menu entries to the Zowe Explorer tree view nodes, the new command name is consistent with the terminology and naming conventions of the existing Zowe Explorer menu entries. More information is provided in the Zowe Explorer extensibility documentation.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">28</td>
+<td style="background-color: #555555">29</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -1902,7 +1942,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td ><b>Existing Menu Items:</b> Extension does not overwrite any existing Zowe Explorer command and context menu entries</td>
 </tr>
 <tr>
-<td style="background-color: #555555">29</td>
+<td style="background-color: #555555">30</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
