@@ -1,5 +1,14 @@
 # Open Mainframe Project Foundation documents
 
-This repository contains many of the governance and overview documents for the Open Mainframe Project, as much as possible in a format to easily track changes and updates. For any top-level projects referencing the Charter, Code of Conduct, or Branding Guidelines, it is preferred to reference this location to avoid any confusion and ensure you are using the most update to date resource.
+This repository contains many of the governance and overview documents for the Open Mainframe Project
 
-In addition, you can [open issues](https://github.com/openmainframeproject/foundation/issues) for OMP staff and [track the various activites](https://github.com/openmainframeproject/foundation/projects) our operations teams are supporting. 
+- [Open Mainframe Project Charter](https://charter.openmainframeproject.org)
+- [Project Charters](project_charters) of the hosted projects and working groups at the Open Mainframe Project.
+- [Zowe Conformance Program](zowe_conformance) source participation agreements, terms and conditions, checklist, and submitted conformance checklists.
+- [Overview Decks](overview_deck) for the Open Mainframe Project.
+- [Open Mainframe Project Annual Goals](goals) as aligned on by the Governing Board.
+- [Open Mainframe Summit](./open_mainframe_summit) transparency reports.
+- [Social Media Guidelines](./SOCIAL_MEDIA_GUIDELINES.md)
+- [Webinar Guidelines](./WEBINAR_GUIDELINES.md)
+
+Please file a [service desk issue](https://servicedesk.aswf.io) with the Open Mainframe Project team if you have any questions, and [open a pull request](https://github.com/openmainframeproject/foundation/pulls) for any corrections needed.
