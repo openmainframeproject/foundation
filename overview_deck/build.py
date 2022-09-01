@@ -7,11 +7,10 @@
 
 from __future__ import print_function
 import os.path
-from googleapiclient.errors import HttpError
-from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
+import requests
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
@@ -23,7 +22,6 @@ documents = [
         {'id':'1KaPgj8AKudkfS7t2TvOxvwWpOb5uu-GP3YwA14su_vY','mimeType':'application/pdf','filename':'open_mainframe_project_host_project.pdf'},
         {'id':'1KaPgj8AKudkfS7t2TvOxvwWpOb5uu-GP3YwA14su_vY','mimeType':'application/vnd.openxmlformats-officedocument.presentationml.presentation','filename':'open_mainframe_project_host_project.pptx'},
         {'id':'1SW-JbXTQgwb_OczGeyo5jqc6GmK5CLmBTzg0pb0vMXs','mimeType':'application/pdf','filename':'Open Mainframe Project - Membership Overview.pdf'},
-        {'id':'1jbOOCoIAaLaAfpDwHIvW0HHcsN7fBet4PYkEGK9FSEM','mimeType':'application/pdf','filename':'The Linux Foundation - Silver Membership Overview.pdf'}
         ]
 
 creds = None
@@ -44,14 +42,19 @@ if not creds or not creds.valid:
     with open('token.json', 'w') as token:
         token.write(creds.to_json())
 
-service = build('drive', 'v3', credentials=creds)
-
 # Retrieve the documents contents from the Docs service.
 for document in documents:
     print("Getting file {}...".format(document['filename']))
     try:
-        contents = service.files().export(fileId=document['id'],mimeType=document['mimeType']).execute()
+        match document['mimeType']:
+            case 'application/pdf':
+                exportFormat = 'pdf'
+            case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+                exportFormat = 'pptx'
+            case _:
+                continue
+        contents = requests.get('https://docs.google.com/feeds/download/presentations/Export?id={docid}&exportFormat={exportFormat}'.format(docid=document['id'],exportFormat=exportFormat),stream=False)
         with open(document['filename'], 'wb') as f:
-            f.write(contents)
+            f.write(contents.content)
     except HttpError as err:
         print(err.content)
