@@ -1,6 +1,6 @@
 # Zowe Conformance Test Evaluation Guide
 
-The Zowe Conformance Test Evaluation Guide is a set of self-certifying and self-service tests to help the development community integrate and extend specific technology into the Zowe framework. 
+The Zowe Conformance Test Evaluation Guide is a set of self-certifying and self-service tests to help the development community integrate and extend specific technology into the Zowe framework. 
 
 This guide describes the requirements of the four available conformance programs. Items marked **(required)** are required for an application to be conformant. Items marked **(best practice)** are considered best practices for conformant applications.
 
@@ -282,6 +282,14 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td></td>
 <td >Every HTTP error code must be documented. If the endpoint has additional and more granular error codes only provide the documentation reference.</td>
 </tr>
+<tr>
+<td style="background-color: #555555">16</td>
+<td style="background-color: #555555">v2</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>Service SHOULD provide the code snippets to be shown to the users as explained in https://docs.zowe.org/stable/extend/extend-apiml/onboard-plain-java-enabler/#api-info</td>
+</tr>
 </tbody>
 </table>
 
@@ -298,7 +306,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">16</td>
+<td style="background-color: #555555">17</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -306,7 +314,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >Encoded slash is not used</td>
 </tr>
 <tr>
-<td style="background-color: #555555">17</td>
+<td style="background-color: #555555">18</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -314,7 +322,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >The service interprets values independent of their URL encoding</td>
 </tr>
 <tr>
-<td style="background-color: #555555">18</td>
+<td style="background-color: #555555">19</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -337,7 +345,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">19</td>
+<td style="background-color: #555555">20</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -345,7 +353,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >REST API - Request and response payloads are in JSON or binary data format</td>
 </tr>
 <tr>
-<td style="background-color: #555555">20</td>
+<td style="background-color: #555555">21</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -353,7 +361,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >REST API - - Since in JSON format, links are relative, links in responses payloads should not contain the schema, hostname, and port. Alternatively, an absolute link can be used, in which case the service must translate the link to the form that goes through the Gateway that is based on the X-Forwarded-* Headers.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">21</td>
+<td style="background-color: #555555">22</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -361,7 +369,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >WebSocket (if applicable) - Service URIs contained in WebSocket messages payload are addressed through the API ML Gateway</td>
 </tr>
 <tr>
-<td style="background-color: #555555">22</td>
+<td style="background-color: #555555">23</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -384,7 +392,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">23</td>
+<td style="background-color: #555555">24</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -392,7 +400,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >Resources are protected by SAF authorization. All Single-Sign-On methods under item 23 are based on SAF authentication.</td>
 </tr>
 <tr>
-<td rowspan="4" style="background-color: #555555">24</td>
+<td rowspan="4" style="background-color: #555555">25</td>
 <td colspan="3" style="background-color: #AAAAAA">Please mark which apply (a), (b) or (c)</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA">Services support Single-Sign-On using at least one of the following methods <br />[please mark which apply (a), (b) or (c)]:</td>
@@ -436,7 +444,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">25</td>
+<td style="background-color: #555555">26</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -444,7 +452,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >Service implementation follows the semantic versioning model</td>
 </tr>
 <tr>
-<td style="background-color: #555555">26</td>
+<td style="background-color: #555555">27</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -467,7 +475,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">27</td>
+<td style="background-color: #555555">28</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -475,7 +483,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >WebSocket connection creation, all subsequent communication between WebSocket client, and server is routed through the API ML Gateway</td>
 </tr>
 <tr>
-<td style="background-color: #555555">28</td>
+<td style="background-color: #555555">29</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -498,7 +506,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">29</td>
+<td style="background-color: #555555">30</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -506,7 +514,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership within the Zowe runtime</td>
 </tr>
 <tr>
-<td style="background-color: #555555">30</td>
+<td style="background-color: #555555">31</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -534,7 +542,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td style="background-color: #555555">Satisfy the following criteria to lifecycle a service with Zowe. By lifecycling we mean that Zowe Launcher will start, configure, validate and stop the service:</td>
 </tr>
 <tr>
-<td style="background-color: #555555">31</td>
+<td style="background-color: #555555">32</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -542,7 +550,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >If the extension is standalone (not bundled with other products), the extension convenience build (non-SMPE) MUST package itself into zip, tar, or pax format.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">32</td>
+<td style="background-color: #555555">33</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -550,7 +558,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >The extension MUST package a manifest.yaml (or manifest.yml, or manifest.json) into final package.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">33</td>
+<td style="background-color: #555555">34</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -558,7 +566,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >If the extension is standalone (not bundled with other products), the manifest file MUST be placed in the root directory after it&rsquo;s extracted or installed.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">34</td>
+<td style="background-color: #555555">35</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -566,7 +574,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >The extension manifest MUST contain "name" definition.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">35</td>
+<td style="background-color: #555555">36</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -574,7 +582,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >It's recommended to define "version" in the extension manifest.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">36</td>
+<td style="background-color: #555555">37</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -582,7 +590,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >It's recommended to define "license" in the extension manifest .</td>
 </tr>
 <tr>
-<td style="background-color: #555555">37</td>
+<td style="background-color: #555555">38</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -590,7 +598,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >It's recommended to define "title" and "description" in the extension manifest.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">38</td>
+<td style="background-color: #555555">39</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -598,7 +606,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >It's recommended to define "build" in the extension manifest to describe the source code information from version control systems.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">39</td>
+<td style="background-color: #555555">40</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -606,7 +614,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >The extension is suggested to define &ldquo;commands.install&rdquo;, &ldquo;commands.configure&rdquo;, and/or &ldquo;commands.start&rdquo; to instruct Zowe how to install, configure or start in Zowe context.</td>
 </tr>
 <tr>
-<td style="background-color: #555555">40</td>
+<td style="background-color: #555555">41</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
@@ -629,7 +637,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">41</td>
+<td style="background-color: #555555">42</td>
 <td style="background-color: #555555">v2</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
