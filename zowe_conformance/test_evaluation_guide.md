@@ -68,6 +68,8 @@ These Zowe Conformant criteria are applicable to the lastest Zowe v1 LTS Release
     e. Every parameter (headers, query parameters, payload, cookies, etc.) is documented with definitions of all possible values and their associated meanings. **(required)**
 
     f. Every HTTP error code must be documented. If the endpoint has additional more granular error codes, only provide the  documentation reference. **(required)**
+    
+    g. Service SHOULD provide the code snippets to be shown to the users as explained in https://docs.zowe.org/stable/extend/extend-apiml/onboard-plain-java-enabler/#api-info **(best practice)**
 
 4. **API naming and addressing**
 
