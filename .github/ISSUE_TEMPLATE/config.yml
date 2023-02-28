@@ -3,6 +3,9 @@ contact_links:
   - name: Share an event or talk you are doing
     url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/514
     about: Share any events or talks you are doing and want us to promote via social and our events page
+  - name: Submit an Open Mainframe Project blog post
+    url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/511
+    about: Submit a blog post for the Open Mainframe Project blog
   - name: Sponsorship/support of your event
     url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/500
     about: Request Open Mainframe Project to sponsor/support a member or other community event
