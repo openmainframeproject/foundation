@@ -1,10 +1,10 @@
 blank_issues_enabled: false
 contact_links:
   - name: Share an event or talk you are doing
-    url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/514
+    url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/514?requestGroup=119
     about: Share any events or talks you are doing and want us to promote via social and our events page
   - name: Submit an Open Mainframe Project blog post
-    url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/511
+    url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/511?requestGroup=119
     about: Submit a blog post for the Open Mainframe Project blog
   - name: Sponsorship/support of your event
     url: https://jira.linuxfoundation.org/plugins/servlet/desk/portal/23/create/500
