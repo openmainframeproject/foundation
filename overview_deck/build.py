@@ -19,8 +19,8 @@ SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
 documents = [
         {'id':'1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk','mimeType':'application/pdf','filename':'open_mainframe_project_overview_deck.pdf'},
         {'id':'1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk','mimeType':'application/vnd.openxmlformats-officedocument.presentationml.presentation','filename':'open_mainframe_project_overview_deck.pptx'},
-        {'id':'1KaPgj8AKudkfS7t2TvOxvwWpOb5uu-GP3YwA14su_vY','mimeType':'application/pdf','filename':'open_mainframe_project_host_project.pdf'},
-        {'id':'1KaPgj8AKudkfS7t2TvOxvwWpOb5uu-GP3YwA14su_vY','mimeType':'application/vnd.openxmlformats-officedocument.presentationml.presentation','filename':'open_mainframe_project_host_project.pptx'},
+#        {'id':'1KaPgj8AKudkfS7t2TvOxvwWpOb5uu-GP3YwA14su_vY','mimeType':'application/pdf','filename':'open_mainframe_project_host_project.pdf'},
+ #       {'id':'1KaPgj8AKudkfS7t2TvOxvwWpOb5uu-GP3YwA14su_vY','mimeType':'application/vnd.openxmlformats-officedocument.presentationml.presentation','filename':'open_mainframe_project_host_project.pptx'},
         {'id':'1SW-JbXTQgwb_OczGeyo5jqc6GmK5CLmBTzg0pb0vMXs','mimeType':'application/pdf','filename':'Open Mainframe Project - Membership Overview.pdf'},
         ]
 
