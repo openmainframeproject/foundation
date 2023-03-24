@@ -43,10 +43,11 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
     - [Support](#support-2)
   - [Zowe Explorer for Visual Studio Code](#zowe-explorer-for-visual-studio-code)
     - [General Extension](#general-extension)
-    - [[a] Extension Interacts with mainframe assets delivered by Zowe Explorer](#a-extension-interacts-with-mainframe-assets-delivered-by-zowe-explorer)
-    - [[b] Extension Accessing Profiles](#b-extension-accessing-profiles)
-    - [[c] Extension Serves as a Data Provider](#c-extension-serves-as-a-data-provider)
-    - [[d] Extension Adding Menus](#d-extension-adding-menus)
+    - [\[a\] Extension Interacts with mainframe assets delivered by Zowe Explorer](#a-extension-interacts-with-mainframe-assets-delivered-by-zowe-explorer)
+    - [\[b\] Extension Accessing Profiles](#b-extension-accessing-profiles)
+    - [\[c\] Extension Serves as a Data Provider](#c-extension-serves-as-a-data-provider)
+    - [\[d\] Extension Adding Menus](#d-extension-adding-menus)
+- [Appendix: Revision History](#appendix-revision-history)
 
 ## Zowe API Mediation Layer
 
@@ -1958,4 +1959,35 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 <td ><b>Context menu items:</b> If contributing commands to Zowe Explorer's views (such as Data Sets, USS, or Jobs), the extension should only add them to the view's right-click context menus.</td>
 </tr>
 </tbody>
+</table>
+
+# Appendix: Revision History
+
+<table rules="all">
+ <thead>
+  <th style="background-color:#5555AA">Date</th>
+  <th>Document Version</th>
+  <th>Change</th>
+  <th>Comment</th>
+ </thead>
+ <tbody>
+   <tr>
+   <td style="background-color:#555555" nowrap="nowrap">&nbsp;2023-03-01&nbsp;</td>
+   <td>2.1.0</td>
+   <td>Criteria Change</td>
+   <td>
+    Entry 39 in the <a href="#encoding">Encoding</a> section of Zowe Application Framework Testing Criteria <br><br>
+    <li><b>WAS:</b> If you want your Apps to work with z/OS Node.js version 12 or greater, all application files must be tagged according to their content type</li>
+    <li><b>IS:</b> For z/OS Apps, all application files must be tagged according to their content type</li>
+   </td>
+   </td>
+ </tr>
+ <tr>
+   <td style="background-color:#555555" nowrap="nowrap">&nbsp;2022-06-01&nbsp;</td>
+   <td>2.0.0</td>
+   <td>Initial Release</td>
+   <td>NONE</td>
+   </td>
+ </tr>
+ </tbody>
 </table>
