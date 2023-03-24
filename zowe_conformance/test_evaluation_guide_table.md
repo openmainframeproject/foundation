@@ -1447,7 +1447,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td>If you want your Apps to work with z/OS Node.js version 12 or greater, all application files must be tagged according to their content type</td>
+<td>For z/OS Apps, all application files must be tagged according to their content type</td>
 </tr>
 </tbody>
 </table>
