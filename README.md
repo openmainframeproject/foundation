@@ -7,15 +7,15 @@ This repository contains many of the governance and overview documents for the O
   - [Open Mainframe Project Charter - charter.openmainframeproject.org](https://charter.openmainframeproject.org)
   - [Project Charters](./project_charters) of the hosted projects and working groups at the Open Mainframe Project.
 - Transparency
-  - [Open Mainframe Project Annual Reports](./annual_report)
   - [Open Mainframe Project Annual Goals](./goals) as aligned on by the Governing Board.
+  - [Open Mainframe Project Annual Reports](./annual_report)
   - [Open Mainframe Summit](./open_mainframe_summit) transparency reports.
   - [Semi-Annual Survey Results](./surveys)
 - Policies and Guidelines
-  - [Social Media Guidelines](./SOCIAL_MEDIA_GUIDELINES.md)
-  - [Webinar Guidelines](./WEBINAR_GUIDELINES.md)
   - [Branding Guidelines](./BRANDING_GUIDELINES.md)
   - [Elections process and schedule](./elections.md)
+  - [Social Media Guidelines](./SOCIAL_MEDIA_GUIDELINES.md)
+  - [Webinar Guidelines](./WEBINAR_GUIDELINES.md)
 - Programs
   - [Zowe Conformance Program](zowe_conformance) source participation agreements, terms and conditions, checklist, and submitted conformance checklists.
 
