@@ -1,6 +1,6 @@
 # Branding Guidelines for Open Mainframe Project and hosted projects
 
-*Latest update June 4, 2019*
+*Latest update November 28, 2023*
 
 This document is intended to serve as a guide to referring to Open Mainframe Project, a member organization’s participation, an individual code contributor’s participation, and the projects hosted by Open Mainframe Project in marketing and communication materials.
 
