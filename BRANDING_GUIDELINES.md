@@ -4,7 +4,7 @@
 
 This document is intended to serve as a guide to referring to Open Mainframe Project, a member organization’s participation, an individual code contributor’s participation, and the projects hosted by Open Mainframe Project in marketing and communication materials.
 
-High resolution versions of Open Mainframe Project and its hosted project logos can be accessed at [artwork.openmainframeproject.org](https://artwork.openmainframeproject.org). A slide deck template that can be used for presentations can be accessed [here](https://artwork.openmainframeproject.org/other/open-mainframe-project/open-mainframe-project-presentation-template.pptx).
+**High resolution versions of Open Mainframe Project and its hosted project logos can be accessed at [artwork.openmainframeproject.org](https://artwork.openmainframeproject.org). A slide deck template that can be used for presentations can be accessed [here](https://artwork.openmainframeproject.org/other/open-mainframe-project/open-mainframe-project-presentation-template.pptx).**
 
 ## Relationship of Open Mainframe Project and its hosted projects
 
