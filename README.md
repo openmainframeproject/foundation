@@ -4,7 +4,8 @@ This repository contains many of the governance and overview documents for the O
 
 - [Open Mainframe Project Overview Deck - overviewdeck.openmainframeproject.org](./overview_deck)
 - Governance Documents
-  - [Open Mainframe Project Charter - charter.openmainframeproject.org](https://charter.openmainframeproject.org)
+  - [Open Mainframe Project Directed Fund Charter and Participation Agreement - charter.openmainframeproject.org](https://charter.openmainframeproject.org)
+    - Not for Execution - you can complete the membership form at [joinnow.openmainframeproject.org](https://joinnow.openmainframeproject.org)
   - [Project Charters](./project_charters) of the hosted projects and working groups at the Open Mainframe Project.
 - Transparency
   - [Open Mainframe Project Annual Goals](./goals) as aligned on by the Governing Board.
