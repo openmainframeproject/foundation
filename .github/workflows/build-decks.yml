@@ -7,6 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Get current date
+      id: date
+      run: |
+          echo "{date}={$(date +'%B %Y')}" >> $GITHUB_STATE
     - name: Check out repo
       uses: actions/checkout@v3
     - name: Set up Python 3.x
@@ -28,7 +32,7 @@ jobs:
          token: ${{ secrets.PAT }}
          branch-suffix: timestamp
          path: .
-         title: Update Overview Decks
+         title: Update Overview Decks for ${{ env.date }}
          labels: automerge
          commit-message: Update Data Sources
          signoff: true
