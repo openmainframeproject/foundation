@@ -11,8 +11,10 @@ import requests
 
 # The ID of a sample document.
 documents = [
-        {'id':'1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk','mimeType':'application/pdf','filename':'open_mainframe_project_overview_deck.pdf'},
-        {'id':'1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk','mimeType':'application/vnd.openxmlformats-officedocument.presentationml.presentation','filename':'open_mainframe_project_overview_deck.pptx'},
+        {'id':'1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk','mimeType':'application/pdf','filename':'Open Mainframe Project - Overview.pdf'},
+        {'id':'1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk','mimeType':'application/vnd.openxmlformats-officedocument.presentationml.presentation','filename':'Open Mainframe Project - Overview.pptx'},
+        {'id':'18l_SwTF3LOEzoYyi0fMX-Wve2GIZb1cLQswJCZEjN9M','mimeType':'application/pdf','filename':'Open Mainframe Project - TAC Overview.pdf'},
+        {'id':'1x8f47QPzhuIP9LM9QthYih8VoJhJvPAAXoy6nW0uF6c','mimeType':'application/pdf','filename':'Open Mainframe Project - Governing Board Overview.pdf'},
         {'id':'1SW-JbXTQgwb_OczGeyo5jqc6GmK5CLmBTzg0pb0vMXs','mimeType':'application/pdf','filename':'Open Mainframe Project - Membership Overview.pdf'},
         ]
 
