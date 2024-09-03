@@ -13,7 +13,9 @@ This guide describes the requirements of the support conformance program. All Ap
     - [Zowe Component Requirements: API Mediation Layer](#zowe-component-requirements-api-mediation-layer)
     - [Zowe Component Requirements: App Framework](#zowe-component-requirements-app-framework)
     - [Zowe Component Requirements: Command Line Interface](#zowe-component-requirements-command-line-interface)
-    - [Zowe Component Requirements: Explorer](#zowe-component-requirements-explorer)
+    - [Zowe Component Requirements: Explorer (VS Code)](#zowe-component-requirements-explorer-vs-code)
+    - [Zowe Component Requirements: Explorer (IntelliJ)](#zowe-component-requirements-explorer-intellij)
+    - [Zowe Component Requirements: Client SDK (Node.js)](#zowe-component-requirements-client-sdk-nodejs)
 
 ## Zowe Support Core Section
 
@@ -31,7 +33,7 @@ This guide describes the requirements of the support conformance program. All Ap
  <tbody>
   <tr>
    <td style="background-color:#555555">1</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
@@ -41,7 +43,7 @@ Authenticated binaries are defined as those applicable to a given Zowe Core comp
   </tr>
   <tr>
    <td style="background-color:#555555">2</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
@@ -64,7 +66,7 @@ Authenticated binaries are defined as those applicable to a given Zowe Core comp
  <tbody>
 <tr>
   <td style="background-color:#555555">3</td>
-  <td style="background-color:#555555">v2</td>
+  <td style="background-color:#555555">v3</td>
   <td style="background-color:#AAAAAA"><center>x</center></td>
   <td style="background-color:#AAAAAA"></td>
   <td></td>
@@ -87,7 +89,7 @@ Authenticated binaries are defined as those applicable to a given Zowe Core comp
  <tbody>
   <tr>
    <td style="background-color:#555555">4</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
@@ -95,7 +97,7 @@ Authenticated binaries are defined as those applicable to a given Zowe Core comp
   </tr>
   <tr>
    <td style="background-color:#555555">5</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
@@ -108,10 +110,14 @@ Authenticated binaries are defined as those applicable to a given Zowe Core comp
 
 - **Comprehensive Zowe Support Applicants:** Mark and complete ALL sections below
 - **Partial Zowe Support Applicants:** Mark and complete just the sections applicable to your Support Offering
+  - [ ] Zowe - ALL COMPONENTS
+
   - [ ] Zowe API Mediation Layer
   - [ ] Zowe App Framework
   - [ ] Zowe Command Line Interface
-  - [ ] Zowe Explorer
+  - [ ] Zowe Explorer (VS Code)
+  - [ ] Zowe Explorer (IntelliJ)
+  - [ ] Zowe Client SDK (Node.js)
 
 For each of the applicable COMPONENT SECTIONS selected, **Support Provider Applicant confirms Capable Support as defined in item (1)** (mark each applicable section as conformant in "Conformant" column).
 
@@ -129,7 +135,7 @@ For each of the applicable COMPONENT SECTIONS selected, **Support Provider Appli
  <tbody>
   <tr>
    <td style="background-color:#555555">6</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
@@ -152,7 +158,7 @@ For each of the applicable COMPONENT SECTIONS selected, **Support Provider Appli
  <tbody>
  <tr>
    <td style="background-color:#555555">7</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
@@ -175,7 +181,7 @@ For each of the applicable COMPONENT SECTIONS selected, **Support Provider Appli
  <tbody>
  <tr>
    <td style="background-color:#555555">8</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
@@ -184,7 +190,7 @@ For each of the applicable COMPONENT SECTIONS selected, **Support Provider Appli
  </tbody>
 </table>
 
-### Zowe Component Requirements: Explorer
+### Zowe Component Requirements: Explorer (VS Code)
 
 <table rules="all">
  <thead>
@@ -198,12 +204,57 @@ For each of the applicable COMPONENT SECTIONS selected, **Support Provider Appli
  <tbody>
  <tr>
    <td style="background-color:#555555">9</td>
-   <td style="background-color:#555555">v2</td>
+   <td style="background-color:#555555">v3</td>
    <td style="background-color:#AAAAAA"><center>x</center></td>
    <td style="background-color:#AAAAAA"></td>
    <td></td>
-   <td> <b>Support Provider confirms:</b> Capable Support as defined in item (1)
-   </td>
+   <td> <b>Support Provider confirms:</b> Capable Support as defined in item (1)</td>
+ </tr>
+ </tbody>
+</table>
+
+### Zowe Component Requirements: Explorer (IntelliJ)
+
+<table rules="all">
+ <thead>
+  <th style="background-color:#5555AA">Item</th>
+  <th style="background-color:#5555AA">Version</th>
+  <th style="background-color:#5555AA">Required</th>
+  <th style="background-color:#5555AA">Best Practice</th>
+  <th style="background-color:#5555AA">Conformant</th>
+  <th style="background-color:#5555AA">Criteria</th>
+ </thead>
+ <tbody>
+ <tr>
+   <td style="background-color:#555555">10</td>
+   <td style="background-color:#555555">v3</td>
+   <td style="background-color:#AAAAAA"><center>x</center></td>
+   <td style="background-color:#AAAAAA"></td>
+   <td></td>
+   <td> <b>Support Provider confirms:</b> Capable Support as defined in item (1)</td>
+ </tr>
+ </tbody>
+</table>
+
+### Zowe Component Requirements: Client SDK (Node.js)
+
+<table rules="all">
+ <thead>
+  <th style="background-color:#5555AA">Item</th>
+  <th style="background-color:#5555AA">Version</th>
+  <th style="background-color:#5555AA">Required</th>
+  <th style="background-color:#5555AA">Best Practice</th>
+  <th style="background-color:#5555AA">Conformant</th>
+  <th style="background-color:#5555AA">Criteria</th>
+ </thead>
+ <tbody>
+ <tr>
+   <td style="background-color:#555555">11</td>
+   <td style="background-color:#555555">v3</td>
+   <td style="background-color:#AAAAAA"><center>x</center></td>
+   <td style="background-color:#AAAAAA"></td>
+   <td></td>
+   <td> <b>Support Provider confirms:</b> Capable Support as defined in item (1)</td>
  </tr>
  </tbody>
 </table>
