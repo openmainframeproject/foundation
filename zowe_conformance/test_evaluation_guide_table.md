@@ -7,6 +7,13 @@ This guide describes the requirements of the four available conformance programs
 These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 
 - [Zowe Conformance Test Evaluation Guide](#zowe-conformance-test-evaluation-guide)
+  - [Zowe CLI](#zowe-cli)
+    - [Infrastructure](#infrastructure)
+    - [Installation](#installation)
+    - [Naming](#naming)
+    - [Profiles](#profiles)
+    - [Support](#support)
+    - [Documentation](#documentation)
   - [Zowe API Mediation Layer](#zowe-api-mediation-layer)
     - [Application Service](#application-service)
     - [REST API Documentation](#rest-api-documentation)
@@ -17,14 +24,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
     - [WebSocket Services](#websocket-services)
     - [Directory and File Ownership Permissions](#directory-and-file-ownership-permissions)
     - [Packaging](#packaging)
-    - [Support](#support)
-  - [Zowe CLI](#zowe-cli)
-    - [Infrastructure](#infrastructure)
-    - [Installation](#installation)
-    - [Naming](#naming)
-    - [Profiles](#profiles)
     - [Support](#support-1)
-    - [Documentation](#documentation)
   - [Zowe Application Framework](#zowe-application-framework)
     - [Packaging](#packaging-1)
     - [Packaging Format and Manifest](#packaging-format-and-manifest)
@@ -49,6 +49,359 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
     - [\[d\] Extension Adding Menus](#d-extension-adding-menus)
 - [Appendix: Revision History](#appendix-revision-history)
 
+
+## Zowe CLI
+
+### Infrastructure 
+
+<table rules="all">
+<thead>
+<th style="background-color: #5555AA">Item</th>
+<th style="background-color: #5555AA">Version</th>
+<th style="background-color: #5555AA">Required</th>
+<th style="background-color: #5555AA">Best Practice</th>
+<th style="background-color: #5555AA">Conformant</th>
+<th style="background-color: #5555AA">Criteria</th>
+</thead>
+<tbody>
+<tr>
+<td style="background-color: #555555">1</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Plug-in is constructed on the Imperative CLI Framework.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">2</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Plug-in is NOT run as a standalone CLI.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">3</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Plug-in commands write to stdout or stderr via Imperative Framework response.console APIs.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">4</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If plug-in requires gzip decompression support, leverage the Core CLI built-in support -- do NOT opt-out of the built-in gzip decompression support (specifically, the `mDecode` property of the Imperative RestClient must NOT be overridden).</td>
+</tr>
+<tr>
+<td style="background-color: #555555">5</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Plug-ins must not have an @zowe/cli peer dependency for improved npm@7 compatibility. The only peer dependencies that should be included are packages which are imported in the plug-in's source code (e.g., @zowe/imperative).</td>
+</tr>
+<tr>
+<td style="background-color: #555555">6</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>In their Imperative config file (defined in the imperative.configurationModule property of package.json), plug-ins should make their imports as few and specific as possible. This can significantly decrease their load time (<a href="https://github.com/zowe/zowe-cli-db2-plugin/pull/53">example</a>).</td>
+</tr>
+<tr>
+<td style="background-color: #555555">7</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>HTTP or HTTPS requests to REST APIs should use the @zowe/imperative RestClient instead of a direct dependency on a 3rd-party package like request or axios.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">8</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>Commands contributed by a plug-in should produce exit codes that follow the convention of: <br/>
+      - Upon successful execution of the command, return zero; or <br/>
+      - If a command fails to execute successfully, return a non-zero value. <br/> 
+Plug-in documentation should identify the possible values that may be returned by the plug-in's commands, explaining what each value indicates.</td>
+</tr>
+<tr>
+</tbody>
+</table>
+
+### Installation
+
+<table rules="all">
+<thead>
+<th style="background-color: #5555AA">Item</th>
+<th style="background-color: #5555AA">Version</th>
+<th style="background-color: #5555AA">Required</th>
+<th style="background-color: #5555AA">Best Practice</th>
+<th style="background-color: #5555AA">Conformant</th>
+<th style="background-color: #5555AA">Criteria</th>
+</thead>
+<tbody>
+<tr>
+<td style="background-color: #555555">9</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Plug-in is installable with the zowe plugins install command.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">10</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Plug-in is installable into the @zowe-vN-lts version of the core Zowe CLI and follows semantic versioning (where "N" = the latest "active" LTS release number).</td>
+</tr>
+<tr>
+<td style="background-color: #555555">11</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Plug-in is uninstallable via the zowe plugins uninstall command.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">12</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>`@latest` must point to the same version as the most recent zowe lts tag (Note: for v3 it will be `@zowe-v3-lts`).</td>
+</tr>
+<tr>
+<td style="background-color: #555555">13</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>Plug-ins should be able to be installed from a local archive without having to download dependencies from npm.</td>
+</tr>
+</tbody>
+</table>
+
+### Naming
+
+<table rules="all">
+<thead>
+<th style="background-color: #5555AA">Item</th>
+<th style="background-color: #5555AA">Version</th>
+<th style="background-color: #5555AA">Required</th>
+<th style="background-color: #5555AA">Best Practice</th>
+<th style="background-color: #5555AA">Conformant</th>
+<th style="background-color: #5555AA">Criteria</th>
+</thead>
+<tbody>
+<tr>
+<td style="background-color: #555555">14</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in introduces a command group name, it does not conflict with existing conformant plug-in group names.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">15</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>Names of CLI commands/groups/options must be in kebab case (lower case &amp; hyphens). Names of properties in zowe.config.json should be camel case. Only alphanumeric characters should be used - `[a-zA-Z0-9-]+`.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">16</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>The following option names/aliases are reserved and must not be used: --response-format-json, --rfj, --help, -h, --help-examples, --help-web, --hw</td>
+</tr>
+</tbody>
+</table>
+
+### Profiles
+
+<table rules="all">
+<thead>
+<th style="background-color: #5555AA">Item</th>
+<th style="background-color: #5555AA">Version</th>
+<th style="background-color: #5555AA">Required</th>
+<th style="background-color: #5555AA">Best Practice</th>
+<th style="background-color: #5555AA">Conformant</th>
+<th style="background-color: #5555AA">Criteria</th>
+</thead>
+<tbody>
+<tr>
+<td style="background-color: #555555">17</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in has unique connection details, it introduces a profile that lets users store these details for repeated use.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">18</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>Plug-in users are able to override all profile settings via the command line and/or environment variables.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">19</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in uses a Zowe API-ML integrated API, it (the plug-in) has an option named `base-path` in the profile to used to house the path of the associated service in the API ML.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">20</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in connects to a service, it must include the following profile properties AND they MUST be these exact properties (e.g. host, NOT hostname): 'host', 'port', 'user', 'password'.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">21</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in connects to a service, and the service supports logging in with a token, it must include the following profile properties AND they MUST be these exact properties: 'tokenType', 'tokenValue'.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">22</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in connects to a service, and the service supports logging in with PEM certificates, it must include the following profile properties AND they MUST be these exact properties: 'certFile', 'certKeyFile'.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">23</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in connects to a service, and the service supports logging in with PFX/P12 certificates, it must include the following profile properties AND they MUST be these exact properties: 'certFile', 'certFilePassphrase'.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">24</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>If the plug-in provides an option to reject untrusted certificates, the property must be named &ldquo;rejectUnauthorized&rdquo;. CLI option should be reject-unauthorized.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">25</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>The plug-in specifies options to be pre-filled by default in zowe.config.json once `zowe config init` has executed.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">26</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>The plug-in supports reading profiles stored in the Zowe Team Config format.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">27</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>The plug-in supports base profiles within a user's Zowe Team Config</td>
+</tr>
+<tr>
+<td style="background-color: #555555">28</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>When host, port, user, or password is missing for a particular command and no default value is set, the user is prompted for the argument. Host, user, and password should NOT have default values.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">29</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>To take advantage of the new 'zowe config auto-init' command, a plugin that works with a single-sign-on, APIML-compliant REST service MUST supply a new object within its plugin definition to identify that REST service. The new IImperative.apimlConnLookup object must be in the plugin's definition. That object includes the apiId and gatewayUrl of the corresponding REST service. The related REST service must also supply its apiId and gatewayUrl in the apiml section of its application.yml definition. Zowe-CLI automatically handles the apimlConnLookup object for the 'zosmf' service. Thus an apimlConnLookup object for 'zosmf' does not have to be specified within a plugin.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">30</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>The plug-in does not use (read or write) v1 profiles.</td>
+</tr>
+</tbody>
+</table>
+
+### Support
+
+<table rules="all">
+<thead>
+<th style="background-color: #5555AA">Item</th>
+<th style="background-color: #5555AA">Version</th>
+<th style="background-color: #5555AA">Required</th>
+<th style="background-color: #5555AA">Best Practice</th>
+<th style="background-color: #5555AA">Conformant</th>
+<th style="background-color: #5555AA">Criteria</th>
+</thead>
+<tbody>
+<tr>
+<td style="background-color: #555555">31</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td>Submitter describes how support is provided and support details are clearly documented.</td>
+</tr>
+</tbody>
+</table>
+
+### Documentation
+
+<table rules="all">
+<thead>
+<th style="background-color: #5555AA">Item</th>
+<th style="background-color: #5555AA">Version</th>
+<th style="background-color: #5555AA">Required</th>
+<th style="background-color: #5555AA">Best Practice</th>
+<th style="background-color: #5555AA">Conformant</th>
+<th style="background-color: #5555AA">Criteria</th>
+</thead>
+<tbody>
+<tr>
+<td style="background-color: #555555">32</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>Plug-in command help is contributed to this repo for the purpose of hosting the ecosystem web-help on Zowe Docs - <a href="https://github.com/zowe/zowe-cli-web-help-generator">https://github.com/zowe/zowe-cli-web-help-generator</a></td>
+</tr>
+</tbody>
+</table>
+
 ## Zowe API Mediation Layer
 
 ### Application Service 
@@ -65,7 +418,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">1</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -78,14 +431,14 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td style="background-color: #AAAAAA">A service must be registered using one of the following methods<br />&nbsp; [please mark which one applies (a) or (b)]:</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
 <td >a.&nbsp; Dynamic Registration</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -93,7 +446,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">3</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -101,7 +454,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">4</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -109,7 +462,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">5</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -117,7 +470,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">6</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -125,39 +478,46 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">7</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >The published service URL must follow the gateway URL conventions</td>
 </tr>
 <tr>
-<td style="background-color: #555555" rowspan="9">8</td>
+<td style="background-color: #555555" rowspan="10">8</td>
 <td style="background-color: #555555"></td>
 <td colspan="2" style="background-color: #AAAAAA">Versioned</td>
 <td style="background-color: #AAAAAA"></td>
 <td  style="background-color: #AAAAAA">For versioned APIs, service URLs must contain a service ID in the first place in the path, before the service version (all formats). Example formats: (Mark only one section - Versioned or Non-Versioned)</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >- {serviceId}/api/v1 reserved for REST APIs</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >- {serviceId}/ui/v1 reserved for UIs</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >- {serviceId}/ws/v1 reserved for WebSockets</td>
+</tr>
+<tr>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td style="background-color: #AAAAAA"></td>
+<td></td>
+<td >- {serviceId}/graphql reserved for GraphQL APIs</td>
 </tr>
 <tr>
 <td style="background-color: #555555">&nbsp;</td>
@@ -166,28 +526,28 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td  style="background-color: #AAAAAA">For non-versioned APIs or APIs versioned differently (e.g. z/OSMF), use the following formats:&nbsp;</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >- {serviceId}/api reserved for REST APIs</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >- {serviceId}/ui reserved for UIs</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >- {serviceId}/ws reserved for WebSockets</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -200,25 +560,26 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td style="background-color: #AAAAAA">Registration of the service must be performed via one of the supported methods: (Mark which one applies _a_, _b_, _c_)</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >a. Adding the static API definition YAML file path to&nbsp;zowe.yaml</td>
+<td >a. Dynamic registration of an application</td>
+
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >b. Copying the static API definition YAML file to the workspace api-definitions directory</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >c. Dynamic registration of an application</td>
+<td >c. Adding the static API definition YAML file path to&nbsp;zowe.yaml</td>
 </tr>
 </tbody>
 </table>
@@ -237,15 +598,15 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">10</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >Documentation is Swagger/Open API 2.0/Open API 3.0 compliant</td>
+<td >Documentation is Swagger/Open API 2.0/Open API 3.0 compliant in case of GraphQL API please provide Swagger with one endpoint e.g. the GraphQL. This will be improved in V4.</td>
 </tr>
 <tr>
 <td style="background-color: #555555">11</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -253,7 +614,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">12</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -261,7 +622,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">13</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -269,7 +630,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">14</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -277,7 +638,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">15</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -285,11 +646,11 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">16</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
-<td>Service SHOULD provide the code snippets to be shown to the users as explained in https://docs.zowe.org/stable/extend/extend-apiml/onboard-plain-java-enabler/#api-info</td>
+<td>Every REST endpoint has associated code snippet showing the client usage of the endpoint.</td>
 </tr>
 </tbody>
 </table>
@@ -308,7 +669,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">17</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -316,7 +677,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">18</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -324,7 +685,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">19</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -347,7 +708,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">20</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -355,7 +716,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">21</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -363,7 +724,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">22</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -371,7 +732,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">23</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -394,7 +755,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">24</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -408,7 +769,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">
-<p>v2</p>
+<p>v3</p>
 </td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
@@ -416,14 +777,14 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td >(a) Services accept PassTickets in the Authorization header of the HTTP requests using the basic authentication scheme (httpBasicPassTicket).</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >(b) Services accept Zowe JWT token in the cookie (zoweJwt)</td>
 </tr>
 <tr>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -446,19 +807,19 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">26</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
-<td >Service implementation follows the semantic versioning model</td>
+<td >Service implementation follows the semantic versioning model.</td>
 </tr>
 <tr>
 <td style="background-color: #555555">27</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >Last two major versions are supported by API services</td>
+<td >If the API service has more than one version, last two major versions are supported by the API service.</td>
 </tr>
 </tbody>
 </table>
@@ -477,7 +838,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">28</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -485,7 +846,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">29</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -508,7 +869,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">30</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -516,7 +877,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">31</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -544,7 +905,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">32</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -552,7 +913,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">33</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -560,7 +921,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">34</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -568,7 +929,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">35</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -576,7 +937,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">36</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -584,7 +945,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">37</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -592,7 +953,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">38</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -600,7 +961,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">39</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -608,7 +969,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">40</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -616,7 +977,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">41</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -639,336 +1000,11 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">42</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td >Submitter describes how Support is provided and Support details are clearly documented</td>
-</tr>
-</tbody>
-</table>
-
-## Zowe CLI
-
-### Infrastructure 
-
-<table rules="all">
-<thead>
-<th style="background-color: #5555AA">Item</th>
-<th style="background-color: #5555AA">Version</th>
-<th style="background-color: #5555AA">Required</th>
-<th style="background-color: #5555AA">Best Practice</th>
-<th style="background-color: #5555AA">Conformant</th>
-<th style="background-color: #5555AA">Criteria</th>
-</thead>
-<tbody>
-<tr>
-<td style="background-color: #555555">1</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in is constructed on the Imperative CLI Framework</td>
-</tr>
-<tr>
-<td style="background-color: #555555">2</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in is NOT run as a standalone CLI</td>
-</tr>
-<tr>
-<td style="background-color: #555555">3</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in commands write to stdout or stderr via Imperative Framework response.console APIs</td>
-</tr>
-<tr>
-<td style="background-color: #555555">4</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If plug-in requires gzip decompression support, leverage the Core CLI built-in support -- do NOT opt-out of the built-in gzip decompression support (specifically, the `mDecode` property of the Imperative RestClient must NOT be overridden).</td>
-</tr>
-<tr>
-<td style="background-color: #555555">5</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-ins must not have an @zowe/cli peer dependency for improved npm@7 compatibility. The only peer dependencies that should be included are packages which are imported in the plug-in's source code (e.g., @zowe/imperative).</td>
-</tr>
-<tr>
-<td style="background-color: #555555">6</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"></td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td></td>
-<td>In their Imperative config file (defined in the imperative.configurationModule property of package.json), plug-ins should make their imports as few and specific as possible. This can significantly decrease their load time (<a href="https://github.com/zowe/zowe-cli-db2-plugin/pull/53">example</a>).</td>
-</tr>
-<tr>
-<td style="background-color: #555555">7</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"></td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td></td>
-<td>HTTP or HTTPS requests to REST APIs should use the @zowe/imperative RestClient instead of a direct dependency on a 3rd-party package like request or axios.</td>
-</tr>
-<tr>
-</tbody>
-</table>
-
-### Installation
-
-<table rules="all">
-<thead>
-<th style="background-color: #5555AA">Item</th>
-<th style="background-color: #5555AA">Version</th>
-<th style="background-color: #5555AA">Required</th>
-<th style="background-color: #5555AA">Best Practice</th>
-<th style="background-color: #5555AA">Conformant</th>
-<th style="background-color: #5555AA">Criteria</th>
-</thead>
-<tbody>
-<tr>
-<td style="background-color: #555555">8</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in is installable with the zowe plugins install command</td>
-</tr>
-<tr>
-<td style="background-color: #555555">9</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in is installable into the @zowe-vN-lts version of the core Zowe CLI and follows semantic versioning (where "N" = the latest "active" LTS release number)</td>
-</tr>
-<tr>
-<td style="background-color: #555555">10</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in is uninstallable via the zowe plugins uninstall command</td>
-</tr>
-<tr>
-<td style="background-color: #555555">11</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>`@latest` should point to the same version as the most recent zowe lts tag (Note: for V2 it will be `@zowe-v2-lts`)</td>
-</tr>
-</tbody>
-</table>
-
-### Naming
-
-<table rules="all">
-<thead>
-<th style="background-color: #5555AA">Item</th>
-<th style="background-color: #5555AA">Version</th>
-<th style="background-color: #5555AA">Required</th>
-<th style="background-color: #5555AA">Best Practice</th>
-<th style="background-color: #5555AA">Conformant</th>
-<th style="background-color: #5555AA">Criteria</th>
-</thead>
-<tbody>
-<tr>
-<td style="background-color: #555555">12</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in introduces a command group name, it does not conflict with existing conformant plug-in group names</td>
-</tr>
-<tr>
-<td style="background-color: #555555">13</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"></td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td></td>
-<td>Names of CLI commands/groups/options must be in kebab case (lower case &amp; hyphens). Names of properties in zowe.config.json should be camel case. Only alphanumeric characters should be used - `[a-zA-Z0-9-]+`.</td>
-</tr>
-<tr>
-<td style="background-color: #555555">14</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>The following option names/aliases are reserved and must not be used: --response-format-json, --rfj, --help, -h, --help-examples, --help-web, --hw</td>
-</tr>
-</tbody>
-</table>
-
-### Profiles
-
-<table rules="all">
-<thead>
-<th style="background-color: #5555AA">Item</th>
-<th style="background-color: #5555AA">Version</th>
-<th style="background-color: #5555AA">Required</th>
-<th style="background-color: #5555AA">Best Practice</th>
-<th style="background-color: #5555AA">Conformant</th>
-<th style="background-color: #5555AA">Criteria</th>
-</thead>
-<tbody>
-<tr>
-<td style="background-color: #555555">15</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in has unique connection details, it introduces a profile that lets users store these details for repeated use</td>
-</tr>
-<tr>
-<td style="background-color: #555555">16</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"></td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td></td>
-<td>Plug-in users are able to override all profile settings via the command line and/or environment variables</td>
-</tr>
-<tr>
-<td style="background-color: #555555">17</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in uses a Zowe API-ML integrated API, it (the plug-in) has an option named `base-path` in the profile to used to house the path of the associated service in the API ML.</td>
-</tr>
-<tr>
-<td style="background-color: #555555">18</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in connects to a service, it must include the following profile properties AND they MUST be these exact properties (e.g. host, NOT hostname): 'host', 'port', 'user', 'password'</td>
-</tr>
-<tr>
-<td style="background-color: #555555">19</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in connects to a service, and the service supports logging in with a token, it must include the following profile properties AND they MUST be these exact properties: 'tokenType', 'tokenValue'</td>
-</tr>
-<tr>
-<td style="background-color: #555555">20</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in connects to a service, and the service supports logging in with PEM certificates, it must include the following profile properties AND they MUST be these exact properties: 'certFile', 'certKeyFile'</td>
-</tr>
-<tr>
-<td style="background-color: #555555">21</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in connects to a service, and the service supports logging in with PFX/P12 certificates, it must include the following profile properties AND they MUST be these exact properties: 'certFile', 'certFilePassphrase'</td>
-</tr>
-<tr>
-<td style="background-color: #555555">22</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>If the plug-in provides an option to reject untrusted certificates, the property must be named &ldquo;rejectUnauthorized&rdquo;. CLI option should be reject-unauthorized.</td>
-</tr>
-<tr>
-<td style="background-color: #555555">23</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"></td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td></td>
-<td>The plug-in specifies options to be pre-filled by default in zowe.config.json once `zowe config init` has executed</td>
-</tr>
-<tr>
-<td style="background-color: #555555">24</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in supports team-profile config</td>
-</tr>
-<tr>
-<td style="background-color: #555555">25</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Plug-in supports base profiles</td>
-</tr>
-<tr>
-<td style="background-color: #555555">26</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"></td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td></td>
-<td>When host, port, user, or password is missing for a particular command and no default value is set, the user is prompted for the argument. Host, user, and password should NOT have default values.</td>
-</tr>
-<tr>
-<td style="background-color: #555555">27</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>To take advantage of the new 'zowe config auto-init' command, a plugin that works with a single-sign-on, APIML-compliant REST service MUST supply a new object within its plugin definition to identify that REST service. The new IImperative.apimlConnLookup object must be in the plugin's definition. That object includes the apiId and gatewayUrl of the corresponding REST service. The related REST service must also supply its apiId and gatewayUrl in the apiml section of its application.yml definition. Zowe-CLI automatically handles the apimlConnLookup object for the 'zosmf' service. Thus an apimlConnLookup object for 'zosmf' does not have to be specified within a plugin.</td>
-</tr>
-</tbody>
-</table>
-
-### Support
-
-<table rules="all">
-<thead>
-<th style="background-color: #5555AA">Item</th>
-<th style="background-color: #5555AA">Version</th>
-<th style="background-color: #5555AA">Required</th>
-<th style="background-color: #5555AA">Best Practice</th>
-<th style="background-color: #5555AA">Conformant</th>
-<th style="background-color: #5555AA">Criteria</th>
-</thead>
-<tbody>
-<tr>
-<td style="background-color: #555555">28</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td style="background-color: #AAAAAA"></td>
-<td></td>
-<td>Submitter describes how Support is provided and Support details are clearly documented</td>
-</tr>
-</tbody>
-</table>
-
-### Documentation
-
-<table rules="all">
-<thead>
-<th style="background-color: #5555AA">Item</th>
-<th style="background-color: #5555AA">Version</th>
-<th style="background-color: #5555AA">Required</th>
-<th style="background-color: #5555AA">Best Practice</th>
-<th style="background-color: #5555AA">Conformant</th>
-<th style="background-color: #5555AA">Criteria</th>
-</thead>
-<tbody>
-<tr>
-<td style="background-color: #555555">29</td>
-<td style="background-color: #555555">v2</td>
-<td style="background-color: #AAAAAA"></td>
-<td style="background-color: #AAAAAA"><center>x</center></td>
-<td></td>
-<td>Plug-in command help is contributed to this repo for the purpose of hosting the ecosystem web-help on Zowe Docs - <a href="https://github.com/zowe/zowe-cli-web-help-generator">https://github.com/zowe/zowe-cli-web-help-generator</a></td>
 </tr>
 </tbody>
 </table>
@@ -989,7 +1025,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">1</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -997,7 +1033,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">2</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1005,7 +1041,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">3</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1013,7 +1049,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">4</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1021,7 +1057,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">5</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1029,7 +1065,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">6</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1052,7 +1088,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">7</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1060,7 +1096,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">8</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1068,7 +1104,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">9</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1076,7 +1112,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">10</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1084,7 +1120,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">11</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1092,7 +1128,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">12</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1100,7 +1136,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">13</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1108,7 +1144,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">14</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1116,7 +1152,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">15</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1124,7 +1160,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">16</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1132,7 +1168,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">17</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1140,7 +1176,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">18</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1148,7 +1184,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">19</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1171,7 +1207,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">20</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1194,7 +1230,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">21</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1202,7 +1238,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">22</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1225,7 +1261,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">23</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1233,7 +1269,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">24</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1241,7 +1277,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">25</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1249,7 +1285,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">26</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1257,7 +1293,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">27</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1265,11 +1301,19 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">28</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
 <td>Web apps should extend the framework's default build scripts for webpack and typescript.</td>
+</tr>
+<tr>
+<td style="background-color: #555555">29</td>
+<td style="background-color: #555555">v3</td>
+<td style="background-color: #AAAAAA"></td>
+<td style="background-color: #AAAAAA"><center>x</center></td>
+<td></td>
+<td>Web apps should state the location of their entry point javascript file, relative to the app's web directory, using the "entryPoint" property of the "webContent" attribute of pluginDefinition.json. This assists a single plugin to support multiple versions of the App Framework by distinguishing  which content is used with each version. "main.js" is the default when not defined, and is the only value used in v2.</td>
 </tr>
 </tbody>
 </table>
@@ -1287,8 +1331,8 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">29</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">30</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1310,16 +1354,16 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">30</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">31</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>If supporting more than one language, the active language to be used for string selection must be retrieved using the get methods in ZoweZLUX.globalization, which determine language by multiple factors</td>
 </tr>
 <tr>
-<td style="background-color: #555555">31</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">32</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1341,8 +1385,8 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">32</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">33</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1364,16 +1408,16 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">33</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">34</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>Every HTTP API which is intended for 3rd party use must be documented in swagger 2.0. The swagger document must be stored in doc/swagger</td>
 </tr>
 <tr>
-<td style="background-color: #555555">34</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">35</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1395,32 +1439,32 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">35</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">36</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>An Apps non-IFrame web components, or App Framework dataservices (eg Javascript and Typescript) must log only through the "zlux" logger</td>
 </tr>
 <tr>
-<td style="background-color: #555555">36</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">37</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>ZSS services log only through the Zowe ZSS Logger</td>
 </tr>
 <tr>
-<td style="background-color: #555555">37</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">38</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>Passwords must never be logged</td>
 </tr>
 <tr>
-<td style="background-color: #555555">38</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">39</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1442,12 +1486,12 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">39</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">40</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td>For z/OS Apps, all application files must be tagged according to their content type</td>
+<td>All application files must be tagged according to their content type</td>
 </tr>
 </tbody>
 </table>
@@ -1465,32 +1509,32 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">40</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">41</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>For persistent storage, user preferences (if applicable to a plugin) must be stored through the configuration data service</td>
 </tr>
 <tr>
-<td style="background-color: #555555">41</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">42</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>Regarding persistent storage for other plugin storage needs, storing data outside of the configuration dataservice is permitted only within /workspaceDirectory/app-server or /workspaceDirectory/app-server/pluginStatic with a top-level folder equal to their plugin ID. Plugins must not store information anywhere else in any Zowe directories such as /workspaceDirectory or $ROOT_DIR in order to prevent conflict with future Zowe versions and other plugins</td>
 </tr>
 <tr>
-<td style="background-color: #555555">42</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">43</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
 <td>It is advisable for the storage of user preferences to use environment variables for locating directories. Use of the workspace directory environment variable is not required, but should be considered to subvert the use of hard-coded paths</td>
 </tr>
 <tr>
-<td style="background-color: #555555">43</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">44</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1512,16 +1556,16 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">44</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">45</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>A conformant application must not modify the contents of the Zowe runtime USS directory and it must not change any directory or file permissions or ownership</td>
 </tr>
 <tr>
-<td style="background-color: #555555">45</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">46</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1546,32 +1590,32 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <td colspan="6" style="background-color: #555555">If the service should be lifecycled by Zowe, then:</td>
 </tr>
 <tr>
-<td style="background-color: #555555">46</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">47</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
 <td>it should provide and specify in its Component manifest a start.sh script</td>
 </tr>
 <tr>
-<td style="background-color: #555555">47</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">48</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
 <td>a validate.sh script</td>
 </tr>
 <tr>
-<td style="background-color: #555555">48</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">49</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
 <td>a configure.sh script</td>
 </tr>
 <tr>
-<td style="background-color: #555555">49</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">50</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1593,8 +1637,8 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </thead>
 <tbody>
 <tr>
-<td style="background-color: #555555">50</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">51</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1619,7 +1663,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 <tbody>
 <tr>
 <td style="background-color: #555555">1</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1627,7 +1671,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">2</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1635,7 +1679,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">3</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1643,7 +1687,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">4</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1651,7 +1695,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">5</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1659,7 +1703,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">6</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1667,7 +1711,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">7</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1675,7 +1719,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">8</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1683,7 +1727,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td style="background-color: #555555">9</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1691,7 +1735,7 @@ These Zowe Conformance criteria are applicable to the lastest Zowe LTS Release.
 </tr>
 <tr>
 <td rowspan="5" style="background-color: #555555">10</td>
-<td colspan="4" style="background-color: #555555">Mark (a) (b) (c) (d)</td>
+<td colspan="4" style="background-color: #555555">Mark all that apply: (a) (b) (c) (d) </td>
 <td style="background-color: #555555">Extension enhances the mainframe user experience [a] <br /> 
 OR <br />
 Extension utilizes the extensibility APIs provided by Zowe Explorer
@@ -1743,7 +1787,7 @@ Extension utilizes the extensibility APIs provided by Zowe Explorer
 <tbody>
 <tr>
 <td style="background-color: #555555">11</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1773,7 +1817,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 <tbody>
 <tr>
 <td style="background-color: #555555">12</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1782,7 +1826,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">13</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1790,7 +1834,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">14</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1798,7 +1842,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">15</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1806,7 +1850,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">16</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1814,11 +1858,11 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">17</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
-<td ><b>v1 Profile Support:</b> Extension has a backwards compatibility and it is able to support v1 type of profiles.</td>
+<td ><b>v1 Profile Support:</b> The plug-in does not use (read or write) v1 profiles.</td>
 </tr>
 </tbody>
 </table>
@@ -1838,7 +1882,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 <tbody>
 <tr>
 <td style="background-color: #555555">18</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1847,7 +1891,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">19</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1855,7 +1899,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">20</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1863,7 +1907,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">21</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1871,7 +1915,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">22</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1895,7 +1939,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 <tbody>
 <tr>
 <td style="background-color: #555555">23</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1904,7 +1948,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">24</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1912,7 +1956,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">25</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1920,7 +1964,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">26</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1928,7 +1972,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">27</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1936,7 +1980,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">28</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"></td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td></td>
@@ -1944,7 +1988,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">29</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1952,7 +1996,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 </tr>
 <tr>
 <td style="background-color: #555555">30</td>
-<td style="background-color: #555555">v2</td>
+<td style="background-color: #555555">v3</td>
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
@@ -1971,20 +2015,9 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
   <th>Comment</th>
  </thead>
  <tbody>
-   <tr>
-   <td style="background-color:#555555" nowrap="nowrap">&nbsp;2023-03-01&nbsp;</td>
-   <td>2.1.0</td>
-   <td>Criteria Change</td>
-   <td>
-    Entry 39 in the <a href="#encoding">Encoding</a> section of Zowe Application Framework Testing Criteria <br><br>
-    <li><b>WAS:</b> If you want your Apps to work with z/OS Node.js version 12 or greater, all application files must be tagged according to their content type</li>
-    <li><b>IS:</b> For z/OS Apps, all application files must be tagged according to their content type</li>
-   </td>
-   </td>
- </tr>
  <tr>
-   <td style="background-color:#555555" nowrap="nowrap">&nbsp;2022-06-01&nbsp;</td>
-   <td>2.0.0</td>
+   <td style="background-color:#555555" nowrap="nowrap">&nbsp;2024-09-03&nbsp;</td>
+   <td>3.0.0</td>
    <td>Initial Release</td>
    <td>NONE</td>
    </td>
