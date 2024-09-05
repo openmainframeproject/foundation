@@ -58,7 +58,9 @@ Please see the applicable provisions of the Program Terms regarding "Participant
 
 Initial Version and Components of Zowe Conformance Program tests for Conformance. Please verify and comment where needed that the participating offering has achieved the conformance criteria for each conformance type. A participating offering may submit for one or more of the Zowe Conformance types (API Mediation Layer, CLI, and/or App Framework) in a single application. For more details on the testing criteria, please refer to the Test Evaluation Guide.
 
-- [ ] **Zowe API Mediation layer - Zowe v2**
+**Zowe Conformance**
+
+- [ ] **Zowe API Mediation layer - Zowe v3**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -106,7 +108,9 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe Conformant Support Provider - API Mediation layer - Zowe v2**
+**Zowe Support Conformance**
+
+- [ ] **Zowe Conformant Support Provider - API Mediation layer - Zowe v3**
 
 > Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -143,6 +147,18 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 - [ ] **Zowe Conformant Support Provider - Zowe Explorer for Visual Studio Code - Zowe v2**
+
+> Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+- [ ] **Zowe Conformant Support Provider - Zowe Explorer for IntelliJ - Zowe v3**
 
 > Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
 >
