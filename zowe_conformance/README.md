@@ -2,11 +2,11 @@
 
 This contains the following materials relevant to the Zowe Conformance Program:
 
-- [Test Evaluation Guide table](/test_evaluation_guide_table.md)
+- [Test Evaluation Guide](/test_evaluation_guide_table.md)
+- [Support Provider Evaluation Guide](support_provider_evaluation_guide_table.md)
 - [Terms and Conditions](terms_and_conditions.md)
 - [Participation Form](participation_form.md)
 - [Brand Guidelines](brand_guidelines.pdf)
-- [Test Evaluation Guide](test_evaluation_guide.md) - deprecated
 
 The documents are the source versions; final version are made available on the [Zowe Conformance Program page](https://www.openmainframeproject.org/projects/zowe/conformance).
 
