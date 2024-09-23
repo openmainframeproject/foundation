@@ -72,7 +72,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe CLI - Zowe v2**
+- [ ] **Zowe CLI - Zowe v3**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -84,7 +84,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe App Framework - Zowe v2**
+- [ ] **Zowe App Framework - Zowe v3**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -96,7 +96,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe Explorer for Visual Studio Code - Zowe v2**
+- [ ] **Zowe Explorer for Visual Studio Code - Zowe v3**
 
 > Please list any items where your offering does not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -122,7 +122,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe Conformant Support Provider - Zowe App Framework - Zowe v2**
+- [ ] **Zowe Conformant Support Provider - Zowe App Framework - Zowe v3**
 
 > Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -134,7 +134,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe Conformant Support Provider - Zowe CLI - Zowe v2**
+- [ ] **Zowe Conformant Support Provider - Zowe CLI - Zowe v3**
 
 > Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -146,7 +146,7 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 >
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-- [ ] **Zowe Conformant Support Provider - Zowe Explorer for Visual Studio Code - Zowe v2**
+- [ ] **Zowe Conformant Support Provider - Zowe Explorer for Visual Studio Code - Zowe v3**
 
 > Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
 >
@@ -159,6 +159,18 @@ Initial Version and Components of Zowe Conformance Program tests for Conformance
 > \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 - [ ] **Zowe Conformant Support Provider - Zowe Explorer for IntelliJ - Zowe v3**
+
+> Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+>
+> \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+- [ ] **Zowe Conformant Support Provider - Zowe Client SDK (Node.js) - Zowe v3**
 
 > Please list any items where you, as a Participant applying for Participant Conformance, do not meet the criteria set forth in the Test Evaluation Guide:
 >
