@@ -466,7 +466,7 @@ Plug-in documentation should identify the possible values that may be returned b
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td >The service ID must be written in lower case, contain no symbols, and is limited to 64 characters</td>
+<td >The service ID must be written in lower case, contain no symbols other than hyphen, and is limited to 63 characters</td>
 </tr>
 <tr>
 <td style="background-color: #555555">6</td>
