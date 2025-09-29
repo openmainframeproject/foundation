@@ -22,11 +22,18 @@ Elections are typically held the month before the role end date for each role ab
 | Election Period                  | 1 week; closes at 11:59 pm Central European Time on the last day. |
 | Announcement of Election Results | Day after Election Ends                                      |
 
+## Eligibility
+
+To serve on any governing body, council, or committee of the Open Mainframe Project, an individual must:
+
+- Be willing and able to fulfill the applicable responsibilities, and
+- Comply with all applicable policies of the Linux Foundation and the Open Mainframe Project, including [Linux Foundation Antitrust Policy](https://www.linuxfoundation.org/legal/antitrust-policy) and [Open Mainframe Project Code of Conduct](https://tac.openmainframeproject.org/code_of_conduct.html).
+
+Failure to meet these requirements may result in removal, suspension, or ineligibility to participate.
 
 ## Nominations
 
 Nominations are done via email. Members of the electorate group may nominate someone else in the electorate group or self-nominate. All nominations must include the nominee’s name, company affiliation, and a short background on the nominee and why they wish to serve in the role. All nominations are confirmed before the election.
-
 
 ## Elections
 
@@ -34,6 +41,6 @@ If there are the same number or fewer nominees for the given role as there are p
 
 An election will be held if there are more nominees for the given role than the number of persons elected. The Open Mainframe Project uses [LFX PCC Voting](https://docs.linuxfoundation.org/lfx/project-control-center/v2-latest-version/collaborations/voting) for the election process. Electorates will be sent an email with the complete list of nominees to review and a separate email from LFX PCC Voting with a unique link to submit their ballot. Voting will be done using the checkbox method; electors will checkbox the individual(s) they wish to elect.
 
-Election results will be announced to the electorate and relevant committee the day after the election closes.
+Election results will be announced to the electorate and the relevant committee the day after the election closes.
 
 If you have questions about the election process, please contact the [Open Mainframe Project staff](https://members.openmainframeproject.org).
