@@ -1838,7 +1838,7 @@ Sample verbiage:  Recommended for use with Zowe Explorer.  [Extension-name] exte
 <td style="background-color: #AAAAAA"><center>x</center></td>
 <td style="background-color: #AAAAAA"></td>
 <td></td>
-<td ><b>Added Profile Type initialization:</b> If the extension has a dependency on a new Zowe CLI profile type other than the Zowe Explorer default `zosmf`, it is calling the `ZoweExplorerApi.IApiRegisterClient.getExplorerExtenderApi().initialize(profileTypeName)` to ensure that the profile type is supported and managed by the extension without a Zowe CLI plugin installed.</td>
+<td ><b>Added Profile Type initialization:</b> If the extension has a dependency on a new Zowe CLI profile type other than the Zowe Explorer default `zosmf`, it calls `ZoweVsCodeExtension.getZoweExplorerApi().getExplorerExtenderApi().initForZowe(profileType, profileTypeConfigurations)` to ensure that the profile type is supported and managed by the extension without a Zowe CLI plugin installed.</td>
 </tr>
 <tr>
 <td style="background-color: #555555">15</td>
