@@ -1,39 +1,23 @@
-name: Update Overview Deck
+name: Update Data From LFX
 on:
   schedule:
-    - cron: '0 0 5 * *'
+    - cron: '0 13 * * *'
   workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Get current date
-      id: date
-      run: |
-          echo "CURRENT_DATE=$(date +'%B %Y')" >> "$GITHUB_OUTPUT"
-    - name: Check out repo
-      uses: actions/checkout@v4
-    - name: Set up Python 3.x
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r overview_deck/requirements.txt
-    - name: Run build
-      run: |
-        cd overview_deck
-        python build.py
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
-      with:
-         token: ${{ secrets.PAT }}
-         branch-suffix: timestamp
-         path: .
-         title: Update Overview Decks for ${{ steps.date.outputs.CURRENT_DATE }}
-         labels: automerge
-         commit-message: Update Data Sources
-         signoff: true
+      - uses: jmertic/lfx-tac-actions@main
+        with:
+          updateprojects: false
+          updatetacmembers: false
+          updatetacagendaitems: false
+          updateclomonitor: false
+          updatedecks: true
+          updatecharters: true
+          slug: open-mainframe-project
+          overview_decks: '[{"url": "https://docs.google.com/presentation/d/1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk/edit?usp=sharing","filename": "Open Mainframe Project - Overview"},{"url":"https://docs.google.com/presentation/d/1x8f47QPzhuIP9LM9QthYih8VoJhJvPAAXoy6nW0uF6c/edit?usp=sharing","filename": "Open Mainframe Project - Governing Board Overview"},{"url":"https://docs.google.com/presentation/d/18l_SwTF3LOEzoYyi0fMX-Wve2GIZb1cLQswJCZEjN9M/edit?usp=sharing","filename": "Open Mainframe Project - TAC Overview"},{"url":"https://docs.google.com/presentation/d/1SW-JbXTQgwb_OczGeyo5jqc6GmK5CLmBTzg0pb0vMXs/edit?usp=sharing","filename":"Open Mainframe Project - Membership Overview"}]'
+        env:
+          token: ${{ secrets.PAT }} 
+          repository: ${{ github.repository }}
+          ref: ${{ github.ref }}
