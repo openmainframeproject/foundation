@@ -18,6 +18,6 @@ This repository contains many of the governance and overview documents for the O
   - [Social Media Guidelines](./SOCIAL_MEDIA_GUIDELINES.md)
   - [Webinar Guidelines](./WEBINAR_GUIDELINES.md)
 - Programs
-  - [Zowe Conformance Program](zowe_conformance) source participation agreements, terms and conditions, checklist, and submitted conformance checklists.
+  - [Zowe Conformance Program](https://github.com/openmainframeproject/zowe_conformance) source participation agreements, terms and conditions, checklist, and submitted conformance checklists.
 
 Please file a [service desk issue](https://servicedesk.openmainframeproject.org) with the Open Mainframe Project team if you have any questions, and [open a pull request](https://github.com/openmainframeproject/foundation/pulls) for any corrections needed.
