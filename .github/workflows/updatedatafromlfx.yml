@@ -7,6 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: app-token
+        with:
+          client-id: ${{ vars.APP_CLIENT_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: jmertic/lfx-tac-actions@39633d84d61a95ed47e84827fdc0c3fb7cf869e0 # 20260612
         with:
           updateprojects: false
@@ -18,6 +23,6 @@ jobs:
           slug: open-mainframe-project
           overview_decks: '[{"url": "https://docs.google.com/presentation/d/1Zk3REYGnE6mYIXl52QxzNbVW7XM2NPs_1w7YxscRXrk/edit?usp=sharing","filename": "Open Mainframe Project - Overview"},{"url":"https://docs.google.com/presentation/d/1x8f47QPzhuIP9LM9QthYih8VoJhJvPAAXoy6nW0uF6c/edit?usp=sharing","filename": "Open Mainframe Project - Governing Board Overview"},{"url":"https://docs.google.com/presentation/d/18l_SwTF3LOEzoYyi0fMX-Wve2GIZb1cLQswJCZEjN9M/edit?usp=sharing","filename": "Open Mainframe Project - TAC Overview"},{"url":"https://docs.google.com/presentation/d/1SW-JbXTQgwb_OczGeyo5jqc6GmK5CLmBTzg0pb0vMXs/edit?usp=sharing","filename":"Open Mainframe Project - Membership Overview"}]'
         env:
-          token: ${{ secrets.PAT }} 
+          token: ${{ steps.app-token.outputs.token }}
           repository: ${{ github.repository }}
           ref: ${{ github.ref }}
